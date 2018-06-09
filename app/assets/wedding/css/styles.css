@@ -1,0 +1,114 @@
+/*
+* Section - Hero
+*/
+
+/** BG - Static */
+#hero-bg-static {
+  background-image: url("../images/bg-hero-static.jpg");
+}
+
+/** BG - Parallax */
+#hero-bg-parallax > .bg-img-parallax {
+  background: url("../images/bg-hero-parallax.jpg");
+}
+
+/** BG - Slideshow */
+#hero-bg-slideshow .slides > .bg-img-cover:nth-child(1) {
+  background: url("../images/bg-hero-slideshow-1.jpg");
+}
+
+#hero-bg-slideshow .slides > .bg-img-cover:nth-child(2) {
+  background: url("../images/bg-hero-slideshow-2.jpg");
+}
+
+#hero-bg-slideshow .slides > .bg-img-cover:nth-child(3) {
+  background: url("../images/bg-hero-slideshow-3.jpg");
+}
+
+#hero-bg-slideshow .slides > .bg-img-cover.flex-active-slide {
+  animation: zoomout 5s;
+}
+
+.hero .container {
+  position: relative;
+  z-index: 20;
+}
+
+.hero .particles-js-canvas-el {
+  left: 0;
+  position: absolute;
+  top: 0;
+  z-index: 10;
+}
+
+.hero-text h2, .hero-text h3 {
+  transform: rotate(-3deg);
+  -webkit-transform: rotate(-3deg);
+  -ms-transform: rotate(-3deg);
+}
+
+.hero-slideshow {
+  height: 100%;
+  overflow: hidden;
+  padding: 0 !important;
+  width: 100%;
+}
+
+.hero-slideshow-content {
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 20;
+}
+
+@-webkit-keyframes zoomout {
+  0% {
+    transform: scale(1.3);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+
+/*
+* Section - Wedding Event
+*/
+
+#wedding-event {
+  background-image: url("../images/bg-wedding-event.jpg");
+}
+
+
+/*
+* Section - Proposed
+*/
+
+#proposed {
+  background: url("../images/bg-proposed.jpg");
+}
+
+
+/*
+* Section - Wedding Gifts
+*/
+
+#wedding-gifts {
+  background-image: url("../images/bg-wedding-gifts.jpg");
+}
+
+
+/*
+* Footer
+*/
+
+footer {
+  background-image: url("../images/bg-footer.jpg");
+}
+
+footer .border-top {
+  border-color: rgba(255, 255, 255, 0.2) !important;
+}

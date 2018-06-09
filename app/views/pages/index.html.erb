@@ -8,7 +8,6 @@
           </h1>
 
           <!-- Blog Posts -->
-          
           <% @articles.each do |a| %>
                 <div class="card mb-4">
             <img class="card-img-top" src="http://placehold.it/750x300" alt="Card image cap">
@@ -25,14 +24,8 @@
           <% end %>
 
           <!-- Pagination -->
-          <ul class="pagination justify-content-center mb-4">
-            <li class="page-item">
-              <a class="page-link" href="#">&larr; Older</a>
-            </li>
-            <li class="page-item disabled">
-              <a class="page-link" href="#">Newer &rarr;</a>
-            </li>
-          </ul>
+                    <%= will_paginate @articles, renderer: WillPaginate::ActionView::BootstrapLinkRenderer %>
+
 
         </div>
 

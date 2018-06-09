@@ -20,6 +20,8 @@
       </tr>
     <% end %>
   </tbody>
+  <!-- Pagination -->
+                    <%= will_paginate @articles, renderer: WillPaginate::ActionView::BootstrapLinkRenderer %>
 </table>
 
 <br>
