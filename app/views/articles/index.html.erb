@@ -1,4 +1,4 @@
-<h1>Articles</h1>
+<h1>Articles <%= @user.articles.first.title %></h1>
 
 <table>
   <thead>
@@ -10,6 +10,7 @@
   </thead>
 
   <tbody>
+    
     <% @articles.each do |article| %>
       <tr>
         <td><%= article.title %></td>
@@ -21,7 +22,6 @@
     <% end %>
   </tbody>
   <!-- Pagination -->
-                    <%= will_paginate @articles, renderer: WillPaginate::ActionView::BootstrapLinkRenderer %>
 </table>
 
 <br>
