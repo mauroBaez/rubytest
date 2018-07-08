@@ -1,97 +1,271 @@
-<div class="row">
+<div class="fh5co-loader"></div>
+<div id="page">
+	<%= render 'layouts/nav' %>
+  
+	<header id="fh5co-header" class="fh5co-cover" role="banner" style="background-image:url(<%= image_url("6") %>);" data-stellar-background-ratio="0.5">
+		<div class="overlay"></div>
+		<div class="container">
+			<div class="row">
+				<div class="col-md-8 offset-md-2 text-center">
+					<div class="display-t">
+						<div class="display-tc animate-box" data-animate-effect="fadeIn">
+							<h1>Nos casamos!</h1>
+							<h2>Faltan</h2>
+							<div class="simply-countdown simply-countdown-one"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</header>
+   
+    <section>
+    	<div id="fh5co-couple">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-8 offset-md-2 text-center fh5co-heading animate-box">
+					<p>Los invitamos a nuestro Casamiento que se realizará el día</p>
+					<h3>28 de noviembre de 2018 en Tal Lugar</h3>
+				</div>
+			</div>
+			<div class="row couple-wrap animate-box">
+				<div class="couple-half">
+					<div class="groom">
+						<img src="<%= image_url("ff") %>" alt="groom" class="img-fluid">
+					</div>
+					<div class="desc-groom">
+						<h3>Papita Di Sisto</h3>
+						<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove</p>
+					</div>
+				</div>
+				<p class="heart text-center"><i class="fa fa-heart"></i></p>
+				<div class="couple-half">
+					<div class="bride">
+						<img src="<%= image_url("ff") %>" alt="groom" class="img-fluid">
+					</div>
+					<div class="desc-bride">
+						<h3>Gise Giselez</h3>
+						<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+    </section>
 
-        <!-- Blog Entries Column -->
-        <div class="col-md-8">
+	<section>
+		<div id="fh5co-event" class="fh5co-bg" style="background-image:url(<%= image_url("slide-11") %>);" >
+		<div class="overlay"></div>
+		<div class="container">
+			<div class="row">
+				<div class="col-md-8 offset-md-2 text-center fh5co-heading animate-box">
+					<span>Horarios y Lugares</span>
+					<h2>Eventos de Nuestro Casamiento</h2>
+				</div>
+			</div>
+			<div class="row">
+				<div class="display-t">
+					<div class="display-tc">
+						<div class="col-md-12">
+							<div class="row">
+								<div class="col-md-6 col-sm-6 text-center">
+								<div class="event-wrap animate-box">
+									<h3>Ceremonia</h3>
+								<div class="row">
+										<div class="col-md-6">
+										<i class="fa fa-calendar"></i>
+										<span>28 de Noviembre de 2018</span>
+									</div>
+									<div class="col-md-6">
+										<i class="fa fa-clock"></i>
+										<span>22:30 horas</span>
+									</div>
+									<div class="col-md-12">
+																			<hr>
 
-          <h1 class="my-4">Page Heading
-            <small>Secondary Text</small>
-          </h1>
+										<i class="fa fa-map-marker-alt"></i>
+										<span>Sarlanga 865, Capital Federal</span>
+									</div>
+									</div>
+									<img class="map img-fluid img-thumbnail mt-3" src="//maps.googleapis.com/maps/api/staticmap?center=Brooklyn+Bridge,New+York,NY&amp;zoom=13&amp;size=600x300&amp;maptype=roadmap&amp;markers=color:blue%7Clabel:S%7C40.702147,-74.015794&amp;markers=color:green%7Clabel:G%7C40.711614,-74.012318&amp;markers=color:red%7Clabel:C%7C40.718217,-73.998284&amp;key=AIzaSyDIJ9XX2ZvRKCJcFRrl-lRanEtFUow4piM&amp;signature=pgcz8_2FdcdBqftd6BrlxesXTjA=" alt="Points of Interest in Lower Manhattan">
+								</div>
+							</div>
+							<div class="col-md-6 col-sm-6 text-center">
+								<div class="event-wrap animate-box">
+									<h3>Fiesta</h3>
+									<div class="row">
+										<div class="col-md-6">
+										<i class="fa fa-calendar"></i>
+										<span>28 de Noviembre de 2018</span>
+									</div>
+									<div class="col-md-6">
+										<i class="fa fa-clock"></i>
+										<span>22:30 horas</span>
+									</div>
+									<div class="col-md-12">
+																			<hr>
 
-          <!-- Blog Posts -->
-          <% @articles.each do |a| %>
-                <div class="card mb-4">
-            <img class="card-img-top" src="http://placehold.it/750x300" alt="Card image cap">
-            <div class="card-body">
-              <h2 class="card-title"><%= a.title %></h2>
-              <p class="card-text"><%= a.body %></p>
-              <%= link_to('Leer más', a, class: "btn btn-primary") %>        
-
-            </div>
-            <div class="card-footer text-muted">
-              Publicado el <%= a.created_at %> por <%= a.user.firstname %></a>
-            </div>
-          </div>
-          <% end %>
-
-          <!-- Pagination -->
-
-
-        </div>
-
-        <!-- Sidebar Widgets Column -->
-        <div class="col-md-4">
-
-          <!-- Search Widget -->
-          <div class="card my-4">
-            <h5 class="card-header">Search</h5>
-            <div class="card-body">
-              <div class="input-group">
-                <input type="text" class="form-control" placeholder="Search for...">
-                <span class="input-group-btn">
-                  <button class="btn btn-secondary" type="button">Go!</button>
-                </span>
-              </div>
-            </div>
-          </div>
-
-          <!-- Categories Widget -->
-          <div class="card my-4">
-            <h5 class="card-header">Categories</h5>
-            <div class="card-body">
-              <div class="row">
-                <div class="col-lg-6">
-                  <ul class="list-unstyled mb-0">
-                    <li>
-                      <a href="#">Web Design</a>
-                    </li>
-                    <li>
-                      <a href="#">HTML</a>
-                    </li>
-                    <li>
-                      <a href="#">Freebies</a>
-                    </li>
-                  </ul>
-                </div>
-                <div class="col-lg-6">
-                  <ul class="list-unstyled mb-0">
-                    <li>
-                      <a href="#">JavaScript</a>
-                    </li>
-                    <li>
-                      <a href="#">CSS</a>
-                    </li>
-                    <li>
-                      <a href="#">Tutorials</a>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Side Widget -->
-          <div class="card my-4">
-            <h5 class="card-header">Entradas Recientes</h5>
-            <ul class="list-group list-group-flush">
-                <% @articles.last(4).each do |a| %>
-                  <%= link_to(a.title, a, class: "list-group-item list-group-item-action") %>        
-                
-              <% end %>
+										<i class="fa fa-map-marker-alt"></i>
+										<span>Sarlanga 865, Capital Federal</span>
+									</div>
+									</div>
+									<img class="map img-fluid img-thumbnail mt-3" src="//maps.googleapis.com/maps/api/staticmap?center=Brooklyn+Bridge,New+York,NY&amp;zoom=13&amp;size=600x300&amp;maptype=roadmap&amp;markers=color:blue%7Clabel:S%7C40.702147,-74.015794&amp;markers=color:green%7Clabel:G%7C40.711614,-74.012318&amp;markers=color:red%7Clabel:C%7C40.718217,-73.998284&amp;key=AIzaSyDIJ9XX2ZvRKCJcFRrl-lRanEtFUow4piM&amp;signature=pgcz8_2FdcdBqftd6BrlxesXTjA=" alt="Points of Interest in Lower Manhattan">
+								</div>
+							</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	</section>
     
-  </ul>
-          </div>
+    <section>
+    	<div id="fh5co-testimonial">
+		<div class="container">
+			<div class="">
+				<div class="row animate-box">
+					<div class="col-md-8 offset-md-2 text-center fh5co-heading">
+						<span>Best Wishes</span>
+						<h2>Friends Wishes</h2>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-12 animate-box">
+						<div class="wrap-testimony">
+							<div class="owl-carousel-fullwidth">
+								<div class="item">
+									<div class="testimony-slide active text-center">
+										<figure>
+										<img src="<%= image_url("ff") %>" alt="groom" class="img-fluid">
+										</figure>
+										<span>John Doe, via <a href="#" class="twitter">Twitter</a></span>
+										<blockquote>
+											<p>"Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics"</p>
+										</blockquote>
+									</div>
+								</div>
+								<div class="item">
+									<div class="testimony-slide active text-center">
+										<figure>
+											<img src="<%= image_url("ff") %>" alt="groom" class="img-fluid">
+										</figure>
+										<span>John Doe, via <a href="#" class="twitter">Twitter</a></span>
+										<blockquote>
+											<p>"Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, at the coast of the Semantics, a large language ocean."</p>
+										</blockquote>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+    </section>
+    
+    <section>
+    	<div id="fh5co-gallery" class="fh5co-section-gray">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-8 offset-md-2 text-center fh5co-heading animate-box">
+					<span>Our Memories</span>
+					<h2>Wedding Gallery</h2>
+					<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+				</div>
+			</div>
+			<div class="row row-bottom-padded-md">
+				<div class="col-md-12">
+					<ul id="fh5co-gallery-list">
+						
+						<li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image: url(images/gallery-1.jpg); "> 
+						<a href="assets/images/ff.txt">
+							<div class="case-studies-summary">
+								<span>14 Photos</span>
+								<h2>Two Glas of Juice</h2>
+							</div>
+						</a>
+					</li>
+					<li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image: url(images/gallery-2.jpg); ">
+						<a href="#" class="color-2">
+							<div class="case-studies-summary">
+								<span>30 Photos</span>
+								<h2>Timer starts now!</h2>
+							</div>
+						</a>
+					</li>
 
-        </div>
 
-      </div>
-      <!-- /.row -->
+					<li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image: url(images/gallery-3.jpg); ">
+						<a href="#" class="color-3">
+							<div class="case-studies-summary">
+								<span>90 Photos</span>
+								<h2>Beautiful sunset</h2>
+							</div>
+						</a>
+					</li>
+					<li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image: url(images/gallery-4.jpg); ">
+						<a href="#" class="color-4">
+							<div class="case-studies-summary">
+								<span>12 Photos</span>
+								<h2>Company's Conference Room</h2>
+							</div>
+						</a>
+					</li>
+
+						<li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image: url(images/gallery-5.jpg); ">
+							<a href="#" class="color-3">
+								<div class="case-studies-summary">
+									<span>50 Photos</span>
+									<h2>Useful baskets</h2>
+								</div>
+							</a>
+						</li>
+						<li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image: url(images/gallery-6.jpg); ">
+							<a href="#" class="color-4">
+								<div class="case-studies-summary">
+									<span>45 Photos</span>
+									<h2>Skater man in the road</h2>
+								</div>
+							</a>
+						</li>
+
+						<li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image: url(images/gallery-7.jpg); ">
+							<a href="#" class="color-4">
+								<div class="case-studies-summary">
+									<span>35 Photos</span>
+									<h2>Two Glas of Juice</h2>
+								</div>
+							</a>
+						</li>
+
+						<li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image: url(images/gallery-8.jpg); "> 
+							<a href="#" class="color-5">
+								<div class="case-studies-summary">
+									<span>90 Photos</span>
+									<h2>Timer starts now!</h2>
+								</div>
+							</a>
+						</li>
+						<li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image: url(images/gallery-9.jpg); ">
+							<a href="#" class="color-6">
+								<div class="case-studies-summary">
+									<span>56 Photos</span>
+									<h2>Beautiful sunset</h2>
+								</div>
+							</a>
+						</li>
+					</ul>		
+				</div>
+			</div>
+		</div>
+	</div>
+    </section>
+  <div class="gototop js-top active">
+		<a href="#" class="js-gotop"><i class="fa fa-arrow-circle-up"></i></a>
+	</div>
+</div> 
+
+	

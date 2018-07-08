@@ -1,0 +1,2 @@
+class Weddingpage < ApplicationRecord
+end

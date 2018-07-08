@@ -1,0 +1,14 @@
+<% @articles.each do |a| %>
+    <div class="card mb-4">
+        <img class="card-img-top" src="http://placehold.it/750x300" alt="Card image cap">
+        <div class="card-body">
+            <h2 class="card-title"><%= a.title %></h2>
+            <p class="card-text"><%= a.body %></p>
+            <%= link_to('Leer más', a, class: "btn btn-primary") %>        
+
+        </div>
+        <div class="card-footer text-muted">
+              Publicado el <%= a.created_at %> por <%= a.user.firstname %></a>
+        </div>
+    </div>
+<% end %>

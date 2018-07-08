@@ -1,0 +1,6 @@
+<ul class="list-group list-group-flush">
+              <% @articles.last(4).each do |a| %>
+                  <%= link_to(a.title, a, class: "list-group-item list-group-item-action") %>        
+                
+              <% end %>  
+            </ul>

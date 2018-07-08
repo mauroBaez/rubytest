@@ -305,6 +305,7 @@ ActiveAdmin.setup do |config|
                 url: "/admin/categories", 
                 priority: 3
     end
+    
 end
 end
 end

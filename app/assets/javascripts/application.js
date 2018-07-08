@@ -11,9 +11,29 @@
 // about supported directives.
 //
 //= require jquery3
+//= require jquery-migrate-3.0.0.min
 //= require popper
 //= require bootstrap
 //= require rails-ujs
 //= require activestorage
 //= require turbolinks
-//= require_tree .
+//= require jquery.countTo
+//= require jquery.easing.1.3
+//= require jquery.magnific-popup.min
+//= require jquery.stellar.min
+//= require jquery.waypoints.min
+//= require magnific-popup-options
+//= require owl.carousel.min
+//= require respond.min
+//= require simplyCountdown
+//= require polyfill.min
+//= require fetch
+//= require uppy.min
+//= require uppy_uploads
+//= require main
+// This code uses:
+//
+// * babel-polyfill (https://babeljs.io/docs/usage/polyfill/)
+// * whatwg-fetch (https://github.github.io/fetch/)
+// * uppy (https://uppy.io)
+

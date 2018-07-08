@@ -9,4 +9,11 @@ ActiveadminAddons.setup do |config|
 
   # Set DateTimePickerInput input format. This if for backend (Ruby)
   # config.datetime_picker_input_format = "%Y-%m-%d %H:%M"
+  config.datetime_picker_default_options = {
+    format: "d-m-Y  H:i",
+    step: 10 # minutes
+    }
+
+    # Set DateTimePickerInput input format. This if for backend (Ruby)
+    config.datetime_picker_input_format = "%d-%m-%Y %H:%M"
 end

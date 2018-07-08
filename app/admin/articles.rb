@@ -12,16 +12,19 @@ ActiveAdmin.register Article do
 #   permitted
 # end
 menu false
-permit_params :title, :body, :user_id,:category_ids => []
+permit_params :title, :body, :user_id, :images => [],:category_ids => []
   form do |f|
     f.semantic_errors # shows errors on :base
     f.inputs do
       f.input :user_id,  :as => :hidden, :input_html => { :value => current_user.id }
       f.input :title
       f.input :body
+
       f.input :category_ids, as: :tags, collection: Category.all, display_name: :title
+      f.file_field :images, multiple: true
 
     end          # builds an input field for every attribute
     f.actions    
   end
+  
 end

@@ -11,7 +11,8 @@ ActiveAdmin.register Category do
 #   permitted << :other if params[:action] == 'create' && current_user.admin?
 #   permitted
 # end
-belongs_to :user
+menu false
+
 permit_params :title, :body, :article_ids => []
 
 end
