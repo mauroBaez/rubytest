@@ -1,14 +1,17 @@
 <div class="fh5co-loader"></div>
 <div id="page">
-	<%= render 'layouts/nav' %>
-  
-	<header id="fh5co-header" class="fh5co-cover" role="banner" style="background-image:url(<%= image_url("6") %>);" data-stellar-background-ratio="0.5">
+	<header id="fh5co-header" class="fh5co-cover" role="banner" style="background-image:url(<%= image_url("fondo") %>);" data-stellar-background-ratio="0.5" data-stellar-vertical-offset="0">
 		<div class="overlay"></div>
 		<div class="container">
 			<div class="row">
-				<div class="col-md-8 offset-md-2 text-center">
-					<div class="display-t">
+				<div class="col-md-6 text-center">
+					
+				</div>
+				<div class="col-md-6 text-center gradient">
+					<div class="display-t gradient">
+						
 						<div class="display-tc animate-box" data-animate-effect="fadeIn">
+							<img class="img-fluid" src="<%= image_url("logo") %>"></img>
 							<h1>Nos casamos!</h1>
 							<h2>Faltan</h2>
 							<div class="simply-countdown simply-countdown-one"></div>
@@ -28,24 +31,18 @@
 					<h3>28 de noviembre de 2018 en Tal Lugar</h3>
 				</div>
 			</div>
-			<div class="row couple-wrap animate-box">
-				<div class="couple-half">
-					<div class="groom">
-						<img src="<%= image_url("ff") %>" alt="groom" class="img-fluid">
-					</div>
+			<div class="row align-items-center couple-wrap animate-box">
+				<div class="col-sm-4 couple-half">
 					<div class="desc-groom">
-						<h3>Papita Di Sisto</h3>
-						<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove</p>
+						<h3>Gisela Mortoro</h3>
 					</div>
 				</div>
-				<p class="heart text-center"><i class="fa fa-heart"></i></p>
-				<div class="couple-half">
-					<div class="bride">
-						<img src="<%= image_url("ff") %>" alt="groom" class="img-fluid">
-					</div>
-					<div class="desc-bride">
-						<h3>Gise Giselez</h3>
-						<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove</p>
+				<div class="col-sm-4">
+					<img src="<%= image_url("9") %>" alt="groom" class="img-fluid">
+				</div>
+				<div class="col-sm-4">
+					<div class="couple-half desc-bride">
+						<h3>Pablo Di Sisto</h3>
 					</div>
 				</div>
 			</div>
@@ -54,7 +51,7 @@
     </section>
 
 	<section>
-		<div id="fh5co-event" class="fh5co-bg" style="background-image:url(<%= image_url("slide-11") %>);" >
+		<div id="fh5co-event" class="fh5co-bg" style="background-image:url(<%= image_url("roses") %>);" >
 		<div class="overlay"></div>
 		<div class="container">
 			<div class="row">
@@ -68,50 +65,8 @@
 					<div class="display-tc">
 						<div class="col-md-12">
 							<div class="row">
-								<div class="col-md-6 col-sm-6 text-center">
-								<div class="event-wrap animate-box">
-									<h3>Ceremonia</h3>
-								<div class="row">
-										<div class="col-md-6">
-										<i class="fa fa-calendar"></i>
-										<span>28 de Noviembre de 2018</span>
-									</div>
-									<div class="col-md-6">
-										<i class="fa fa-clock"></i>
-										<span>22:30 horas</span>
-									</div>
-									<div class="col-md-12">
-																			<hr>
-
-										<i class="fa fa-map-marker-alt"></i>
-										<span>Sarlanga 865, Capital Federal</span>
-									</div>
-									</div>
-									<img class="map img-fluid img-thumbnail mt-3" src="//maps.googleapis.com/maps/api/staticmap?center=Brooklyn+Bridge,New+York,NY&amp;zoom=13&amp;size=600x300&amp;maptype=roadmap&amp;markers=color:blue%7Clabel:S%7C40.702147,-74.015794&amp;markers=color:green%7Clabel:G%7C40.711614,-74.012318&amp;markers=color:red%7Clabel:C%7C40.718217,-73.998284&amp;key=AIzaSyDIJ9XX2ZvRKCJcFRrl-lRanEtFUow4piM&amp;signature=pgcz8_2FdcdBqftd6BrlxesXTjA=" alt="Points of Interest in Lower Manhattan">
-								</div>
-							</div>
-							<div class="col-md-6 col-sm-6 text-center">
-								<div class="event-wrap animate-box">
-									<h3>Fiesta</h3>
-									<div class="row">
-										<div class="col-md-6">
-										<i class="fa fa-calendar"></i>
-										<span>28 de Noviembre de 2018</span>
-									</div>
-									<div class="col-md-6">
-										<i class="fa fa-clock"></i>
-										<span>22:30 horas</span>
-									</div>
-									<div class="col-md-12">
-																			<hr>
-
-										<i class="fa fa-map-marker-alt"></i>
-										<span>Sarlanga 865, Capital Federal</span>
-									</div>
-									</div>
-									<img class="map img-fluid img-thumbnail mt-3" src="//maps.googleapis.com/maps/api/staticmap?center=Brooklyn+Bridge,New+York,NY&amp;zoom=13&amp;size=600x300&amp;maptype=roadmap&amp;markers=color:blue%7Clabel:S%7C40.702147,-74.015794&amp;markers=color:green%7Clabel:G%7C40.711614,-74.012318&amp;markers=color:red%7Clabel:C%7C40.718217,-73.998284&amp;key=AIzaSyDIJ9XX2ZvRKCJcFRrl-lRanEtFUow4piM&amp;signature=pgcz8_2FdcdBqftd6BrlxesXTjA=" alt="Points of Interest in Lower Manhattan">
-								</div>
-							</div>
+							
+								<%= render 'events/eventslist' %>
 							</div>
 						</div>
 					</div>
@@ -127,39 +82,59 @@
 			<div class="">
 				<div class="row animate-box">
 					<div class="col-md-8 offset-md-2 text-center fh5co-heading">
-						<span>Best Wishes</span>
-						<h2>Friends Wishes</h2>
+						<span>Dejanos tu mensaje</span>
+						<h2>Mensajes de Familia y Amigos</h2>
+						
+			          </div>
 					</div>
 				</div>
 				<div class="row">
 					<div class="col-md-12 animate-box">
 						<div class="wrap-testimony">
 							<div class="owl-carousel-fullwidth">
-								<div class="item">
-									<div class="testimony-slide active text-center">
-										<figure>
-										<img src="<%= image_url("ff") %>" alt="groom" class="img-fluid">
-										</figure>
-										<span>John Doe, via <a href="#" class="twitter">Twitter</a></span>
-										<blockquote>
-											<p>"Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics"</p>
-										</blockquote>
-									</div>
-								</div>
-								<div class="item">
-									<div class="testimony-slide active text-center">
-										<figure>
-											<img src="<%= image_url("ff") %>" alt="groom" class="img-fluid">
-										</figure>
-										<span>John Doe, via <a href="#" class="twitter">Twitter</a></span>
-										<blockquote>
-											<p>"Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, at the coast of the Semantics, a large language ocean."</p>
-										</blockquote>
-									</div>
-								</div>
+								
+								
+								<% @messages.each do |message| %>
+    <div class="item">
+		<div class="testimony-slide active text-center">
+			
+			<span>Mensaje de: <%= message.author %></span>
+			<blockquote>
+				<p>"<%= message.content %>"</p>
+			</blockquote>
+		</div>
+	</div>
+    
+<% end %>
+
 							</div>
 						</div>
+						
 					</div>
+					<div class="col-sm-12 col-md-6 offset-md-3 text-center my-4">
+					<!-- Button trigger modal -->
+					<button type="button" class="btn btn-primary my-4" data-toggle="modal" data-target="#exampleModal">
+					  Dejar Mensaje
+					</button>
+					
+					<!-- Modal -->
+					<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+					  <div class="modal-dialog" role="document">
+					    <div class="modal-content">
+					      <div class="modal-header">
+					        <h5 class="modal-title" id="exampleModalLabel">Dejanos un Mensaje</h5>
+					        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					          <span aria-hidden="true">&times;</span>
+					        </button>
+					      </div>
+					      <div class="modal-body">
+								<%= render 'messages/form' %>					      
+						</div>
+					      
+					    </div>
+					  </div>
+					</div>
+					
 				</div>
 			</div>
 		</div>
@@ -171,9 +146,8 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-md-8 offset-md-2 text-center fh5co-heading animate-box">
-					<span>Our Memories</span>
-					<h2>Wedding Gallery</h2>
-					<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+					<span>Nuestros Recuerdos</span>
+					<h2>Galería de Fotos</h2>
 				</div>
 			</div>
 			<div class="row row-bottom-padded-md">
@@ -183,80 +157,11 @@
 						<li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image: url(images/gallery-1.jpg); "> 
 						<a href="assets/images/ff.txt">
 							<div class="case-studies-summary">
-								<span>14 Photos</span>
 								<h2>Two Glas of Juice</h2>
 							</div>
 						</a>
 					</li>
-					<li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image: url(images/gallery-2.jpg); ">
-						<a href="#" class="color-2">
-							<div class="case-studies-summary">
-								<span>30 Photos</span>
-								<h2>Timer starts now!</h2>
-							</div>
-						</a>
-					</li>
-
-
-					<li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image: url(images/gallery-3.jpg); ">
-						<a href="#" class="color-3">
-							<div class="case-studies-summary">
-								<span>90 Photos</span>
-								<h2>Beautiful sunset</h2>
-							</div>
-						</a>
-					</li>
-					<li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image: url(images/gallery-4.jpg); ">
-						<a href="#" class="color-4">
-							<div class="case-studies-summary">
-								<span>12 Photos</span>
-								<h2>Company's Conference Room</h2>
-							</div>
-						</a>
-					</li>
-
-						<li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image: url(images/gallery-5.jpg); ">
-							<a href="#" class="color-3">
-								<div class="case-studies-summary">
-									<span>50 Photos</span>
-									<h2>Useful baskets</h2>
-								</div>
-							</a>
-						</li>
-						<li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image: url(images/gallery-6.jpg); ">
-							<a href="#" class="color-4">
-								<div class="case-studies-summary">
-									<span>45 Photos</span>
-									<h2>Skater man in the road</h2>
-								</div>
-							</a>
-						</li>
-
-						<li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image: url(images/gallery-7.jpg); ">
-							<a href="#" class="color-4">
-								<div class="case-studies-summary">
-									<span>35 Photos</span>
-									<h2>Two Glas of Juice</h2>
-								</div>
-							</a>
-						</li>
-
-						<li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image: url(images/gallery-8.jpg); "> 
-							<a href="#" class="color-5">
-								<div class="case-studies-summary">
-									<span>90 Photos</span>
-									<h2>Timer starts now!</h2>
-								</div>
-							</a>
-						</li>
-						<li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image: url(images/gallery-9.jpg); ">
-							<a href="#" class="color-6">
-								<div class="case-studies-summary">
-									<span>56 Photos</span>
-									<h2>Beautiful sunset</h2>
-								</div>
-							</a>
-						</li>
+					
 					</ul>		
 				</div>
 			</div>

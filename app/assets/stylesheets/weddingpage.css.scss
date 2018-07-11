@@ -1,13 +1,13 @@
 $font-primary: 'Work Sans', Arial, sans-serif;
-$font-secondary: 'Sacramento', Arial, serif;
-
+//$font-secondary: 'Sacramento', Arial, serif;
+$font-secondary: 'Great Vibes';
 
 // Overrides
 $grid-gutter-width: 40px !default; 
 $border-radius-base:  4px !default;
 $padding-base-vertical: 14px !default;
 
-$brand-primary: #F14E95 !default;
+$brand-primary: #D03F85 !default;
 $brand-secondary: #118DF0 !default; 
 
 $brand-white: #fff;
@@ -168,6 +168,13 @@ body {
 	color: #828282;
 	background: #fff;
 }
+.gradient{
+	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+0,ffffff+100&0.15+0,0+100 */
+background: -moz-linear-gradient(top, rgba(255,255,255,0.15) 0%, rgba(255,255,255,0) 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top, rgba(255,255,255,0.15) 0%,rgba(255,255,255,0) 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom, rgba(255,255,255,0.15) 0%,rgba(255,255,255,0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#26ffffff', endColorstr='#00ffffff',GradientType=0 ); /* IE6-9 */
+}
 #page {
 	position: relative;
 	overflow-x: hidden;
@@ -205,7 +212,7 @@ p {
 }
 
 h1, h2, h3, h4, h5, h6, figure {
-	color: $brand-black;
+	color: $brand-primary;
 	font-family: $font-primary;
 	font-weight: 400;
 	margin: 0 0 20px 0;
@@ -423,7 +430,7 @@ h1, h2, h3, h4, h5, h6, figure {
 	}
 	&:hover {
 		.overlay {
-			background: rgba(0, 0, 0, .7);		
+		background: rgba(0, 0, 0, .14);
 		}
 		a {
 			position: relative;
@@ -437,7 +444,7 @@ h1, h2, h3, h4, h5, h6, figure {
 	}
 }
 .fh5co-cover {
-	height: 900px;
+	height: 100vh;
 	background-size: cover;
 	// background-position: center center;
 	background-repeat: no-repeat;
@@ -450,7 +457,7 @@ h1, h2, h3, h4, h5, h6, figure {
 		top: 0;
 		left: 0;
 		right: 0;
-		background: rgba(0, 0, 0, .5);
+		background: rgba(0, 0, 0, .14);
 	}
 	> .fh5co-container {
 		position: relative;
@@ -461,7 +468,7 @@ h1, h2, h3, h4, h5, h6, figure {
 	}
 	.display-t,
 	.display-tc {
-		height: 900px;
+		height: 95vh;
 		display: table;
 		width: 100%;
 		@media screen and (max-width: $screen-sm) {
@@ -488,24 +495,23 @@ h1, h2, h3, h4, h5, h6, figure {
 
 #fh5co-counter,
 #fh5co-event {
-	height: 850px;
+	height: auto;
 	float: left;
 	.display-t,
 	.display-tc {
-		height: 700px;
+		height: 100vh;
 		display: table;
 		width: 100%;
 	}
 	.fh5co-heading{
 		h2{
-			color: $brand-white;
+			color: #1F4C1D;
 		}
 		span{
-			color: rgba($brand-white,.5);
+			color: rgba(#1F4C1D,.5);
 			text-transform: uppercase;
 			font-size: 13px;
 			letter-spacing: 2px;
-			font-weight: 600;
 		}
 	}
 	.overlay {
@@ -514,7 +520,7 @@ h1, h2, h3, h4, h5, h6, figure {
 		left: 0;
 		right: 0;
 		bottom: 0;
-		background: rgba(0, 0, 0, .4);
+		background: rgba(0, 0, 0, .14);
 	}
 	@media screen and (max-width: $screen-sm) {
 		height: inherit;
@@ -920,15 +926,16 @@ form {
 .fh5co-cover {
 	.display-tc {
 		display: table-cell!important;
-		vertical-align: middle;
+		vertical-align: bottom;
 		h1, h2 {
 			margin: 0;
 			padding: 0;
 			color: rgba(255,255,255,1);
+			text-shadow: -1px -1px 10px rgba(0, 0, 0, 1),1px 1px 10px rgba(0, 0, 0, 1);
 		}
 		h1 {
 			margin-bottom: 0px;
-			font-size: 100px;
+			font-size: 80px;
 			line-height: 1.5;
 			font-family: $font-secondary;
 			@media screen and (max-width: $screen-sm) {
@@ -1104,15 +1111,16 @@ form {
 	}
 }
 .couple-half{
-	width: 50%;
+	//width: 50%;
 	float: left;
 	@media screen and (max-width: $screen-sm){
 		width: 100%;
 	}
 	h3{
 		font-family: $font-secondary;
-		color: $brand-primary;
-		font-size: 30px;
+		color: #be9a7f;
+		font-size: 58px;
+		text-shadow: 0px 0px 1px rgba(190, 154, 127, 1);
 	}
 	.groom,.bride{
 		float: left;
@@ -1146,11 +1154,10 @@ form {
 		margin-left: 5px;
 	}
 	.desc-groom{
-		padding-right: 180px;
 		text-align: right;
 	}
 	.desc-bride{
-		padding-left: 180px;
+	
 		text-align: left;
 	}
 	@media screen and (max-width: $screen-xs){
@@ -1218,7 +1225,6 @@ form {
 		font-size: 60px;
 		margin-bottom: 10px;
 		line-height: 1.5;
-		font-weight: bold;
 		color: $brand-primary;
 		font-family: $font-secondary;
 		@media screen and (max-width: $screen-sm){
@@ -1370,7 +1376,7 @@ form {
 		left: 0;
 		right: 0;
 		bottom: 0;
-		background: rgba(0, 0, 0, .4);
+		background: rgba(0, 0, 0, .14);
 	}
 	.fh5co-heading {
 		h2 {
@@ -1861,4 +1867,20 @@ form {
 	.js & {
 		opacity: 0;
 	}
+}
+.alert {
+    //color: #383d41;
+    //background-color: #e2e3e5;
+    //border-color: #d6d8db;
+    margin-bottom: 0;
+    z-index: 999999;
+    &.alert-notice{
+    color: #fff;
+    background-color: $brand-primary;
+    border: none;
+    border-radius: none;
+    text-align: center;
+    
+    z-index: 999999;
+}
 }

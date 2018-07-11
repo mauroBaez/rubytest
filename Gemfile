@@ -86,4 +86,3 @@ gem 'shrine', '~> 2.11'
 #gem 'aws-sdk-s3', '~> 1.2'
 gem 'image_processing', '~> 1.0'
 gem 'activeadmin_latlng'
-gem "activeadmin-magicfields"

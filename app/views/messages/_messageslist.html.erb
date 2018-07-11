@@ -1,0 +1,14 @@
+<div class="owl-carousel-fullwidth">
+	<% @messages.each do |message| %>
+    <div class="item">
+		<div class="testimony-slide active text-center">
+			
+			<span>Mensaje de: <%= message.author %></span>
+			<blockquote>
+				<p>"<%= message.content %>"</p>
+			</blockquote>
+		</div>
+	</div>
+    
+<% end %>
+</div>
