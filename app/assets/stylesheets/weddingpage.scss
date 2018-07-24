@@ -7,10 +7,11 @@ $grid-gutter-width: 40px !default;
 $border-radius-base:  4px !default;
 $padding-base-vertical: 14px !default;
 
-$brand-primary: #D03F85 !default;
+$brand-primary: #70478C !default;
 $brand-secondary: #118DF0 !default; 
-
-$brand-white: #fff;
+$brand-gold: #9B7A4F !default;
+$brand-white: #F9F4FC;
+$brand-white-secondary: #FAF7FB;
 $brand-black: #000;
 $brand-darker: #444;
 $brand-gray: #ccc;
@@ -170,11 +171,12 @@ body {
 }
 .gradient{
 	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+0,ffffff+100&0.15+0,0+100 */
-background: -moz-linear-gradient(top, rgba(255,255,255,0.15) 0%, rgba(255,255,255,0) 100%); /* FF3.6-15 */
-background: -webkit-linear-gradient(top, rgba(255,255,255,0.15) 0%,rgba(255,255,255,0) 100%); /* Chrome10-25,Safari5.1-6 */
-background: linear-gradient(to bottom, rgba(255,255,255,0.15) 0%,rgba(255,255,255,0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#26ffffff', endColorstr='#00ffffff',GradientType=0 ); /* IE6-9 */
-}
+  /* FF3.6-15 */
+  /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.21) 0%, rgba(255, 255, 255, 0.07) 100%);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#26ffffff', endColorstr='#00ffffff',GradientType=0 );
+  /* IE6-9 */}
 #page {
 	position: relative;
 	overflow-x: hidden;
@@ -464,26 +466,32 @@ h1, h2, h3, h4, h5, h6, figure {
 		z-index: 10;
 	}
 	@media screen and (max-width: $screen-sm) {
-		height: 600px;
-	}
+		//height: 600px;
+		height: auto;	}
 	.display-t,
 	.display-tc {
-		height: 95vh;
+		height: 100vh;
 		display: table;
 		width: 100%;
+		padding: 0 15px;
 		@media screen and (max-width: $screen-sm) {
-			height: 600px;
+			//height: 600px;
+			height: auto;
+
 		}
 	}	
 
 	&.fh5co-cover-sm {
 		height: 600px;
 		@media screen and (max-width: $screen-sm) {
-			height: 400px;
+			//height: 400px;
+			height: auto;
+
 		}
 		.display-t,
 		.display-tc {
-			height: 600px;
+			//height: 600px;
+			height: auto;
 			display: table;
 			width: 100%;
 			@media screen and (max-width: $screen-sm) {
@@ -502,6 +510,7 @@ h1, h2, h3, h4, h5, h6, figure {
 		height: 100vh;
 		display: table;
 		width: 100%;
+		
 	}
 	.fh5co-heading{
 		h2{
@@ -520,7 +529,7 @@ h1, h2, h3, h4, h5, h6, figure {
 		left: 0;
 		right: 0;
 		bottom: 0;
-		background: rgba(0, 0, 0, .14);
+  		background: rgba($brand-white-secondary, 0.65);
 	}
 	@media screen and (max-width: $screen-sm) {
 		height: inherit;
@@ -532,30 +541,41 @@ h1, h2, h3, h4, h5, h6, figure {
 	}
 
 	.event-wrap{
-		border: 2px solid rgba($brand-white,.5);
-		background:rgba($brand-white,.1);
-		padding: 30px;
-		width: 100%;
-		float: left;
+			background: rgba(68, 74, 40, 0.55);
+    padding: 15px 0;
+    width: 100%;
+    float: left;
 		@include border-radius(4px);
 		@media screen and (max-width: $screen-sm) {
 			margin-bottom: 10px;
 		}
+		.header h2{
+			font-family: $font-secondary;
+		    font-size: 2.5em;
+		    display: block;
+		    padding: 10px 0 5px;
+		    background: #1F4C1D;
+		    margin: 0;
+		    color: $brand-white;
+    		letter-spacing: 2px;
+		}
 		h3{
-			font-size: 20px;
-			color: $brand-white;
-			border-bottom: 1px solid rgba($brand-white,.5);
-			display: block;
-			padding-bottom: 20px;
-			text-transform: uppercase;
-			letter-spacing: 2px;
+			font-family: $font-primary;
+		    font-size: 0.8em;
+		    display: block;
+		    padding: 5px 0 0;
+		    //background: #1F4C1D;
+		    margin: 0;
+		    color: $brand-white;
+    		letter-spacing: 0;
 		}
 		p,span{
-			display: block;
-			color: rgba($brand-white,.8);
+			//display: block;
+			//color: #fff;
+
 		}
 		i{
-			color: rgba($brand-white,1);
+			color: $brand-gold;
 			font-size: 20px;
 		}
 		.event-col{
@@ -920,24 +940,38 @@ form {
 	}
 }
 
+span.border {
+content: '';
+		    display: block;
+		    width: 100%;
+		    height: 37px;
+		    background: asset-url("border") no-repeat center center;
+		    margin-top: -30px;
+		    opacity: 0.99;
+		    border: none!important;
+	
+}
 
 #fh5co-header,
 #fh5co-counter,
 .fh5co-cover {
+	
+	
 	.display-tc {
 		display: table-cell!important;
-		vertical-align: bottom;
+		vertical-align: middle;
+		
 		h1, h2 {
 			margin: 0;
 			padding: 0;
-			color: rgba(255,255,255,1);
+			color: #faf3fc;
 			text-shadow: -1px -1px 10px rgba(0, 0, 0, 1),1px 1px 10px rgba(0, 0, 0, 1);
 		}
 		h1 {
-			margin-bottom: 0px;
-			font-size: 80px;
-			line-height: 1.5;
 			font-family: $font-secondary;
+			margin-bottom: 0px;
+			font-size: 60px;
+			line-height: 1.7;
 			@media screen and (max-width: $screen-sm) {
 				font-size: 40px;
 			}
@@ -1014,7 +1048,7 @@ form {
 // COUNTDOWN CUSTOM
 .simply-countdown {
     /* The countdown */
-    margin-bottom: 2em;
+    margin-bottom: 15px;
 }
 .simply-countdown > .simply-section {
     /* coutndown blocks */
@@ -1078,6 +1112,7 @@ form {
 	}
 }
 
+
 .fh5co-section-gray{
 	background: rgba($brand-black,.04);
 }
@@ -1118,9 +1153,8 @@ form {
 	}
 	h3{
 		font-family: $font-secondary;
-		color: #be9a7f;
+		color: $brand-gold;
 		font-size: 58px;
-		text-shadow: 0px 0px 1px rgba(190, 154, 127, 1);
 	}
 	.groom,.bride{
 		float: left;
@@ -1175,39 +1209,64 @@ form {
 		}
 	}
 }
-
+.datetime {
+			z-index: 99;
+		    text-align: center;
+		    padding: 0;
+		    color: #ffffff;
+		    margin: 15px 30px;
+		    
+	}
 .feature-center {
 	text-align: center;
-	padding-left: 20px;
-	padding-right: 20px;
-	float: left;
+	padding-left: 0;
+	padding-right:  0;
+	float: none;
 	width: 100%;
-	margin-bottom: 40px;
+	margin-bottom: 0;
 	@media screen and (max-width: $screen-sm) {
-		margin-bottom: 50px;		
+		margin-bottom: 0;		
 	}
 	
+	.date {
+			text-transform: uppercase;
+			letter-spacing: 0;
+		    padding: 20px 0 10px;	
+		    font-weight: 100;
+		    font-size: 30px;
+			text-shadow: -1px -1px 10px rgba(0, 0, 0, 1),1px 1px 10px rgba(0, 0, 0, 1);
+
+			margin-bottom: 20px;
+			margin-top: -20px;
+			border-top: 1px solid $brand-white;
+	}
 	.icon {
-		width: 90px;
-		height: 90px;
-		background: #efefef;
-		display: table;
-		text-align: center;
-		margin: 0 auto 30px auto;
+		    width: 45px;
+		    height: 45px;
+		    background: $brand-white;
+		    color: $brand-primary;
+		    display: table;
+		    text-align: center;
+		    margin: 0 auto 0 auto;
+		    border-radius: 50%;
+		    box-shadow: 0px 14px 30px -15px rgba(0, 0, 0, 0.95);
 		@include border-radius(50%);
 		i {
 			display: table-cell;
 			vertical-align: middle;
-			height: 90px;
-			font-size: 40px;
-			line-height: 40px;
+			height: 45px;
+			font-size: 20px;
+			line-height: 20px;
 			color: $brand-primary;
 		}
 		
 	}
+	
 	p, h3 {
 		margin-bottom: 30px;
+		
 	}
+	
 	h3 {
 		text-transform: uppercase;
 		font-size: 18px;
@@ -1217,7 +1276,7 @@ form {
 
 
 .fh5co-heading {
-	margin-bottom: 5em;
+	margin-bottom: 2.8em;
 	&.fh5co-heading-sm {
 		margin-bottom: 2em;
 	}
@@ -1227,6 +1286,15 @@ form {
 		line-height: 1.5;
 		color: $brand-primary;
 		font-family: $font-secondary;
+		&:after {
+		    content: '';
+		    display: block;
+		    width: 100%;
+		    height: 37px;
+		    background: asset-url("border") no-repeat center center;
+		    margin-top: 12px;
+		    opacity: 0.6;
+		}
 		@media screen and (max-width: $screen-sm){
 			font-size: 40px;
 		}
@@ -1248,8 +1316,15 @@ form {
 #fh5co-testimonial {
 	.wrap-testimony{
 		position: relative;
+		
+		.item {
+			background: #eee;
+		padding: 30px;
+		}
 		.testimony-slide{
+			padding: 30px;
 			text-align: center;
+			border: 2px dashed #fff;
 			span{
 				font-size: 12px;
 				text-transform: uppercase;
@@ -1368,15 +1443,19 @@ form {
 	}
 }
 
+
 #fh5co-started {
 	position: relative;
+	padding: 3.5em 0;
+	clear: both;
+	background: $brand-white-secondary;
 	.overlay {
 		position: absolute;
 		top: 0;
 		left: 0;
 		right: 0;
 		bottom: 0;
-		background: rgba(0, 0, 0, .14);
+		background: rgba($brand-primary, .04);
 	}
 	.fh5co-heading {
 		h2 {
@@ -1874,11 +1953,12 @@ form {
     //border-color: #d6d8db;
     margin-bottom: 0;
     z-index: 999999;
+    border-radius: 0;
+
     &.alert-notice{
     color: #fff;
     background-color: $brand-primary;
     border: none;
-    border-radius: none;
     text-align: center;
     
     z-index: 999999;

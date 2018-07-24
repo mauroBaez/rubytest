@@ -108,14 +108,14 @@
 							}
 
 							el.removeClass('item-animate');
-						},  k * 160, 'easeInOutExpo' );
+						},  k * 80, 'easeInOutExpo' );
 					});
 					
-				}, 80);
+				}, 20);
 				
 			}
 
-		} , { offset: '85%' } );
+		} , { offset: '100%' } );
 	};
 
 
@@ -156,18 +156,25 @@
 	};
 
 
+	var lightbox = function() {
+
+		var $gallery = $('.gallery a').simpleLightbox();
+		$gallery.on('show.simplelightbox', function(){
+			console.log('Requested for showing');
+		})
+		
+	};
+	var body = $('html, body');
+
+    
 	var goToTop = function() {
 
-		$('.js-gotop').on('click', function(event){
-			
-			event.preventDefault();
-			alert($('html').offset().top);
-			$('html, body').animate({
-				scrollTop: -888
-			}, 500, 'easeInOutExpo');
-			
-			return false;
-		});
+		$('.js-gotop').click(function(e){
+		        e.preventDefault();
+		        body.animate({scrollTop:-2000}, 500, 'swing');
+		
+		}); 
+		
 
 		$(window).scroll(function(){
 
@@ -185,7 +192,7 @@
 
 	// Loading page
 	var loaderPage = function() {
-		$(".fh5co-loader").fadeOut("slow");
+		//$(".fh5co-loader").fadeOut("slow");
 	};
 
 	var counter = function() {
@@ -220,9 +227,12 @@
 
     // default example
     simplyCountdown('.simply-countdown-one', {
-        year: d.getFullYear(),
-        month: d.getMonth() + 1,
-        day: d.getDate(),
+        year: 2018,
+        month: 11,
+        day: 3,
+        hours: 0, // Default is 0 [0-23] integer
+        minutes: 0, // Default is 0 [0-59] integer
+        seconds: 0,
         words: { //words displayed into the countdown
                 days: 'día',
                 hours: 'hora',
@@ -248,6 +258,7 @@
 		countdown();
 		counter();
 		counterWayPoint();
+		lightbox();
 	});
 
 

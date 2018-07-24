@@ -1,24 +1,31 @@
 <% @events.each do |event| %>
     <div class="col-md-6 col-sm-12 text-center">
+    	
 		<div class="event-wrap animate-box fadeInUp animated-fast">
-			<h3><%= event.name %></h3>
-		<div class="row">
-				<div class="col-md-6">
-				<i class="fa fa-calendar"></i>
-				<span><%= event.datetime.strftime("%A %d-%m-%Y") %></span>
-			</div>
-			<div class="col-md-6">
-				<i class="fa fa-clock"></i>
-				<span><%= event.datetime.strftime("%-H:%M %p") %></span>
-			</div>
-			<div class="col-md-12">
-													<hr>
+			<div class="header">
+				<h2><%= event.name %></h2>
 
-				<i class="fa fa-map-marker-alt"></i>
-				<span>Sarlanga 865, Capital Federal</span>
 			</div>
-			</div>
+
+		<div class="my-4">
+			
+		<div class="datetime">
+										<div class="feature-center">
+										<span class="icon">
+											<i class="fa fa-calendar"></i>
+										</span>
+										<div class="date"><h3><%= event.datetime.day %> de <%= I18n.t("date.month_names")[event.datetime.month] %> de <%= event.datetime.year %> - <%= event.datetime.strftime("%-H:%M %p") %></h3></div>
+									</div>
+									<div class="feature-center">
+										<span class="icon">
+											<i class="fa fa-map-marker-alt"></i>
+										</span>
+										<div class="date"><h3>Chala corta</h3></div>
+									</div>
+									</div>
 			<img class="map img-fluid img-thumbnail mt-3" src='http://maps.google.com/maps/api/staticmap?size=500x300&center="<%= event.lat %>,<%= event.lng %>"&sensor=false&markers=color:red|<%= event.lat %>,<%= event.lng %>&zoom=16' alt="Ubicación">
-		</div>
+		
+			</div>
+			</div>
 	</div>
 <% end %>

@@ -4,6 +4,7 @@ class PagesController < ApplicationController
         @categories = Category.all
         @events = Event.all
         @messages = Message.all
+        @photos = Album.first.photos
     end
     
     def contact

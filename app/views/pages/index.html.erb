@@ -1,34 +1,69 @@
-<div class="fh5co-loader"></div>
 <div id="page">
 	<header id="fh5co-header" class="fh5co-cover" role="banner" style="background-image:url(<%= image_url("fondo") %>);" data-stellar-background-ratio="0.5" data-stellar-vertical-offset="0">
 		<div class="overlay"></div>
 		<div class="container">
 			<div class="row">
 				<div class="col-md-6 text-center">
-					
+					<img class="img-fluid d-md-none" src="<%= image_url("logo") %>"></img>
+
 				</div>
-				<div class="col-md-6 text-center gradient">
+				<div class="col-md-6 text-center gradient mb-4">
 					<div class="display-t gradient">
 						
-						<div class="display-tc animate-box" data-animate-effect="fadeIn">
-							<img class="img-fluid" src="<%= image_url("logo") %>"></img>
-							<h1>Nos casamos!</h1>
-							<h2>Faltan</h2>
-							<div class="simply-countdown simply-countdown-one"></div>
+						<div class="display-tc animate-box gradient" data-animate-effect="fadeIn">
+							
+							<div class="display-tc gradient">
+								<div class="">
+									<img class="img-fluid logo" src="<%= image_url("logo") %>"></img>
+									<span class="border"></span>
+									<h1 class="subtitle">Nos casamos!</h1>
+									<div class="datetime">
+										<div class="feature-center">
+										<span class="icon">
+											<i class="fa fa-calendar"></i>
+										</span>
+										<div class="date">3 de Noviembre - 12 hs</div>
+									</div>
+									<div class="feature-center">
+										<span class="icon">
+											<i class="fa fa-map-marker-alt"></i>
+										</span>
+										<div class="date">Chala corta</div>
+									</div>
+									</div>
+									
+								
+								</div>
+								
+							</div>
+							
+							
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
 	</header>
-   
+   <div id="fh5co-started">
+		<div class="container">
+			<div class="row animate-box fadeInUp animated-fast">
+				<div class="col-md-12 text-center animate-box">
+					<h3>Faltan:</h3>
+					<div class="simply-countdown simply-countdown-one"></div>
+				</div>
+			</div>
+			
+		</div>
+	</div>
+
     <section>
     	<div id="fh5co-couple">
 		<div class="container">
+			
 			<div class="row">
 				<div class="col-md-8 offset-md-2 text-center fh5co-heading animate-box">
 					<p>Los invitamos a nuestro Casamiento que se realizará el día</p>
-					<h3>28 de noviembre de 2018 en Tal Lugar</h3>
+					<h3>3 de noviembre de 2018 en Tal Lugar</h3>
 				</div>
 			</div>
 			<div class="row align-items-center couple-wrap animate-box">
@@ -49,7 +84,7 @@
 		</div>
 	</div>
     </section>
-
+    
 	<section>
 		<div id="fh5co-event" class="fh5co-bg" style="background-image:url(<%= image_url("roses") %>);" >
 		<div class="overlay"></div>
@@ -84,12 +119,11 @@
 					<div class="col-md-8 offset-md-2 text-center fh5co-heading">
 						<span>Dejanos tu mensaje</span>
 						<h2>Mensajes de Familia y Amigos</h2>
-						
 			          </div>
 					</div>
 				</div>
 				<div class="row">
-					<div class="col-md-12 animate-box">
+					<div class="col-md-8 offset-md-2  animate-box">
 						<div class="wrap-testimony">
 							<div class="owl-carousel-fullwidth">
 								
@@ -141,6 +175,7 @@
 	</div>
     </section>
     
+    
     <section>
     	<div id="fh5co-gallery" class="fh5co-section-gray">
 		<div class="container">
@@ -151,19 +186,20 @@
 				</div>
 			</div>
 			<div class="row row-bottom-padded-md">
-				<div class="col-md-12">
-					<ul id="fh5co-gallery-list">
-						
-						<li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image: url(images/gallery-1.jpg); "> 
-						<a href="assets/images/ff.txt">
-							<div class="case-studies-summary">
-								<h2>Two Glas of Juice</h2>
-							</div>
-						</a>
-					</li>
-					
-					</ul>		
-				</div>
+				<div class="row mb-4 gallery">
+                    	<% @photos.each_with_index do |photo, idx| %>
+	                    	<div class="col-md-3">
+	                            <a href="<%= photo.image_url(:thumbnail).to_s %>">
+	                            	<div class="case-studies-summary">
+									<span><%= photo.title %></span>
+								</div>
+	                            <img src="<%= photo.image_url(:thumbnail).to_s %>" class="img-fluid" alt="<%= photo.title %>" title="<%= photo.title %>">    
+	                            
+	                            </a>
+	                        </div>
+    					<% end %>
+    					
+                    </div>
 			</div>
 		</div>
 	</div>

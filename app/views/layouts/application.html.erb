@@ -6,11 +6,13 @@
     <%= csp_meta_tag %>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.js"></script>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag    'application', media: 'all' %>
     <link href='https://fonts.googleapis.com/css?family=Work+Sans:400,300,600,400italic,700' rel='stylesheet' type='text/css'>
 	  <link href="https://fonts.googleapis.com/css?family=Sacramento" rel="stylesheet">
 	  <link href='//fonts.googleapis.com/css?family=Great+Vibes' rel='stylesheet' type='text/css'>
-	  <script type="text/template" id="template-photo">
+
+
+<script type="text/template" id="template-photo">
       <%= render partial: "albums/photo", locals: { photo: Photo.new, idx: "{{index}}" } %>
     </script>
 

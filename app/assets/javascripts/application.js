@@ -28,6 +28,7 @@
 //= require simplyCountdown
 //= require polyfill.min
 //= require fetch
+//= require lightbox
 //= require uppy.min
 //= require uppy_uploads
 //= require main
