@@ -1,0 +1,9 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @messageboard.name %>
+</p>
+
+<%= link_to 'Edit', edit_messageboard_path(@messageboard) %> |
+<%= link_to 'Back', messageboards_path %>

@@ -1,0 +1,19 @@
+<script type="text/template" id="template-photo">
+  <ol>
+  <li class="input">
+        <img class="img-thumbnail file-upload-preview media-object" id="album-photo-preview-{{index}}" src="" width="150" height="150" />
+  </li>
+  <li class="input">
+    <input type="hidden" name="album[photos_attributes][{{index}}][image]" id="album-photo-upload-result-{{index}}" />
+    <input type="file" name="album[photos_attributes][{{index}}][image]" id="album-photo-field-{{index}}" accept="image/jpeg,image/png" data-preview-element="album-photo-preview-{{index}}" data-upload-result-element="album-photo-upload-result-{{index}}" data-upload-server="app" />
+  </li>
+  <li class="input">
+    <label for="album-photo-title-field-__index__">Title</label>
+    <input type="text" name="album[photos_attributes][{{index}}][title]" id="album-photo-title-field-{{index}}" />
+  </li>
+  
+  <li class="input">
+    Quitar foto: 
+    <input type="checkbox" name="album[photos_attributes][{{index}}][_destroy]" id="album_photos_attributes___index____destroy" value="{:value=&gt;true}" />  </li>
+</ol>
+</script>

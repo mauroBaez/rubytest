@@ -1,0 +1,33 @@
+<% @wedding.events.each do |event| %>
+    <div class="col-lg-6 col-sm-12 text-center">
+    	
+		<div class="event-wrap animate-box fadeInUp animated-fast">
+			<div class="header">
+				<h2><%= event.name %></h2>
+			</div>
+			<div class="datetime my-4">
+				<div class="feature-center">
+					<span class="icon">
+						<i class="fa fa-calendar"></i>
+					</span>
+					<div class="date">
+						<h3><%= event.datetime.day %> de <%= I18n.t("date.month_names")[event.datetime.month] %> de <%= event.datetime.year %></h3>
+						<h3><%= event.datetime.strftime("%-H:%M %p") %></h3>
+					</div>
+				</div>
+				<div class="feature-center">
+					<span class="icon">
+						<i class="fa fa-map-marker-alt"></i>
+					</span>
+					<div class="date">
+						<h3><%= event.place_name %></h3>
+						<h3><%= event.address %></h3>
+					</div>
+				</div>
+				<div class="map-container">
+					<div class="map"><%= event.lat %>,<%= event.lng %></div>
+				</div>
+			</div>
+		</div>
+	</div>
+<% end %>

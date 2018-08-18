@@ -1,0 +1,68 @@
+@import "bootstrap";
+#main-navigation{
+    z-index : 999999;
+}
+table { 
+    @extend .table;
+    @extend .table-striped;
+    
+}
+/*!
+ * Start Bootstrap - Full Slider (https://startbootstrap.com/template-overviews/full-slider)
+ * Copyright 2013-2017 Start Bootstrap
+ * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-full-slider/blob/master/LICENSE)
+ */
+#slider {
+    margin-top: -86px;
+}
+.overlay {
+    z-index: 0;
+    position: absolute;
+    bottom: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.5);
+}
+.carousel-item {
+  height: 100vh;
+  min-height: 300px;
+  background: no-repeat center center scroll;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+
+.devise-form-wrapper {
+    display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+  align-items: center;
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+.devise-form {
+  width: 100%;
+  max-width: 330px;
+  padding: 15px;
+  margin: auto;
+}
+
+.image-preview {
+  margin-bottom: 20px;
+}
+
+.file-upload-preview[src=""] {
+  visibility: hidden;
+}
+
+.file-upload-list li {
+  margin-bottom: 20px;
+}
+
+.image-preview {
+  margin-top: 10px;
+  display: inline-block;
+}

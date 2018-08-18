@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Gise & Pablo - Nos casamos!</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.js"></script>
+
+    <%= stylesheet_link_tag    'application', media: 'all' %>
+    
+	  <link href='//fonts.googleapis.com/css?family=Great+Vibes' rel='stylesheet' type='text/css'>
+    <link href="//fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+
+
+  </head>
+
+  <body>
+      <% flash.each do |name, msg| %>
+        <div class="alert alert-<%= name %>" role="alert"><%= msg %>
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+      <% end %>
+      
+      <%= yield %>
+      <%= javascript_include_tag 'application' %>
+    <script>
+      function initMap() {
+        $('.map').each(function (index, Element) {
+
+          var coords = $(Element).text().split(",");
+
+          if (coords.length != 2) {
+              $(this).display = "none";
+              return;
+          }
+          var latlng = new google.maps.LatLng(parseFloat(coords[0]), parseFloat(coords[1]));
+          var myOptions = {
+              zoom: parseFloat(15),
+              center: latlng,
+              mapTypeId: google.maps.MapTypeId.ROADMAP,
+              disableDefaultUI: false,
+              mapTypeControl: false,
+              zoomControl: true,
+              zoomControlOptions: {
+                  style: google.maps.ZoomControlStyle.SMALL
+              },
+              styles: [
+    {
+        "featureType": "all",
+        "elementType": "geometry",
+        "stylers": [
+            {
+                "hue": "#a954e2"
+            },
+            {
+                "saturation": 48
+            },
+            {
+                "lightness": 8
+            }
+        ]
+    },
+    {
+        "featureType": "all",
+        "elementType": "labels.icon",
+        "stylers": [
+            {
+                "visibility": "off"
+            }
+        ]
+    },
+    {
+        "featureType": "poi.park",
+        "elementType": "labels.text",
+        "stylers": [
+            {
+                "visibility": "off"
+            }
+        ]
+    }
+]	
+
+          };
+          var map = new google.maps.Map(Element, myOptions);
+      
+          var marker = new google.maps.Marker({
+              position: latlng,
+              map: map
+          });
+      });
+      }
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB_bHEjt-UWoAiwgrTrS2Cc-i9UXEvUf6Y&language=es&callback=initMap"
+    async defer></script>
+  </body>
+</html>

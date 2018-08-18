@@ -1,0 +1,19 @@
+<ol>
+  <li class="input">
+      <%= image_tag photo.image_url(:thumbnail).to_s, size: 150, class: "img-thumbnail file-upload-preview media-object", id: "album-photo-preview-#{idx}" %>
+  </li>
+  <li class="input">
+    <%= hidden_field_tag "album[photos_attributes][#{idx}][image]", photo.cached_image_data, id: "album-photo-upload-result-#{idx}" %>
+    <%= file_field_tag "album[photos_attributes][#{idx}][image]", accept: ImageUploader::ALLOWED_TYPES.join(","), id: "album-photo-field-#{idx}", data: { preview_element: "album-photo-preview-#{idx}", upload_result_element: "album-photo-upload-result-#{idx}", upload_server: upload_server } %>
+  </li>
+  <li class="input">
+    <%= label_tag "album-photo-title-field-#{idx}", "Título" %>
+    <%= text_field_tag "album[photos_attributes][#{idx}][title]", photo.title, id: "album-photo-title-field-#{idx}" %>
+  </li>
+  
+  <li class="input">
+    <%= hidden_field_tag "album[photos_attributes][#{idx}][id]", photo.id if photo.id %>
+    Quitar foto: 
+    <%= check_box_tag "album[photos_attributes][#{idx}][_destroy]", value: true %>
+  </li>
+</ol>

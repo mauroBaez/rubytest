@@ -1,0 +1,7 @@
+{
+  "name": "environment",
+  "private": true,
+  "dependencies": {
+    "cli-engine-command": "^8.0.0"
+  }
+}

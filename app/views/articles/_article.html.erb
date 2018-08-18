@@ -1,0 +1,48 @@
+<!-- Title -->
+          <h1 class="mt-4"><%= @article.title %></h1>
+
+          <!-- Author -->
+          <p class="lead">
+            por <%= @article.user.firstname %>
+          </p>
+
+          <hr>
+
+          <!-- Date/Time -->
+          <p>Publicado el <%= @article.created_at %></p>
+
+          <hr>
+          <!-- Preview Image -->
+          <% @article.images.each do |image| %>
+            <%= image_tag image %> <br />
+          <% end %>
+
+
+          <hr>
+          <!-- Post Content -->
+          <%= @article.body %>
+          <hr>
+
+          <!-- Comments Form -->
+          <div class="card my-4">
+            <h5 class="card-header">Leave a Comment:</h5>
+            <div class="card-body">
+              <%= render 'comments/form' %>
+            </div>
+          </div>
+          
+          <% @article.comments.each do |c| %>
+          <% if c.user  %>
+            <div class="media mb-4">
+              <img class="d-flex mr-3 rounded-circle" src="http://placehold.it/50x50" alt="">
+              <div class="media-body">
+                <h5 class="mt-0"><%= c.user.firstname %> <%= c.user.firstname %></h5>
+                <%= c.body %>
+              </div>
+            </div>  <%# code or partial to display the message %>
+          <% else %>
+            
+          <% end %>
+          <!-- Single Comment -->
+          
+          <% end %>

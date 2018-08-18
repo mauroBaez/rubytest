@@ -1,0 +1,39 @@
+<nav class="fh5co-nav" role="navigation">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-4">
+					<div id="fh5co-logo"><a href="index.html">Gise &amp; Papita<strong>.</strong></a></div>
+				</div>
+				<div class="col-md-8 text-right menu-1">
+					<ul>
+      <% if user_signed_in? %>
+      
+      <li >
+  <%= link_to('Blog', articles_path) %>        
+  </li>
+  
+  <li>
+  <%= link_to('Salir', destroy_user_session_path, method: :delete) %>        
+  </li>
+<% else %>
+  <li>
+  <%= link_to('Ingresar', new_user_session_path)  %>  
+  </li>
+  
+<% end %>
+
+<% if user_signed_in? %>
+  <li class="nav-item">
+  <%= link_to('Editar Usuario', edit_user_registration_path) %>
+  </li>
+<% else %>
+  <li class="nav-item">
+  <%= link_to('Registrarse', new_user_registration_path)  %>
+  </li>
+<% end %>
+    </ul>
+				</div>
+			</div>
+			
+		</div>
+	</nav>

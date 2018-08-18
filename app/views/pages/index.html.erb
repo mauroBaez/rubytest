@@ -1,0 +1,218 @@
+<div id="page">
+	<header id="fh5co-header" class="fh5co-cover" role="banner"  data-stellar-background-ratio="1.5" data-stellar-vertical-offset="-30">
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-12 d-lg-none text-center">
+					<img class="img-fluid  logo" src="<%= image_url("logo.png") %>"></img>
+					<div class="row d-lg-none">
+						<div class="col-sm-12 text-center display-tc datetime d-lg-none">
+							<h1 class="subtitle">Nos casamos!</h1>
+								<div class="gradient-dark">
+								<span class="border"></span>
+									<h2>Faltan</h2>
+									<div class="simply-countdown simply-countdown-one"></div>
+								</div>
+						
+						</div>
+					</div>
+				</div>
+				<div class="offset-md-7 col-md-5 offset-lg-6 col-lg-6 text-center gradient d-none d-lg-block">
+					<div class="display-t gradient">
+						
+						<div class="display-tc animate-box gradient" data-animate-effect="fadeIn">
+							
+							<div class="display-tc gradient">
+									<img class="img-fluid logo " src="<%= image_url("logo.png") %>"></img>
+									<span class="border"></span>
+										<h1 class="subtitle">Nos casamos!</h1>
+										<h2>Faltan</h2>
+										<div class="simply-countdown simply-countdown-one"></div>
+							</div>
+									
+									
+								
+								
+							</div>
+							
+							
+						</div>
+					</div>
+				</div>
+				
+			</div>
+			
+	</header>
+<% if @wedding %>	
+   <div class="fh5co-started">
+		<div class="container">
+			<div class="row animate-box fadeInUp animated-fast">
+				<div class="col-md-12 text-center animate-box">
+					<%= @wedding.invitation_details_content.html_safe %>
+					
+				</div>
+			</div>
+			
+		</div>
+	</div>
+
+    <section>
+    	<div id="fh5co-couple">
+		<div class="container">
+			<div class="row animate-box fadeInUp animated-fast">
+					<div class="col-md-12 text-center fh5co-heading">
+						<h2><%= @wedding.wedding_details_title %></h2>
+			          </div>
+					</div>
+			
+			<div class="row align-items-center animate-box">
+				<div class="col-sm-4 couple-half">
+					<div class="desc-groom">
+						<h3><%= @wedding.bride_name %> <%= @wedding.bride_surname %></h3>
+					</div>
+				</div>
+				<div class="col-sm-4 d-none d-sm-block">
+					<img src="<%= image_url("novios.png") %>" alt="groom" class="img-fluid">
+				</div>
+				<div class="col-sm-4 couple-half">
+					<div class="desc-bride">
+						<h3><%= @wedding.groom_name %> <%= @wedding.groom_surname %></h3>
+					</div>
+				</div>
+				<div class="col-sm-4 d-sm-none">
+					<img src="<%= image_url("novios.png") %>" alt="groom" class="img-fluid">
+				</div>
+			</div>
+		</div>
+	</div>
+    </section>
+    
+	<% if @wedding.events.count >0 %>
+	<section id="fh5co-event" class="fh5co-bg" data-stellar-background-ratio="1.5" data-stellar-vertical-offset="-30">
+		<div class="overlay"></div>
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12 text-center fh5co-heading animate-box">
+					<span>Horarios y Lugares</span>
+					<h2>Eventos de Nuestro Casamiento</h2>
+				</div>
+			</div>
+			<div class="row">
+				<div class="display-t">
+					<div class="display-tc">
+						<div class="col-md-12">
+							<div class="row">
+								<%= render 'events/eventslist' %>
+
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+	</div>
+	</section>
+	<% end %> 
+
+    <div class="fh5co-started">
+		<div class="container">
+			<div class="row animate-box fadeInUp animated-fast">
+				<div class="col-md-12 text-center animate-box">
+
+						<%= @wedding.gifts_details_content.html_safe %>
+
+						<button type="button" class="btn btn-primary my-4" data-toggle="modal" data-target="#giftModal">
+						  <%= @wedding.gifts_details_content_btn_text %>
+						</button>
+
+
+
+					
+					</div>
+				</div>
+			</div>
+			
+		</div>
+
+			<!-- Modal -->
+			<div class="modal fade" id="giftModal" tabindex="-1" role="dialog" aria-labelledby="giftModalLabel" aria-hidden="true">
+			  <div class="modal-dialog" role="document">
+			    <div class="modal-content">
+			      <div class="modal-header">
+			        <h5 class="modal-title" id="giftModalLabel"><%= @wedding.gifts_details_content_btn_text %></h5>
+			        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+			          <span aria-hidden="true">&times;</span>
+			        </button>
+			      </div>
+			      <div class="modal-body">
+						<%= @wedding.gifts_info_content.html_safe %>				      
+				</div>
+			      
+			    </div>
+			  </div>
+			</div>
+
+    <section>
+    	<div id="fh5co-testimonial" class="gradient-dark">
+			<div class="container">
+				<div class="">
+					<div class="row animate-box">
+						<div class="col-md-12 text-center fh5co-heading">
+							<span>Dejanos tu mensaje</span>
+							<h2>Mensajes de Familia y Amigos</h2>
+				          </div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-8 offset-md-2  animate-box">
+							<div class="wrap-testimony">
+								<%= render 'messages/messageslist' %>
+							</div>
+						</div>
+						<div class="col-sm-12 col-md-6 offset-md-3 text-center my-4">
+						<button type="button" class="btn btn-primary my-4" data-toggle="modal" data-target="#messageModal">
+						  Dejar Mensaje
+						</button>
+						
+						<!-- Modal -->
+						<div class="modal fade" id="messageModal" tabindex="-1" role="dialog" aria-labelledby="messageModalLabel" aria-hidden="true">
+						  <div class="modal-dialog" role="document">
+						    <div class="modal-content">
+						      <div class="modal-header">
+						        <h5 class="modal-title" id="messageModalLabel">Dejanos un Mensaje</h5>
+						        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						          <span aria-hidden="true">&times;</span>
+						        </button>
+						      </div>
+						      <div class="modal-body">
+									<%= render 'messages/form' %>					      
+							</div>
+						      
+						    </div>
+						  </div>
+						</div>
+						
+						
+					</div>
+				</div>
+			</div>
+		</div>
+    </section>
+    
+    
+    <% if @album &&  @album.photos.count >0 %>
+	    <section>
+	    	<div id="fh5co-gallery" class="fh5co-section-gray">
+				<div class="container">
+						<%= render 'albums/photogallery' %>	
+				</div>
+			</div>
+	    </section>
+    <% end %>
+
+<% end %>
+
+  
+</div> 
+<div class="gototop js-top active">
+	<a href="#" class="js-gotop"><i class="fa fa-arrow-circle-up"></i></a>
+</div>
+	

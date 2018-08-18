@@ -1,0 +1,14 @@
+
+<%= simple_form_for([@message, Message.new]) do |f| %>
+  <%= f.error_notification %>
+  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+
+  <div class="form-inputs">
+    <%= f.input :author , label: 'Remitente/s' %>
+    <%= f.input :content , label: 'Contenido del Mensaje' %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit , label: "Enviar Mensaje"   %>
+  </div>
+<% end %>
