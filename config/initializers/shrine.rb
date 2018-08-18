@@ -16,8 +16,8 @@ if Rails.env.production?
 
   require "shrine/storage/cloudinary"
   
-  require "./jobs/promote_job"
-  require "./jobs/delete_job"
+  #require "./jobs/promote_job"
+  #require "./jobs/delete_job"
   
   Cloudinary.config(
     cloud_name: ENV.fetch("CLOUDINARY_CLOUD_NAME"),
