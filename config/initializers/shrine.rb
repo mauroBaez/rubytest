@@ -13,7 +13,10 @@ Shrine.plugin :upload_endpoint
 
 
 if Rails.env.production?
-  
+  Shrine.storages = {
+    cache: Shrine::Storage::FileSystem.new("public", prefix: "uploads/cache"), # temporary
+    store: Shrine::Storage::FileSystem.new("public", prefix: "uploads"),       # permanent
+  }
 #  Shrine.plugin :presign_endpoint, presign_options: { method: :put }
 #  s3_options = {
 #    access_key_id:     "uuuu",
