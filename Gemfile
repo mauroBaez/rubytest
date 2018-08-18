@@ -84,7 +84,7 @@ gem 'sucker_punch', '~> 2.0'
 gem 'dotenv-rails'
 # Shrine
 gem 'shrine', '~> 2.11'
-gem 'aws-sdk-s3', '~> 1.2'
+gem "shrine-cloudinary"
 gem 'image_processing', '~> 1.0'
 gem 'activeadmin_latlng'
 gem 'activeadmin_medium_editor'

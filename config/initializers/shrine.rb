@@ -1,5 +1,4 @@
 require "shrine"
-require "shrine/storage/file_system"
 
 
 Shrine.plugin :activerecord
@@ -13,10 +12,28 @@ Shrine.plugin :upload_endpoint
 
 
 if Rails.env.production?
+  require "./config/cloudinarycredentials"
+
+  require "shrine/storage/cloudinary"
+  
+  require "./jobs/promote_job"
+  require "./jobs/delete_job"
+  
+  Cloudinary.config(
+    cloud_name: ENV.fetch("CLOUDINARY_CLOUD_NAME"),
+    api_key:    ENV.fetch("CLOUDINARY_API_KEY"),
+    api_secret: ENV.fetch("CLOUDINARY_API_SECRET"),
+  )
+  
   Shrine.storages = {
-    cache: Shrine::Storage::FileSystem.new("public", prefix: "uploads/cache"), # temporary
-    store: Shrine::Storage::FileSystem.new("public", prefix: "uploads"),       # permanent
+    cache: Shrine::Storage::Cloudinary.new(prefix: "cache"),
+    store: Shrine::Storage::Cloudinary.new(prefix: "store"),
   }
+  
+  Shrine.plugin :backgrounding
+  Shrine.plugin :logging
+  
+  
 #  Shrine.plugin :presign_endpoint, presign_options: { method: :put }
 #  s3_options = {
 #    access_key_id:     "uuuu",
@@ -30,6 +47,8 @@ if Rails.env.production?
 #  }
 
 else
+  require "shrine/storage/file_system"
+
   Shrine.storages = {
     cache: Shrine::Storage::FileSystem.new("public", prefix: "uploads/cache"), # temporary
     store: Shrine::Storage::FileSystem.new("public", prefix: "uploads"),       # permanent
