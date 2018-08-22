@@ -20,6 +20,7 @@ Rails.application.routes.draw do
   get 'pages/about'
   
   mount Shrine.upload_endpoint(:cache) => "/upload"
-  
+  #mount ImageUploader::UploadEndpoint => "/upload"
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

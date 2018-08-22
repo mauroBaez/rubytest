@@ -1,6 +1,6 @@
 <ol>
   <li class="input">
-      <%= image_tag photo.image_url(:thumbnail).to_s, size: 150, class: "img-thumbnail file-upload-preview media-object", id: "album-photo-preview-#{idx}" %>
+      <%= cl_image_tag photo.image_url().to_s, class: "img-thumbnail file-upload-preview media-object", id: "album-photo-preview-#{idx}" %>
   </li>
   <li class="input">
     <%= hidden_field_tag "album[photos_attributes][#{idx}][image]", photo.cached_image_data, id: "album-photo-upload-result-#{idx}" %>
