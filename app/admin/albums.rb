@@ -66,12 +66,10 @@ form do |f|
           render partial: "albums/phototemplate"
           columns do
           resource.photos.each_with_index do |photo, idx|
-                        
-
               column max_width: "260px", min_width: "260px" do
                 panel "" do
-              render partial: "albums/photo", locals: { photo: photo, idx: idx }
-            end
+                render partial: "albums/photo", locals: { photo: photo, idx: idx }
+              end
             end
         end
             

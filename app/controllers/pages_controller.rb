@@ -5,6 +5,7 @@ class PagesController < ApplicationController
         @wedding = Wedding.first
         @messages = Message.all.where(:show => true)
         @album = Album.first
+    
     end
     
     def contact
