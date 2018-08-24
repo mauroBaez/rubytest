@@ -247,7 +247,8 @@
 
     
 	};
-	
+
+		
 	$(function(){
 		mobileMenuOutsideClick();
 		//parallax();

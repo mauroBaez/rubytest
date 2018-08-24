@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  sent: false
+  sent_datetime: 2018-08-24 02:37:53
+
+two:
+  title: MyString
+  sent: false
+  sent_datetime: 2018-08-24 02:37:53

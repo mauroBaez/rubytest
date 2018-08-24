@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :guests
+  resources :invitations
   resources :weddings
   resources :messageboards
   root to: 'pages#index'

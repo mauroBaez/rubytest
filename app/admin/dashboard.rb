@@ -3,6 +3,16 @@ ActiveAdmin.register_page "Dashboard" do
   content title: proc { I18n.t("active_admin.dashboard") } do
     columns do
       column do
+        panel "Invitaciones" do
+          table_for Message.order("id desc").limit(10) do
+            column("Invitados") { |c| c.author }
+            column("Fecha") { |c| c.created_at.to_date }
+            column("Enviada?") { |c| c.show }
+            
+          end
+        end
+      end
+      column do
         panel "Mensajes Recientes" do
           table_for Message.order("id desc").limit(10) do
             column("Remitente") { |c| c.author }
@@ -12,7 +22,7 @@ ActiveAdmin.register_page "Dashboard" do
           end
         end
       end
-
+      
       
     end # columns
 

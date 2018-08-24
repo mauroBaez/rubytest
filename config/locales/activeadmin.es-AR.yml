@@ -12,6 +12,12 @@ es-AR:
         edit_model: 'Editar Evento del Casamiento' # edit action item
         create_model: 'Guardar datos del Evento del Casamiento'
         update_model: 'Guardar datos del Evento del Casamiento'
+      invitation: # Registered resource
+        index: 'Administrar Invitación' # edit action item
+        show_model: 'Administrar Invitación' # edit action item
+        edit_model: 'Administrar Invitación' # edit action item
+        create_model: 'Nueva Invitación'
+        update_model: 'Guardar Invitación'
       messageboard: # Registered resource
         edit_model: 'Editar Mensajes' # edit action item
         create_model: 'Guardar Mensajes'

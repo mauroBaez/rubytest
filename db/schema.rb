@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_08_03_034917) do
+ActiveRecord::Schema.define(version: 2018_08_24_024136) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string "namespace"
@@ -101,6 +101,24 @@ ActiveRecord::Schema.define(version: 2018_08_03_034917) do
     t.string "place_name"
     t.integer "wedding_id"
     t.index ["wedding_id"], name: "index_events_on_wedding_id"
+  end
+
+  create_table "guests", force: :cascade do |t|
+    t.string "name"
+    t.string "email"
+    t.string "phone"
+    t.integer "invitation_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["invitation_id"], name: "index_guests_on_invitation_id"
+  end
+
+  create_table "invitations", force: :cascade do |t|
+    t.string "title"
+    t.boolean "sent"
+    t.datetime "sent_datetime"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "messageboards", force: :cascade do |t|

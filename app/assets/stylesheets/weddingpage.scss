@@ -178,7 +178,10 @@ body {
 	color: #828282;
 	background-color: #fff;
 	background-image: asset-url("papel");
-		background-repeat: repeat;
+	background-repeat: repeat;
+	@media screen and (max-width: $screen-sm) {
+		font-size: 18px;
+	}
 }
 .gradient{
 	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+0,ffffff+100&0.15+0,0+100 */
@@ -192,20 +195,16 @@ body {
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#26ffffff', endColorstr='#00ffffff',GradientType=0 );
   /* IE6-9 */}
 .gradient-dark{
-background-image: -webkit-linear-gradient(rgba(255, 255, 255, 0) 0%, rgba(103, 32, 150, 0.5) 100%);
-background-image: -moz-linear-gradient(rgba(255, 255, 255, 0) 0%, rgba(103, 32, 150, 0.5) 100%);
-background-image: -o-linear-gradient(rgba(255, 255, 255, 0) 0%, rgba(103, 32, 150, 0.5) 100%);
-background-image: linear-gradient(rgba(255, 255, 255, 0) 0%, rgba(103, 32, 150, 0.5) 100%);
+	background-image: -webkit-linear-gradient(rgba(255, 255, 255, 0) 0%, rgba(103, 32, 150, 0.5) 100%);
+	background-image: -moz-linear-gradient(rgba(255, 255, 255, 0) 0%, rgba(103, 32, 150, 0.5) 100%);
+	background-image: -o-linear-gradient(rgba(255, 255, 255, 0) 0%, rgba(103, 32, 150, 0.5) 100%);
+	background-image: linear-gradient(rgba(255, 255, 255, 0) 0%, rgba(103, 32, 150, 0.5) 100%);
 	
 }
 .primary-color-bg{
-	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+0,ffffff+100&0.15+0,0+100 */
-  /* FF3.6-15 */
-  /* Chrome10-25,Safari5.1-6 */
-background: rgba(103, 32, 150, 1);  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  /* IE6-9 */
-	
+	background: rgba(103, 32, 150, 1); 
 }
+
 #page {
 	position: relative;
 	overflow-x: hidden;

@@ -3,22 +3,23 @@
   <head>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-    <%= display_meta_tags site: 'Gise & Pablo - Nos casamos!' %>
+    <%= display_meta_tags site: 'Gi & Pablo - Nos casamos!' %>
     <%= display_meta_tags description: 'Invitación a Nuestro Casamiento' %>
     <%= display_meta_tags separator: "&mdash;".html_safe %>
     <%= display_meta_tags prefix: false, separator: ":" %>
     <%= display_meta_tags lowercase: true %>
     <%= display_meta_tags reverse: true, prefix: false %>
     <%= display_meta_tags og: { 
-        title:    'Gise & Pablo - Nos casamos!',
+        title:    'Gi & Pablo - Nos casamos!',
         type:     'website',
         image:      image_url("fondo-sm.jpg")
         
      } %>
-    
+    <meta name="robots" content="noindex">
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.js"></script>
 
-    <%= stylesheet_link_tag    'application', media: 'all' %>
+    <%= stylesheet_link_tag 'application', media: 'all' %>
     
 	 <link href='//fonts.googleapis.com/css?family=Great+Vibes' rel='stylesheet' type='text/css'>
     <link href="//fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">

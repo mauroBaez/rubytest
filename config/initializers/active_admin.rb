@@ -305,7 +305,7 @@ ActiveAdmin.setup do |config|
                 priority: 2
 
       links.add label: "Invitaciones",
-                url: "/admin/", 
+                url: "/admin/invitations", 
                 priority: 3
     end
     menu.add label: "Fotos", url: "/admin/albums/1/edit"
