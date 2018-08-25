@@ -67,17 +67,20 @@
 					</div>
 			
 			<div class="row align-items-center animate-box">
-				
+				<div class="col-md-12 text-center">
+					<%= @wedding.wedding_details_content.html_safe %>
+			    </div>
+
 				<div class="col-sm-4 couple-half">
-					<div class="desc-bride">
+					<div class="desc-groom">
 						<h3><%= @wedding.groom_name %> <%= @wedding.groom_surname %></h3>
 					</div>
 				</div>
 				<div class="col-sm-4 d-none d-sm-block">
-					<img src="<%= image_url("novios.jpg") %>" alt="groom" class="img-fluid">
+					<img src="<%= image_url("novios.jpg") %>" alt="groom" class="img-photo img-fluid">
 				</div>
 				<div class="col-sm-4 couple-half">
-					<div class="desc-groom">
+					<div class="desc-bride">
 						<h3><%= @wedding.bride_name %> <%= @wedding.bride_surname %></h3>
 					</div>
 				</div>
