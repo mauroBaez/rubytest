@@ -15,7 +15,7 @@ menu false
 menu false
 breadcrumb do
     [
-      
+      link_to('Invitaciones', '/invitations')
     ]
   end
 controller do
@@ -27,17 +27,30 @@ controller do
       format.html { redirect_to edit_admin_invitation_path(resource) }
     end
   end
+  def lock
+    lock! do |format, invitation|
+redirect_to edit_admin_invitation_path(resource)    end
+  end
+end
+
+
+member_action :lock, method: :get do
+  resource.lock!
+  redirect_to resource_path, notice: "Locked!"
 end
 
 index :title => 'Invitaciones' do
-  column "Invitaciones" do |invitation|
-    link_to invitation.title, edit_admin_invitation_path(invitation)
+  column "" do |invitation|
+    invitation.id
   end
   column "Invitados" do |invitation|
-    invitation.guests.collect{|t| t.name}.join(', ')
+    invitation.guests.collect{|t| t.name}.join('<br>').html_safe
   end
-  column "Cantidad de Invitados" do |invitation|
+  column "Cantidad de Invitados", :sortable do |invitation|
     invitation.guests.count
+  end
+  column "" do |invitation|
+    link_to "Editar", edit_admin_invitation_path(invitation)  
   end
 end
 
@@ -50,17 +63,16 @@ end
 sidebar "Estado de Envío", only: :edit do
   render 'status', { invitation: invitation }
 end
-form :title => :title do |f|
+form :title => 'Editar Invitación' do |f|
     
     f.semantic_errors # shows errors on :base
     f.inputs do
       f.input :title , label: "Título de la Invitación"
 
     end
-    f.inputs do
-      f.has_many :guests, heading: 'Invitados',
-                              allow_destroy: true,
-                              new_record: true do |a|
+    f.inputs 'Invitados' do
+      f.has_many :guests, sortable: :sort_order, heading: false, allow_destroy: true, new_record: 'Agregar Invitado' do |a|
+        a.label "Nombre del Invitado"
         a.input :name, label: "Nombre del Invitado"
         a.input :email, label: "Email del Invitado"
         a.input :phone, label: "Teléfono movil del Invitado"

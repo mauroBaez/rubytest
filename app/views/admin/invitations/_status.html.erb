@@ -1,10 +1,10 @@
 <h2>Enviada?</h2>
 <% if invitation.sent %>
 <p><strong>Sí</strong> (Último envío:)</p>
-<a href="/admin/invitations/1/edit">Reenviar Invitación</a>
+<a class="lightbox" href="/admin/invitations/1/edit">Reenviar Invitación</a>
 
 <% else%>
 <strong>No</strong>
 <p>Esta invitación aún no se ha enviado</p>
-<a href="/admin/invitations/1/edit">Enviar Invitación</a>
+<a class="lightbox" href="/admin/invitations/1/edit">Enviar Invitación</a>
 <% end%>

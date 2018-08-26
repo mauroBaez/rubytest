@@ -6,3 +6,5 @@
 #= require uppy_uploads
 #= require activeadmin/medium_editor/medium_editor
 #= require activeadmin/medium_editor_input
+#= require active_admin_lightbox
+#= require admin
