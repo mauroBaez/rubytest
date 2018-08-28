@@ -1,0 +1,44 @@
+<% if params[:send] == 'mail'%>
+<form>
+<div class="panel">
+    <h3>Enviar Invitaciones por mail</h3>
+    <div class="panel_contents">
+        <% invitation.guests.each do |guest| %>
+            <label for="<%= guest.name %>" class="">
+                <input type="checkbox" name="<%= guest.name %>" id="<%= guest.name %>" value="<%= guest.email %>"> <strong><%= guest.name %></strong> - <%= guest.email %>
+            </label>
+            <br>
+            <br>
+        <% end %>
+    </div>
+</div>
+<fieldset class="actions">
+    <ol>
+        <li class="action input_action " id="invitation_submit_action">
+            <input type="submit" name="commit" value="Enviar" data-disable-with="Enviar">
+        </li>
+        <li class="cancel">
+            <a href="/admin/invitations/<%= invitation.id %>/edit">Cancelar</a>
+        </li>
+    </ol>
+</fieldset>
+</form>
+<% end %>
+
+<% if params[:send] == 'whatsapp'%>
+    <form>
+        <div class="panel">
+            <h3>Compartir Invitaciones por Whatsapp</h3>
+            <div class="panel_contents">
+                <% invitation.guests.each do |guest| %>
+                    <label for="<%= guest.name %>" class="">
+                        <input type="checkbox" name="<%= guest.name %>" id="<%= guest.name %>" value="<%= guest.email %>"> <strong><%= guest.name %></strong> - <%= guest.email %>
+                    </label>
+                    <br>
+                    <br>
+                <% end %>
+            </div>
+        </div>
+        
+    </form>
+<% end %>

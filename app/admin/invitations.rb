@@ -15,7 +15,7 @@ menu false
 menu false
 breadcrumb do
     [
-      link_to('Invitaciones', '/invitations')
+      link_to('Invitaciones', '/admin/invitations')
     ]
   end
 controller do
@@ -29,10 +29,18 @@ controller do
   end
   def lock
     lock! do |format, invitation|
-redirect_to edit_admin_invitation_path(resource)    end
+      redirect_to edit_admin_invitation_path(resource)    
+    end
   end
 end
 
+action_item :view, only: :edit do
+  link_to 'Enviar por Mail', edit_admin_invitation_path(resource)+'?send=mail'
+end
+
+action_item :view, only: :edit do
+  link_to 'Compartir por Whatsapp', edit_admin_invitation_path(resource)+'?send=whatsapp'
+end
 
 member_action :lock, method: :get do
   resource.lock!
@@ -56,13 +64,13 @@ end
 
 show do |invitation|
     
-    panel "Invitados" do
-      
-    end
+    # renders app/views/admin/posts/_some_partial.html.erb
+      render 'send', { invitation: invitation }
+
 end
-sidebar "Estado de Envío", only: :edit do
-  render 'status', { invitation: invitation }
-end
+#sidebar "Estado de Envío", only: :edit do
+#  render 'status', { invitation: invitation }
+#end
 form :title => 'Editar Invitación' do |f|
     
     f.semantic_errors # shows errors on :base
@@ -72,7 +80,6 @@ form :title => 'Editar Invitación' do |f|
     end
     f.inputs 'Invitados' do
       f.has_many :guests, sortable: :sort_order, heading: false, allow_destroy: true, new_record: 'Agregar Invitado' do |a|
-        a.label "Nombre del Invitado"
         a.input :name, label: "Nombre del Invitado"
         a.input :email, label: "Email del Invitado"
         a.input :phone, label: "Teléfono movil del Invitado"
