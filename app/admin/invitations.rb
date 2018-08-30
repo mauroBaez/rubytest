@@ -29,26 +29,36 @@ controller do
   end
   def lock
     lock! do |format, invitation|
-      redirect_to edit_admin_invitation_path(resource)    
+      
+      
     end
   end
 end
 
+member_action :lock, method: :post do
+  resource.lock! 
+  @t=""
+  hash = JSON.parse request.request_parameters.first
+  hash.each do |guest|
+    Rails.logger.warn guest.email
+    #@t=@t+guest.email
+  end
+  render json: { status: @t} 
+end
+
+
 action_item :view, only: :edit do
-  link_to 'Enviar por Mail', edit_admin_invitation_path(resource)+'?send=mail'
+  link_to 'Enviar por Mail', admin_invitation_path(resource)+'?send=mail'
 end
 
 action_item :view, only: :edit do
-  link_to 'Compartir por Whatsapp', edit_admin_invitation_path(resource)+'?send=whatsapp'
+  link_to 'Compartir por Whatsapp', admin_invitation_path(resource)+'?send=whatsapp'
 end
 
-member_action :lock, method: :get do
-  resource.lock!
-  redirect_to resource_path, notice: "Locked!"
-end
+
 
 index :title => 'Invitaciones' do
-  column "" do |invitation|
+  column "#", sortable: :id do |invitation|
     invitation.id
   end
   column "Invitados" do |invitation|

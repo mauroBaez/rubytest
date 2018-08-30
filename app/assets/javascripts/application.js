@@ -17,6 +17,7 @@
 //= require rails-ujs
 //= require activestorage
 //= require turbolinks
+//= require jquery-turbolinks
 //= require jquery.countTo
 //= require jquery.easing.1.3
 //= require jquery.magnific-popup.min

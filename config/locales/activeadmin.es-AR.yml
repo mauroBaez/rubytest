@@ -2,6 +2,8 @@ es-AR:
   formtastic:
     actions:
       update: "Guardar"
+      create: "Crear"
+      new: "Crear"
   active_admin:
     resources:
       wedding: # Registered resource
@@ -17,6 +19,7 @@ es-AR:
         show_model: 'Administrar Invitación' # edit action item
         edit_model: 'Administrar Invitación' # edit action item
         create_model: 'Nueva Invitación'
+        new_model: 'Nueva Invitación'
         update_model: 'Guardar Invitación'
       messageboard: # Registered resource
         edit_model: 'Editar Mensajes' # edit action item

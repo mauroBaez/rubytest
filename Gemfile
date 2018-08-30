@@ -83,6 +83,7 @@ gem 'activeadmin_addons'
 gem 'sucker_punch', '~> 2.0'
 gem 'dotenv-rails'
 gem 'meta-tags'
+gem 'jquery-turbolinks'
 # Shrine
 gem 'shrine', '~> 2.11'
 gem "shrine-cloudinary"
