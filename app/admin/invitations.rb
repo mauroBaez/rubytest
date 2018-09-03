@@ -177,38 +177,7 @@ form :title => 'Editar Invitación' do |f|
       f.input :title , label: "Título de la Invitación"
 
     end
-    f.inputs 'Invitados' do
-      panel "Ingredients" do
-        table_for (invitation.guests), {:sortable => true} do
-        column :name do |guest|
-          best_in_place guest, :name, as: :input, url: [:admin,guest], :place_holder => "Clic para agregar"
-        end 
-        column :email do |guest|
-          best_in_place guest, :email, as: :input, url: [:admin,guest], :place_holder => "Clic para agregar"
-        end
-        column :phone do |guest|
-          best_in_place guest, :phone, as: :input, url: [:admin,guest], :place_holder => "Clic para agregar"
-        end 
-        end
-      end
-      f.has_many :guests, sortable: :sort_order, heading: false, allow_destroy: true, new_record: 'Agregar Invitado' do |a|
-        columns do
-          column do
-            a.input :name, label: "Nombre del Invitado"
-          end
-          column do
-            a.input :email, label: "Email del Invitado"
-          end
-          column do
-            a.input :phone, label: "Teléfono movil del Invitado"
-          end
-        end
-        
-        
-        
-      end
-        
-    end
+    
     f.actions
     #image_tag @invitation.cover_photo_url(:thumbnail).to_s, width: 300, class: "img-thumbnail file-upload-preview", id: "preview-cover-photo"
     
