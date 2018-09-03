@@ -62,8 +62,8 @@ Rails.application.configure do
   
   config.action_mailer.default_url_options = { host: 'https://273baf2c1094441fac31af02eaf9ad9e.vfs.cloud9.us-east-2.amazonaws.com/'}
   ActionMailer::Base.smtp_settings = {
-    :user_name => 'app97112742@heroku.com',
-    :password => 'Mauromauro1!',
+    :user_name => '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',
+    :password => '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',
     :domain => 'giypablo.com',
     :address => 'smtp.sendgrid.net',
     :port => 587,
