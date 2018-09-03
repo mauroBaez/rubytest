@@ -7,4 +7,14 @@
 #= require activeadmin/medium_editor/medium_editor
 #= require activeadmin/medium_editor_input
 #= require active_admin_lightbox
+#= require best_in_place
+#= require jquery.purr
+#= require best_in_place.purr
+#= require activeadmin-async_panel
+#= require fancybox
+#= require activeadmin-orderable
 #= require admin
+$(document).ready ->
+  jQuery(' a.fancybox').fancybox()
+$(document).ready ->
+  jQuery(".best_in_place").best_in_place()

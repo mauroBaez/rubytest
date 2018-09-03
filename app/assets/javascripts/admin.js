@@ -6,15 +6,19 @@ $(document).ready(function(){
     var selected = [];
     $('input[type=checkbox]:checked').each(function() {
         var guest = {
-          id: $(this)[0].id,
-          name: $(this)[0].name,
-          email: $(this)[0].value
+          "id": $(this)[0].id,
+          "name": $(this)[0].name,
+          "email": $(this)[0].value
         };
         
         selected.push(guest);
     });
     
-    console.log(selected);
+    var request = {
+          "request": selected
+    };
+    console.log( JSON.stringify(request));
+
     var html = $($(this).data("target")).html();
     
     $.each( selected, function( key, value ) {
@@ -27,14 +31,14 @@ $(document).ready(function(){
     }).done(() => sendMails(selected)  );
     
     function sendMails(guests){
-      console.log( JSON.stringify(guests));
-      $.post(location.protocol + '//' + location.host + location.pathname + '/lock', JSON.stringify(guests), 
+      //console.log( JSON.stringify(guests));
+
+      $.post(location.protocol + '//' + location.host + location.pathname + '/lock', JSON.stringify(request), 
           function(returnedData){
                console.log(returnedData);
         }).fail(function(){
               console.log("error");
         });
-      console.log($.parseJSON(guests));
     }
   })
   

@@ -57,7 +57,6 @@ form do |f|
     f.input :datetime, as: :date_time_picker, label: "Fecha y hora del Evento"
     f.input :place_name, label: "Nombre del lugar del Evento"
     f.input :address, label: "Dirección del lugar del Evento"
-
     f.latlng lang: :es, label: "Ubicación del lugar del Evento en el Mapa", map: :google, height: 500, loading_map: true, api_key: 'AIzaSyB_bHEjt-UWoAiwgrTrS2Cc-i9UXEvUf6Y'
     f.input :lat, as: :hidden
     f.input :lng, as: :hidden

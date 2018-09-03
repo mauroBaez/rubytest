@@ -13,11 +13,14 @@ ActiveAdmin.register Invitation do
 # end
 menu false
 menu false
+orderable
 breadcrumb do
     [
       link_to('Invitaciones', '/admin/invitations')
     ]
-  end
+end
+config.action_items.delete_if {|item| item.name == :edit && item.display_on?(:show) }
+
 controller do
   def permitted_params
     params.permit!
@@ -33,49 +36,122 @@ controller do
       
     end
   end
-end
-
-member_action :lock, method: :post do
-  resource.lock! 
-  @t=""
-  hash = JSON.parse request.request_parameters.first
-  hash.each do |guest|
-    Rails.logger.warn guest.email
-    #@t=@t+guest.email
+  
+  def quick_send
+      @invitation = Invitation.find(params[:id])
+      @guests = @invitation.guests
+      render layout: false
   end
-  render json: { status: @t} 
+  def quick_order
+      Invitation.all.each do |invitation|
+        invitation.guests.order(:updated_at).each.with_index(1) do |guest, index|
+          guest.update_column :sort_order, index
+        end
+      end
+  end
+  
+  def quick_remove
+      @invitation = Invitation.find(params[:id])
+      @guest = Guest.find(params[:guest_id]).destroy
+      redirect_to admin_invitation_path(@invitation) 
+  end
+  def quick_add
+      @invitation = Invitation.find(params[:id])
+      @guest = Guest.new()
+      @guest.invitation = @invitation
+      render layout: false
+  end
+  
+  def quick_create
+      @invitation = Invitation.find(params[:id])
+      @guest = Guest.new(permitted_params[:guest])
+      @guest.invitation = @invitation
+      @guest.save
+      render 'quick_response.js', layout: false
+  end
 end
 
-
-action_item :view, only: :edit do
-  link_to 'Enviar por Mail', admin_invitation_path(resource)+'?send=mail'
+member_action :lbock, method: :post do
+  resource.lock! 
+  #@t=""
+  hash = (params[:request])
+  hash = JSON.parse(hash) if hash.is_a?(String)
+  hash.each do |guest|
+    Rails.logger.warn guest
+    Rails.logger.warn "___________________________________________"
+    
+    #@t=@t+guest[0]
+  end
+  render json: { status: hash} 
 end
 
-action_item :view, only: :edit do
+action_item only: :show do
+  link_to 'Enviar por Email', admin_invitation_quick_send_path, class: 'fancybox', data: { 'fancybox-type' => 'ajax' }
+end
+
+action_item :view, only: :show do
   link_to 'Compartir por Whatsapp', admin_invitation_path(resource)+'?send=whatsapp'
 end
 
+sidebar "Estado de Envío", only: :show do
+  render 'send', { invitation: invitation }
+end
 
 
 index :title => 'Invitaciones' do
-  column "#", sortable: :id do |invitation|
-    invitation.id
-  end
+  column :sort_order
   column "Invitados" do |invitation|
-    invitation.guests.collect{|t| t.name}.join('<br>').html_safe
+    invitation.guests.collect{|t| t.name}.join(', ').html_safe
   end
   column "Cantidad de Invitados", :sortable do |invitation|
     invitation.guests.count
   end
   column "" do |invitation|
-    link_to "Editar", edit_admin_invitation_path(invitation)  
+    link_to "Editar", admin_invitation_path(invitation), :class => "member_link edit_link"
   end
 end
 
 show do |invitation|
-    
+    team = Invitation.find(params[:id])
+
+  panel "Invitación" do
+    attributes_table_for team do
+      row :title
+      row :created_at
+      row :updated_at
+    end
+  end
+
+  panel "Invitados" do
+        div class: 'button-row' do
+          link_to 'Agregar Invitado', admin_guest_quick_add_path, class: 'fancybox button', data: { 'fancybox-type' => 'ajax' }
+        end
+
+        table_for invitation.guests, {:sortable => true, :class => 'index_table'} do |guests|
+          orderable_handle_column
+          column :position
+          column "Nombre del Invitado" do |guest|
+              best_in_place guest, :name, as: :input, url: [:admin,guest], :place_holder => "Clic para agregar",:required => true
+            end 
+            column "Email" do |guest|
+              best_in_place guest, :email, as: :input, url: [:admin,guest], :place_holder => "Clic para agregar"
+            end
+            column "Teléfono móvil" do |guest|
+              best_in_place guest, :phone, as: :input, url: [:admin,guest], :place_holder => "Clic para agregar"
+            end
+            column max_width: "200px", min_width: "100px" do |guest|
+  
+                  link_to "Delete", admin_guest_quick_remove_path(resource.id,guest.id), data: { confirm: 'Quitar al Invitado de la lista?' }, :class => "member_link delete_link"
+
+            end
+        end
+
+      end
+
+  
+
     # renders app/views/admin/posts/_some_partial.html.erb
-      render 'send', { invitation: invitation }
+    # render 'send', { invitation: invitation }
 
 end
 #sidebar "Estado de Envío", only: :edit do
@@ -89,10 +165,34 @@ form :title => 'Editar Invitación' do |f|
 
     end
     f.inputs 'Invitados' do
+      panel "Ingredients" do
+        table_for (invitation.guests), {:sortable => true} do
+        column :name do |guest|
+          best_in_place guest, :name, as: :input, url: [:admin,guest], :place_holder => "Clic para agregar"
+        end 
+        column :email do |guest|
+          best_in_place guest, :email, as: :input, url: [:admin,guest], :place_holder => "Clic para agregar"
+        end
+        column :phone do |guest|
+          best_in_place guest, :phone, as: :input, url: [:admin,guest], :place_holder => "Clic para agregar"
+        end 
+        end
+      end
       f.has_many :guests, sortable: :sort_order, heading: false, allow_destroy: true, new_record: 'Agregar Invitado' do |a|
-        a.input :name, label: "Nombre del Invitado"
-        a.input :email, label: "Email del Invitado"
-        a.input :phone, label: "Teléfono movil del Invitado"
+        columns do
+          column do
+            a.input :name, label: "Nombre del Invitado"
+          end
+          column do
+            a.input :email, label: "Email del Invitado"
+          end
+          column do
+            a.input :phone, label: "Teléfono movil del Invitado"
+          end
+        end
+        
+        
+        
       end
         
     end

@@ -1,4 +1,30 @@
-<div class="action_items">
-            <span class="action_item"><a href="/admin/invitations/2/edit">Administrar Invitación</a></span>
-            <span class="action_item"><a data-confirm="¿Está seguro de que quiere eliminar esto?" rel="nofollow" data-method="delete" href="/admin/invitations/2">Eliminar Invitation</a></span>
-          </div>
+<h2>Enviada?</h2>
+<% if invitation.sent %>
+<p><strong>Sí</strong> (Último envío:)</p>
+<a class="lightbox" href="/admin/invitations/1/edit">Reenviar Invitación</a>
+
+<% else%>
+<strong>No</strong>
+<p>Esta invitación aún no se ha enviado</p>
+<a class="lightbox" href="/admin/invitations/1/edit">Enviar Invitación</a>
+<% end%>
+
+
+<input class="lightbox" type="submit" name="commit" value="Agregar Invitado" data-target="#send-confirm" data-disable-with="Enviar">
+            <div id="send-confirm" class="modal">
+                <%= simple_form_for([@guest, Guest.new]) do |f| %>
+                  <%= f.error_notification %>
+                  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+                
+                  <div class="form-inputs">
+                    <%= f.input :invitation_id , value: invitation.id, label: 'Nombre' %>
+                    <%= f.input :name , label: 'Nombre' %>
+                    <%= f.input :email , label: 'Email' %>
+                    <%= f.input :phone , label: 'Teléfono móvil' %>
+                  </div>
+                
+                  <div class="form-actions">
+                    <%= f.button :submit , label: "Agregar"   %>
+                  </div>
+                <% end %>
+            </div>

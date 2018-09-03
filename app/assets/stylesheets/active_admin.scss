@@ -9,12 +9,15 @@
 // $sidebar-width: 242px;
 
 // Active Admin's got SASS!
-//@import "active_admin/mixins";
+@import "active_admin/mixins";
 //@import "active_admin/base";
 @import 'formadmin/formadmin';
 @import 'uppy';
 @import 'activeadmin/medium_editor_input';
 @import 'activeadmin/medium_editor/themes/default.css'; // or another theme
+@import "activeadmin-async_panel";
+@import "fancybox";
+@import "activeadmin-orderable";
 
 // Overriding any non-variable SASS must be done after the fact.
 // For example, to change the default status-tag color:
@@ -38,6 +41,25 @@ body.active_admin form .medium-editor-element {
 body.active_admin form .medium-editor-element:focus {
     border-color: rgba(77, 82, 86, 0.5);
     box-shadow: 0 0 5px rgba(77, 82, 86, 0.25);
+    
+}
+.button-row {
+    margin-bottom:15px;
+    
+}
+a.button{
+    display: inline-block;
+    font-size: 14px;
+    outline: 0;
+    padding: 9px 12px;
+    text-align: center;
+    text-decoration: none;
+    transition: background 250ms, box-shadow 250ms;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    vertical-align: middle;
     
 }
 
@@ -141,3 +163,29 @@ body.active_admin #admin-lightbox #buttons button{
 .modal{
   display:none;
 }
+form.form_in_place{
+  box-sizing: unset;
+  &,&:before,&:after{
+  box-sizing: unset;
+overflow: hidden;
+  
+}
+  *,*:before,*:after{
+  box-sizing: unset;
+overflow: hidden;
+  
+}
+  input{
+  box-sizing: unset;
+&:before,&:after{
+  box-sizing: unset;
+overflow: hidden;
+  
+}
+  width: auto;
+  float:left!important;
+  height: 100%;
+  margin: -3px 0 0;
+  padding: 0;
+}
+} 

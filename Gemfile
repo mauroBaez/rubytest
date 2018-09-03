@@ -91,3 +91,8 @@ gem "shrine-cloudinary"
 gem 'image_processing', '~> 1.0'
 gem 'activeadmin_latlng'
 gem 'activeadmin_medium_editor'
+gem 'best_in_place'
+gem 'activeadmin-async_panel'
+gem 'fancybox2-rails'
+gem 'acts_as_list'
+gem "activeadmin-orderable"
