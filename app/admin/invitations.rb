@@ -42,6 +42,19 @@ controller do
       @guests = @invitation.guests
       render layout: false
   end
+  def quick_send_mails
+      #@invitation = Invitation.find(params[:id])
+      #@guests = @invitation.guests
+      #render layout: false
+      #UserNotifier.send_signup_email(@guest).deliver
+      @guests = params[:guests]
+      @guests.each do |key, value|
+        @g = Guest.find(key)
+        InvitationMailer.send_invitation_email(@g).deliver
+      end
+      render json: { status: @guests} 
+
+  end
   def quick_order
       Invitation.all.each do |invitation|
         invitation.guests.order(:updated_at).each.with_index(1) do |guest, index|

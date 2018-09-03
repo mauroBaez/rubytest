@@ -1,10 +1,11 @@
 class InvitationMailer < ActionMailer::Base
-  default from: 'notifications@example.com'
- 
-  def invitation_email
-    @guest = params[:guest]
-    @url  = 'http://example.com/login'
-    mail(to: @guest.email, subject: 'Welcome to My Awesome Site')
+   default :from => 'giypablo@giypablo.com'
+
+  # send a signup email to the user, pass in the user object that   contains the user's email address
+  def send_invitation_email(guest)
+    @guest = guest
+    mail( :to => @guest.email,
+    :subject => 'Thanks for signing up for our amazing app' )
   end
   
 end

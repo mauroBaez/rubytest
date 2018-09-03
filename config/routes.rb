@@ -3,6 +3,8 @@ Rails.application.routes.draw do
   
   resources :invitations
   get '/admin/invitations/:id/quick_send' => 'admin/invitations#quick_send', as: :admin_invitation_quick_send
+  post '/admin/invitations/:id/quick_send_mails' => 'admin/invitations#quick_send_mails', as: :admin_invitation_quick_send_mails
+  
   post '/admin/invitations/:id/quick_order' => 'admin/invitations#quick_order', as: :admin_invitation_quick_order
 
   get '/admin/invitations/:id/guests/:guest_id/quick_remove' => 'admin/invitations#quick_remove', as: :admin_guest_quick_remove
