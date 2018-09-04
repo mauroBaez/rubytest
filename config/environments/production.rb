@@ -93,13 +93,5 @@ Rails.application.configure do
   config.active_record.dump_schema_after_migration = false
   
   config.action_mailer.default_url_options = { host: 'https://giypablo.com/' }
-  ActionMailer::Base.smtp_settings = {
-    :user_name => 'app97112742@heroku.com',
-    :password => 'h6ibayl54679',
-    :domain => 'giypablo.com',
-    :address => 'smtp.sendgrid.net',
-    :port => 465,
-    :authentication => :plain,
-    :enable_starttls_auto => true
-  }
+  
 end
