@@ -98,7 +98,7 @@ Rails.application.configure do
     :password => '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',
     :domain => 'giypablo.com',
     :address => 'smtp.sendgrid.net',
-    :port => 587,
+    :port => 465,
     :authentication => :plain,
     :enable_starttls_auto => true
   }
