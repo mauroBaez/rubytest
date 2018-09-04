@@ -300,7 +300,7 @@ ActiveAdmin.setup do |config|
                 url: "/admin/weddings/1/edit", 
                 priority: 1
                 
-      links.add label: "Días y Horarios",
+      links.add label: "Eventos del Casamiento",
                 url: "/admin/events", 
                 priority: 2
 

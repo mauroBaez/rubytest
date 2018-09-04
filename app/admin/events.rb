@@ -15,7 +15,8 @@ ActiveAdmin.register Event do
 menu false
 breadcrumb do
     [
-      
+        link_to('Eventos del Casamiento', '/admin/events')
+
     ]
   end
   config.filters = false
