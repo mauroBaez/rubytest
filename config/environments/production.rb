@@ -94,8 +94,8 @@ Rails.application.configure do
   
   config.action_mailer.default_url_options = { host: 'https://giypablo.com/' }
   ActionMailer::Base.smtp_settings = {
-    :user_name => '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',
-    :password => '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',
+    :user_name => 'app97112742@heroku.com',
+    :password => 'h6ibayl54679',
     :domain => 'giypablo.com',
     :address => 'smtp.sendgrid.net',
     :port => 465,
