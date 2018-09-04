@@ -2,6 +2,8 @@
 #= require activeadmin_addons/all
 #= require polyfill.min
 #= require fetch
+#= require turbolinks
+#= require jquery-turbolinks
 #= require uppy.min
 #= require uppy_uploads
 #= require activeadmin/medium_editor/medium_editor

@@ -53,6 +53,7 @@ end
 
 form do |f|
   f.inputs do
+    f.input :wedding_id, label: "weddi"
     f.input :name, label: "Nombre del Evento"
     f.input :datetime, as: :date_time_picker, label: "Fecha y hora del Evento"
     f.input :place_name, label: "Nombre del lugar del Evento"

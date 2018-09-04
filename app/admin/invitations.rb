@@ -50,9 +50,14 @@ controller do
       @guests = params[:guests]
       @guests.each do |key, value|
         @g = Guest.find(key)
-        InvitationMailer.send_invitation_email(@g).deliver
+        
+        
+        
+        #ContactMailer.contact_email(@g.name, @g.email, "Hola como te va tanto tiempo")
+        #InvitationMailer.send_invitation_email(@g).deliver
       end
       render json: { status: @guests} 
+      #redirect_to admin_invitation_path(params[:id])
 
   end
   def quick_order
