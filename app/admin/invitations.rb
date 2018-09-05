@@ -50,7 +50,20 @@ controller do
       @guests = params[:guests]
       @guests.each do |key, value|
         @g = Guest.find(key)
+        require 'mailgun-ruby'
+
+        # First, instantiate the Mailgun Client with your API key
+        mg_client = Mailgun::Client.new
         
+        # Define your message parameters
+        message_params =  { from: 'bob@mailgun.giypablo.com',
+                            to:   @g.email,
+                            subject: 'The Ruby SDK is awesome!',
+                            text:    'It is really easy to send a message!'
+                          }
+        
+        # Send your message through the client
+        mg_client.send_message 'mailgun.giypablo.com', message_params
         
         
         #ContactMailer.contact_email(@g.name, @g.email, "Hola como te va tanto tiempo")
@@ -145,14 +158,13 @@ show do |invitation|
           link_to 'Agregar Invitado', admin_guest_quick_add_path, class: 'fancybox button', data: { 'fancybox-type' => 'ajax' }
         end
 
-        table_for invitation.guests, {:sortable => true, :class => 'index_table'} do |guests|
+        table_for invitation.guests, {:class => 'index_table'} do |guests|
           orderable_handle_column
-          column :position
           column "Nombre del Invitado" do |guest|
-              best_in_place guest, :name, as: :input, url: [:admin,guest], :place_holder => "Clic para agregar",:required => true
+              best_in_place guest, :name, as: :input, url: [:admin, guest], :place_holder => "Clic para agregar",:required => true
             end 
             column "Email" do |guest|
-              best_in_place guest, :email, as: :input, url: [:admin,guest], :place_holder => "Clic para agregar"
+              best_in_place guest, :email, as: :input, url: [:admin, guest], :place_holder => "Clic para agregar"
             end
             column "Teléfono móvil" do |guest|
               best_in_place guest, :phone, as: :input, url: [:admin,guest], :place_holder => "Clic para agregar"

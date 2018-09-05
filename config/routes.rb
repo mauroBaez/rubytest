@@ -8,6 +8,8 @@ Rails.application.routes.draw do
   post '/admin/invitations/:id/quick_order' => 'admin/invitations#quick_order', as: :admin_invitation_quick_order
 
   get '/admin/invitations/:id/guests/:guest_id/quick_remove' => 'admin/invitations#quick_remove', as: :admin_guest_quick_remove
+  post '/admin/invitations/:id/sort' => 'admin/invitations#sort', as: :admin_guest_sort
+  
   get '/admin/invitations/:id/new/quick_add' => 'admin/invitations#quick_add', as: :admin_guest_quick_add
   post '/admin/invitations/:id/quick_create' => 'admin/invitations#quick_create', as: :admin_guest_quick_create
   
