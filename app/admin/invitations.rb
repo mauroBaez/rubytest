@@ -64,9 +64,9 @@ controller do
             <h1>Welcome to example.com," + @g.name + "</h1>
             
             <p>
-              To login to the site, just follow this link: " + @g.id + ".
+              <a href='https://www.giypablo.com/" + @g.id.to_s + "'>Ver Invitación</a>
             </p>
-            <p>Thanks for joining and have a great day!</p>
+            <p>Los esperamos!</p>
           </body>
         </html>"
         
