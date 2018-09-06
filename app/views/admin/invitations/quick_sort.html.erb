@@ -1,0 +1,20 @@
+<div id="modal">    
+  <h2>Ordenar Invitados</h2> 
+    <p class="modal-description">Añadir Invitado a la lista.</p>
+    <%= simple_form_for(@invitation, url: admin_invitation_path, remote: true) do |f| %>
+      <%= f.error_notification %>
+      <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+      <fieldset>
+        <%= f.has_many :guests, sortable: :sort_order, heading: false, allow_destroy: true, new_record: 'Agregar Invitado' do |a|  %>
+            a.input :name, label: "Nombre del Invitado"
+            a.input :email, label: "Email del Invitado"
+            a.input :phone, label: "Teléfono movil del Invitado"
+        <% end %>
+      </fieldset>
+      <ul class="form-actions">
+        <li>
+          <%= f.button :submit, "Agregar Invitado"   %>
+        </li>
+      </ul>
+    <% end %>
+</div>

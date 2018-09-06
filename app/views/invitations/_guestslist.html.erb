@@ -1,0 +1,5 @@
+<% if @invitation %>
+	<% @invitation.guests.each do |guest| %>
+	    <h3><%= guest.name %></h3>
+	<% end %>
+<% end %>

@@ -2,16 +2,19 @@ Rails.application.routes.draw do
   resources :guests
   
   resources :invitations
+  get ':id' => 'pages#index', as: :invitation_page
+  
   get '/admin/invitations/:id/quick_send' => 'admin/invitations#quick_send', as: :admin_invitation_quick_send
   post '/admin/invitations/:id/quick_send_mails' => 'admin/invitations#quick_send_mails', as: :admin_invitation_quick_send_mails
   
   post '/admin/invitations/:id/quick_order' => 'admin/invitations#quick_order', as: :admin_invitation_quick_order
 
   get '/admin/invitations/:id/guests/:guest_id/quick_remove' => 'admin/invitations#quick_remove', as: :admin_guest_quick_remove
-  post '/admin/invitations/:id/sort' => 'admin/invitations#sort', as: :admin_guest_sort
-  
+
   get '/admin/invitations/:id/new/quick_add' => 'admin/invitations#quick_add', as: :admin_guest_quick_add
   post '/admin/invitations/:id/quick_create' => 'admin/invitations#quick_create', as: :admin_guest_quick_create
+  get '/admin/invitations/:id/quick_sort' => 'admin/invitations#quick_sort', as: :admin_invitation_quick_sort
+
   
   resources :weddings
   resources :messageboards
@@ -29,7 +32,7 @@ Rails.application.routes.draw do
   resources :categories
   resources :albums
   
-  
+
   get 'pages/contact'
   get 'pages/about'
   

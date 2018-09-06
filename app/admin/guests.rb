@@ -11,12 +11,15 @@ ActiveAdmin.register Guest do
 #   permitted << :other if params[:action] == 'create' && current_user.admin?
 #   permitted
 # end
-    menu false
-    
-    controller do
-      def permitted_params
-        params.permit!
-      end
-      
+  belongs_to :invitation
+  orderable
+
+  menu false
+  
+  controller do
+    def permitted_params
+      params.permit!
     end
+    
+  end
 end
