@@ -66,7 +66,7 @@ controller do
         message = result['message']
       end
       
-      render json: { status: message} 
+      render json: { status: result} 
       #redirect_to admin_invitation_path(params[:id])
 
   end
