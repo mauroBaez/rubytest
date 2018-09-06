@@ -1,5 +1,5 @@
 class InvitationMailer < ActionMailer::Base
-   default :from => 'giypablo@giypablo.com'
+   default :from => 'giypablo@mailgun.giypablo.com'
 
   # send a signup email to the user, pass in the user object that   contains the user's email address
   def send_invitation_email(guest)
