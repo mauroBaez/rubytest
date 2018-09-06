@@ -65,6 +65,7 @@ controller do
         result = mg_client.send_message('mailgun.giypablo.com', message_params).to_h!
         
         results.store(@g.email,result)
+        @guest.las
       end
       
       render json: { status: results} 
