@@ -55,12 +55,27 @@ controller do
       @guests.each do |key, value|
         @g = Guest.find(key)
 
+        @html = "<!DOCTYPE html>
+        <html>
+          <head>
+            <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+          </head>
+          <body>
+            <h1>Welcome to example.com," + @g.name + "</h1>
+            
+            <p>
+              To login to the site, just follow this link: " + @g.id + ".
+            </p>
+            <p>Thanks for joining and have a great day!</p>
+          </body>
+        </html>"
+        
         mg_client = Mailgun::Client.new(ENV['MAILGUN_API_KEY'])
 
         message_params = {:from => 'giypablo@mailgun.giypablo.com',
                 :to => @g.email,
                 :subject => 'Gi y Pablo - Invitación a Nuestro Casamiento!',
-                :html => (render_to_string(template: "../views/invitation_mailer/send_invitation_email",:locals => {:guest => @g})).to_str, layout: false
+                :html => @html
         }
         
         result = mg_client.send_message('mailgun.giypablo.com', message_params).to_h!
