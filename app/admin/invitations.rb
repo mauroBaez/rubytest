@@ -29,7 +29,9 @@ controller do
   def update
     update! do |format, invitation|
       format.html { redirect_to edit_admin_invitation_path(resource) }
+      format.json { render json: resource }
     end
+    
   end
   def lock
     lock! do |format, invitation|
@@ -67,8 +69,8 @@ controller do
         results.store(@g.email,result)
         @guest.save
       end
-      
-      render json: { status: results} 
+      render 'quick_response.js', layout: false
+      #render json: { status: results} 
       #redirect_to admin_invitation_path(params[:id])
 
   end
