@@ -50,26 +50,23 @@ controller do
       @guests = params[:guests]
       @guests.each do |key, value|
         @g = Guest.find(key)
-        require 'mailgun-ruby'
 
-        # First, instantiate the Mailgun Client with your API key
-        mg_client = Mailgun::Client.new
-        
-        # Define your message parameters
-        message_params =  { from: 'bob@mailgun.giypablo.com',
-                            to:   @g.email,
-                            subject: 'The Ruby SDK is awesome!',
-                            text:    'It is really easy to send a message!'
+        mg_client = Mailgun::Client.new(ENV['MAILGUN_API_KEY'])
+
+        message_params =  {
+                           from: 'bob@mailgun.giypablo.com',
+                           to:   @g.email,
+                           subject: 'The Ruby SDK is awesome!',
+                           text:    'It is really easy to send a message!'
                           }
         
-        # Send your message through the client
-        mg_client.send_message 'mailgun.giypablo.com', message_params
+        result = mg_client.send_message('mailgun.giypablo.com', message_params).to_h!
         
-        
-        #ContactMailer.contact_email(@g.name, @g.email, "Hola como te va tanto tiempo")
-        #InvitationMailer.send_invitation_email(@g).deliver
+        message_id = result['id']
+        message = result['message']
       end
-      render json: { status: @guests} 
+      
+      render json: { status: message} 
       #redirect_to admin_invitation_path(params[:id])
 
   end
