@@ -48,6 +48,7 @@ controller do
       #render layout: false
       #UserNotifier.send_signup_email(@guest).deliver
       @guests = params[:guests]
+      results = {}
       @guests.each do |key, value|
         @g = Guest.find(key)
 
@@ -62,11 +63,10 @@ controller do
         
         result = mg_client.send_message('mailgun.giypablo.com', message_params).to_h!
         
-        message_id = result['id']
-        message = result['message']
+        results.store(@g.email,result)
       end
       
-      render json: { status: result} 
+      render json: { status: results} 
       #redirect_to admin_invitation_path(params[:id])
 
   end
