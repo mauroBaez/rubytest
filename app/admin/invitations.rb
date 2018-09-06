@@ -60,13 +60,12 @@ controller do
         message_params = {:from => 'giypablo@mailgun.giypablo.com',
                 :to => @g.email,
                 :subject => 'Gi y Pablo - Invitación a Nuestro Casamiento!',
-                :html => (render_to_string(template: "../views/invitation_mailer/send_invitation_email",:locals => {:guest => @g})).to_str
+                :html => (render_to_string(template: "../views/invitation_mailer/send_invitation_email",:locals => {:guest => @g})).to_str, layout: false
         }
         
         result = mg_client.send_message('mailgun.giypablo.com', message_params).to_h!
         
         results.store(@g.email,result)
-        @guest.save
       end
       render 'quick_response.js', layout: false
       #render json: { status: results} 
