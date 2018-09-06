@@ -57,12 +57,11 @@ controller do
 
         mg_client = Mailgun::Client.new(ENV['MAILGUN_API_KEY'])
 
-        message_params =  {
-                           from: 'giypablo@mailgun.giypablo.com',
-                           to:   @g.email,
-                           subject: 'Gi y Pablo - Invitación a Nuestro Casamiento!',
-                           text:    'Los invitamos a Nuestro Casamiento!'
-                          }
+        message_params = {:from => 'giypablo@mailgun.giypablo.com',
+                :to => @g.email,
+                :subject => 'Gi y Pablo - Invitación a Nuestro Casamiento!',
+                :html => (render_to_string(template: "../views/invitation_mailer/send_invitation_email")).to_str
+        }
         
         result = mg_client.send_message('mailgun.giypablo.com', message_params).to_h!
         
