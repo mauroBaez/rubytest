@@ -56,16 +56,16 @@ controller do
         mg_client = Mailgun::Client.new(ENV['MAILGUN_API_KEY'])
 
         message_params =  {
-                           from: 'bob@mailgun.giypablo.com',
+                           from: 'giypablo@mailgun.giypablo.com',
                            to:   @g.email,
-                           subject: 'The Ruby SDK is awesome!',
-                           text:    'It is really easy to send a message!'
+                           subject: 'Gi y Pablo - Invitación a Nuestro Casamiento!',
+                           text:    'Los invitamos a Nuestro Casamiento!'
                           }
         
         result = mg_client.send_message('mailgun.giypablo.com', message_params).to_h!
         
         results.store(@g.email,result)
-        @guest.las
+        @guest.save
       end
       
       render json: { status: results} 
