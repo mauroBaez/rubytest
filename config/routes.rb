@@ -2,8 +2,6 @@ Rails.application.routes.draw do
   resources :guests
   
   resources :invitations
-  get ':id' => 'pages#index', as: :invitation_page
-  
   get '/admin/invitations/:id/quick_send' => 'admin/invitations#quick_send', as: :admin_invitation_quick_send
   post '/admin/invitations/:id/quick_send_mails' => 'admin/invitations#quick_send_mails', as: :admin_invitation_quick_send_mails
   
