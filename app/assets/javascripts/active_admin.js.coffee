@@ -16,7 +16,4 @@
 #= require fancybox
 #= require activeadmin-orderable
 #= require admin
-$(document).ready ->
-  jQuery(' a.fancybox').fancybox()
-$(document).ready ->
-  jQuery(".best_in_place").best_in_place()
+

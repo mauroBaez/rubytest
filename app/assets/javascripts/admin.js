@@ -1,5 +1,6 @@
 $(document).ready(function(){
-  
+  $('a.fancybox').fancybox()
+  $(".best_in_place").best_in_place()
   
   $('.lightbox').click(function(event){
     event.preventDefault();
@@ -69,3 +70,7 @@ $(document).ready(function(){
   //displayVals();
   
 })
+$(document).on('ready page:load', function () {
+/* Activating Best In Place */
+$(".best_in_place").best_in_place();
+});

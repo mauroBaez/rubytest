@@ -5,7 +5,7 @@ ActiveAdmin.setup do |config|
   # for each of the active admin pages.
   #
 
-  config.site_title = "Gise & Pablo"
+  config.site_title = "Gi & Pablo"
 
   # Set the link url for the title. For example, to take
   # users to your main site. Defaults to no link.

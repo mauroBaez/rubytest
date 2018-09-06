@@ -29,7 +29,7 @@ controller do
   def update
     update! do |format, invitation|
       format.html { redirect_to edit_admin_invitation_path(resource) }
-      format.json { render json: resource }
+      format.json { render json: edit_admin_invitation_path(resource) }
     end
     
   end
