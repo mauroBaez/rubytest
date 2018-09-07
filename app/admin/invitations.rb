@@ -55,6 +55,8 @@ controller do
       @fondo = ActionController::Base.helpers.asset_path("fondo-mail.jpg")
       @calendar = ActionController::Base.helpers.asset_path("calendar.png")
       @guests = params[:guests]
+      @invitation = Invitation.find(params[:id])
+      @invitados = @invitation.guests.collect{|t| t.name}.join('<br>').html_safe
       @results = {}
       @guests.each do |key, value|
         @g = Guest.find(key)
@@ -220,6 +222,11 @@ alt="Insert alt text here" style="display: block; color: #666666;  font-family: 
 serif; color: #cd30a6; padding-top: 30px;" class="padding">Invitaci&oacute;n a Nuestro Casamiento</td>
                                         </tr>
                                         <tr>
+                                            <td align="center" style="font-size: 25px; font-family: Helvetica, Arial, sans-
+
+serif; color: #cd30a6; padding-top: 30px;font-weight:bold" class="padding">' +  @invitados + '</td>
+                                        </tr>
+                                        <tr>
                                             <td align="center" style="padding: 20px 0 0 0; font-size: 16px; line-height: 
 
 25px; font-family: Helvetica, Arial, sans-serif; color: #666666;" class="padding">Es nuestro deseo que esten junto a 
@@ -243,7 +250,7 @@ container">
                                                     <tr>
                                                     	<td align="center" style="border-radius: 3px;" bgcolor="#984ecb"><a 
 
-href="https://www.giypablo.com/' + @g.invitation_id.to_s + '" target="_blank" style="font-size: 16px; font-family: Helvetica, Arial, sans-serif; color: #ffffff; 
+href="https://www.giypablo.com/invitations/' + @g.invitation_id.to_s + '" target="_blank" style="font-size: 16px; font-family: Helvetica, Arial, sans-serif; color: #ffffff; 
 
 text-decoration: none; color: #ffffff; text-decoration: none; border-radius: 3px; padding: 15px 25px; border: 1px solid 
 
