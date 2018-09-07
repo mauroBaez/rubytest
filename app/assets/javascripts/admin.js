@@ -72,5 +72,7 @@ $(document).ready(function(){
 })
 $(document).on('ready page:load', function () {
 /* Activating Best In Place */
-$(".best_in_place").best_in_place();
+  $('a.fancybox').fancybox()
+  $(".best_in_place").best_in_place()
+  
 });

@@ -40,12 +40,20 @@ controller do
     end
   end
   
+  def quick_whatsapp
+      @invitation = Invitation.find(params[:id])
+      @guests = @invitation.guests
+      
+      render layout: false 
+  end
+  
   def quick_send
       @invitation = Invitation.find(params[:id])
       @guests = @invitation.guests
       
       render layout: false 
   end
+  
   def quick_send_mails
       #@invitation = Invitation.find(params[:id])
       #@guests = @invitation.guests
@@ -167,7 +175,7 @@ changing default text sizes */
 <div style="display: none; font-size: 1px; color: #fefefe; line-height: 1px; font-family: Helvetica, Arial, sans-serif; 
 
 max-height: 0px; max-width: 0px; opacity: 0; overflow: hidden;">
-    Entice the open with some amazing preheader text. Use a little mystery and get those subscribers to read through...
+    Nos Conocimos...!! Nos Enamoramos...!! Nos Casamos....!!
 </div>
 
 <!-- HEADER -->
@@ -314,7 +322,7 @@ width:100%;">
                                             <tr>
                                                 <td valign="top" style="padding: 40px 0 0 0;" class="mobile-hide"><a 
 
-href="http://litmus.com" target="_blank"><img src="https://www.giypablo.com' + @calendar +'" alt="alt text here" width="105" height="105" border="0" 
+href="http://litmus.com" target="_blank"><img src="https://www.giypablo.com' + @calendar + '" alt="alt text here" width="105" height="105" border="0" 
 
 style="display: block; font-family: Arial; color: #666666; font-size: 14px; width: 105px; height: 105px;"></a></td>
                                             </tr>
@@ -400,7 +408,7 @@ width:100%;">
                                             <tr>
                                                 <td valign="top" style="padding: 40px 0 0 0;" class="mobile-hide"><a 
 
-href="http://litmus.com" target="_blank"><img src="https://www.giypablo.com' + @calendar +'" alt="alt text here" width="105" height="105" border="0" 
+href="http://litmus.com" target="_blank"><img src="https://www.giypablo.com' + @calendar + '" alt="alt text here" width="105" height="105" border="0" 
 
 style="display: block; font-family: Arial; color: #666666; font-size: 14px; width: 105px; height: 105px;"></a></td>
                                             </tr>
@@ -483,7 +491,7 @@ width:100%;">
                                             <tr>
                                                 <td valign="top" style="padding: 40px 0 0 0;" class="mobile-hide"><a 
 
-href="http://litmus.com" target="_blank"><img src="https://www.giypablo.com' + @calendar +'"  alt="alt text here" width="105" height="105" border="0" 
+href="http://litmus.com" target="_blank"><img src="https://www.giypablo.com' + @calendar + '"  alt="alt text here" width="105" height="105" border="0" 
 
 style="display: block; font-family: Arial; color: #666666; font-size: 14px; width: 105px; height: 105px;"></a></td>
                                             </tr>
@@ -605,11 +613,11 @@ end
 
 
 action_item only: :show do
-  link_to 'Enviar por Emaill', admin_invitation_quick_send_path, class: 'fancybox', data: { 'fancybox-type' => 'ajax' }
+  link_to 'Enviar por Email', admin_invitation_quick_send_path, class: 'fancybox', data: { 'fancybox-type' => 'ajax' }
 end
 
 action_item :view, only: :show do
-  link_to 'Compartir por Whatsapp', admin_invitation_path(resource)+'?send=whatsapp'
+  link_to 'Enviar por Whatsapp', admin_invitation_quick_whatsapp_path, class: 'fancybox', data: { 'fancybox-type' => 'ajax' }
 end
 
 sidebar "Estado de Envío", only: :show do

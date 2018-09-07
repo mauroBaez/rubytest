@@ -1,0 +1,15 @@
+<div class="panel">
+    <h3>Enviar Invitaciones por Whatsapp</h3>
+    <div class="panel_contents">
+        <p><strong>Hacer clic sobre el Invitado al que se le quiera enviar la Invitación por Whatsapp</strong></p>
+        <% @guests.each do |guest| %>
+            <% if guest.phone != "" %>
+                <p>
+                <a class="button" target="_blank" href="https://api.whatsapp.com/send?l=es&phone=54<%= guest.phone %>&text=https://www.giypablo.com/invitations/<%= guest.invitation_id %>/"><strong><%= guest.name %></strong> - <%= guest.phone %></a>
+                </p>
+            <% end %>
+        <% end %>
+      
+    </div>
+    
+</div>

@@ -144,6 +144,8 @@ GEM
     fancybox2-rails (0.2.7)
       railties (>= 3.1.0)
     ffi (1.9.23)
+    font-awesome-rails (4.7.0.4)
+      railties (>= 3.2, < 6.0)
     font-awesome-sass (5.0.13)
       sassc (>= 1.11)
     formadmin (0.2.1)
@@ -401,6 +403,7 @@ DEPENDENCIES
   devise
   dotenv-rails
   fancybox2-rails
+  font-awesome-rails
   font-awesome-sass (~> 5.0.13)
   formadmin
   image_processing (~> 1.0)

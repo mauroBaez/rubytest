@@ -98,3 +98,4 @@ gem "activeadmin-orderable"
 gem 'sendgrid-ruby'
 gem 'rest-client'
 gem 'mailgun-ruby'
+gem 'font-awesome-rails'
