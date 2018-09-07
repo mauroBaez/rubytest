@@ -177,7 +177,7 @@ max-height: 0px; max-width: 0px; opacity: 0; overflow: hidden;">
                 <tr>
                     <td align="center" valign="top" style="padding: 15px 0;" class="logo">
                         <a href="http://litmus.com" target="_blank">
-                            <img alt="Logo" src="' + ActionController::Base.asset_host + ActionController::Base.helpers.asset_path(source)("logo.png") +'" width="220" height="220" style="display: block; font-family: 
+                            <img alt="Logo" src="' + ActionController::Base.asset_host + ActionController::Base.helpers.asset_path("logo.png") +'" width="220" height="220" style="display: block; font-family: 
 
 Helvetica, Arial, sans-serif; color: #ffffff; font-size: 16px;" border="0">
                         </a>
@@ -208,7 +208,7 @@ table">
                             <tr>
                               	<td class="padding" align="center">
                                     <a href="http://litmus.com" target="_blank">
-                                        <img src="' + ActionController::Base.asset_host + ActionController::Base.helpers.asset_path(source)("fondo-sm.jpg") +'" width="500" height="400" border="0" 
+                                        <img src="' + ActionController::Base.asset_host + ActionController::Base.helpers.asset_path("fondo-sm.jpg") +'" width="500" height="400" border="0" 
 
 alt="Insert alt text here" style="display: block; color: #666666;  font-family: Helvetica, arial, sans-serif; font-size: 
 
