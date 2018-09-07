@@ -43,13 +43,16 @@ controller do
   def quick_send
       @invitation = Invitation.find(params[:id])
       @guests = @invitation.guests
-      render layout: false
+      
+      render layout: false 
   end
   def quick_send_mails
       #@invitation = Invitation.find(params[:id])
       #@guests = @invitation.guests
       #render layout: false
       #UserNotifier.send_signup_email(@guest).deliver
+      @logo = ActionController::Base.helpers.asset_path("logo.png")
+      @fondo = ActionController::Base.helpers.asset_path("fondo-sm.jpg")
       @guests = params[:guests]
       results = {}
       @guests.each do |key, value|
@@ -177,7 +180,7 @@ max-height: 0px; max-width: 0px; opacity: 0; overflow: hidden;">
                 <tr>
                     <td align="center" valign="top" style="padding: 15px 0;" class="logo">
                         <a href="http://litmus.com" target="_blank">
-                            <img alt="Logo" src="' + ActionController::Base.asset_host + ActionController::Base.helpers.asset_path("logo.png") +'" width="220" height="220" style="display: block; font-family: 
+                            <img alt="Logo" src="https://www.giypablo.com' + @logo +'" width="220" height="220" style="display: block; font-family: 
 
 Helvetica, Arial, sans-serif; color: #ffffff; font-size: 16px;" border="0">
                         </a>
@@ -208,7 +211,7 @@ table">
                             <tr>
                               	<td class="padding" align="center">
                                     <a href="http://litmus.com" target="_blank">
-                                        <img src="' + ActionController::Base.asset_host + ActionController::Base.helpers.asset_path("fondo-sm.jpg") +'" width="500" height="400" border="0" 
+                                        <img src="https://www.giypablo.com' +  @fondo + '" width="500" height="400" border="0" 
 
 alt="Insert alt text here" style="display: block; color: #666666;  font-family: Helvetica, arial, sans-serif; font-size: 
 
@@ -558,18 +561,18 @@ PASAJE LAS PROVINCIAS 3052 / 3068</td>
         mg_client = Mailgun::Client.new(ENV['MAILGUN_API_KEY'])
 
         message_params = {:from => 'giypablo@mailgun.giypablo.com',
-                :to => @g.email,
-                :subject => 'Gi y Pablo - Invitación a Nuestro Casamiento!',
-                :html => @html
+               :to => @g.email,
+               :subject => 'Gi y Pablo - Invitación a Nuestro Casamiento!',
+               :html => @html
         }
         
         result = mg_client.send_message('mailgun.giypablo.com', message_params).to_h!
         
         results.store(@g.email,result)
       end
-      render 'quick_response.js', layout: false
-      #render json: { status: results} 
-      #redirect_to admin_invitation_path(params[:id])
+      #render 'quick_response.js', layout: false
+      #render @html
+      redirect_to admin_invitation_path(params[:id])
 
   end
   def quick_sort
