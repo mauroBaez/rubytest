@@ -53,6 +53,7 @@ controller do
       #UserNotifier.send_signup_email(@guest).deliver
       @logo = ActionController::Base.helpers.asset_path("logo.png")
       @fondo = ActionController::Base.helpers.asset_path("fondo-sm.jpg")
+      @calendar = ActionController::Base.helpers.asset_path("calendar.png")
       @guests = params[:guests]
       results = {}
       @guests.each do |key, value|
@@ -316,7 +317,7 @@ width:100%;">
                                             <tr>
                                                 <td valign="top" style="padding: 40px 0 0 0;" class="mobile-hide"><a 
 
-href="http://litmus.com" target="_blank"><img src="calendar.png" alt="alt text here" width="105" height="105" border="0" 
+href="http://litmus.com" target="_blank"><img src="https://www.giypablo.com' + @logo +'" alt="alt text here" width="105" height="105" border="0" 
 
 style="display: block; font-family: Arial; color: #666666; font-size: 14px; width: 105px; height: 105px;"></a></td>
                                             </tr>
@@ -402,7 +403,7 @@ width:100%;">
                                             <tr>
                                                 <td valign="top" style="padding: 40px 0 0 0;" class="mobile-hide"><a 
 
-href="http://litmus.com" target="_blank"><img src="calendar.png" alt="alt text here" width="105" height="105" border="0" 
+href="http://litmus.com" target="_blank"><img src="https://www.giypablo.com' + @logo +'" alt="alt text here" width="105" height="105" border="0" 
 
 style="display: block; font-family: Arial; color: #666666; font-size: 14px; width: 105px; height: 105px;"></a></td>
                                             </tr>
@@ -485,7 +486,7 @@ width:100%;">
                                             <tr>
                                                 <td valign="top" style="padding: 40px 0 0 0;" class="mobile-hide"><a 
 
-href="http://litmus.com" target="_blank"><img src="calendar.png" alt="alt text here" width="105" height="105" border="0" 
+href="http://litmus.com" target="_blank"><img src="https://www.giypablo.com' + @logo +'"  alt="alt text here" width="105" height="105" border="0" 
 
 style="display: block; font-family: Arial; color: #666666; font-size: 14px; width: 105px; height: 105px;"></a></td>
                                             </tr>
