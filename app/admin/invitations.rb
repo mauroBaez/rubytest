@@ -175,9 +175,9 @@ max-height: 0px; max-width: 0px; opacity: 0; overflow: hidden;">
     <tr>
         <td bgcolor="#e8e8e8" align="center">
             <!--[if (gte mso 9)|(IE)]>
-            <table align="center" border="0" cellspacing="0" cellpadding="0" width="500">
+            <table align="center" border="0" cellspacing="0" cellpadding="0" width="600">
             <tr>
-            <td align="center" valign="top" width="500">
+            <td align="center" valign="top" width="600">
             <![endif]-->
             
             <!--[if (gte mso 9)|(IE)]>
@@ -190,11 +190,11 @@ max-height: 0px; max-width: 0px; opacity: 0; overflow: hidden;">
     <tr>
         <td bgcolor="#ffffff" align="center" style="padding: 70px 15px 70px 15px;" class="section-padding">
             <!--[if (gte mso 9)|(IE)]>
-            <table align="center" border="0" cellspacing="0" cellpadding="0" width="500">
+            <table align="center" border="0" cellspacing="0" cellpadding="0" width="600">
             <tr>
-            <td align="center" valign="top" width="500">
+            <td align="center" valign="top" width="600">
             <![endif]-->
-            <table border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width: 780px;" class="responsive-
+            <table border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width: 600px;" class="responsive-
 
 table">
                 <tr>
@@ -204,7 +204,7 @@ table">
                             <tr>
                               	<td class="padding" align="center">
                                     <a href="http://litmus.com" target="_blank">
-                                        <img src="https://www.giypablo.com' +  @fondo + '" width="780" height="auto" border="0" 
+                                        <img src="https://www.giypablo.com' +  @fondo + '" width="600" height="auto" border="0" 
 
 alt="Insert alt text here" style="display: block; color: #666666;  font-family: Helvetica, arial, sans-serif; font-size: 
 
@@ -222,9 +222,9 @@ alt="Insert alt text here" style="display: block; color: #666666;  font-family: 
 serif; color: #cd30a6; padding-top: 30px;" class="padding">Invitaci&oacute;n a Nuestro Casamiento</td>
                                         </tr>
                                         <tr>
-                                            <td align="center" style="font-size: 25px; font-family: Helvetica, Arial, sans-
+                                            <td align="center" style="padding: 20px 0 0 0; font-size: 16px; line-height: 
 
-serif; color: #cd30a6; padding-top: 30px;font-weight:bold" class="padding">' +  @invitados + '</td>
+25px; font-family: Helvetica, Arial, sans-serif; color: #666666; font-weight:bold" class="padding">' +  @invitados + '</td>
                                         </tr>
                                         <tr>
                                             <td align="center" style="padding: 20px 0 0 0; font-size: 16px; line-height: 
