@@ -177,17 +177,7 @@ max-height: 0px; max-width: 0px; opacity: 0; overflow: hidden;">
             <tr>
             <td align="center" valign="top" width="500">
             <![endif]-->
-            <table border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width: 500px;" class="wrapper">
-                <tr>
-                    <td align="center" valign="top" style="padding: 15px 0;" class="logo">
-                        <a href="http://litmus.com" target="_blank">
-                            <img alt="Logo" src="https://www.giypablo.com' + @logo + '" width="220" height="220" style="display: block; font-family: 
-
-Helvetica, Arial, sans-serif; color: #ffffff; font-size: 16px;" border="0">
-                        </a>
-                    </td>
-                </tr>
-            </table>
+            
             <!--[if (gte mso 9)|(IE)]>
             </td>
             </tr>
@@ -202,7 +192,7 @@ Helvetica, Arial, sans-serif; color: #ffffff; font-size: 16px;" border="0">
             <tr>
             <td align="center" valign="top" width="500">
             <![endif]-->
-            <table border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width: 500px;" class="responsive-
+            <table border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width: 780px;" class="responsive-
 
 table">
                 <tr>
@@ -212,7 +202,7 @@ table">
                             <tr>
                               	<td class="padding" align="center">
                                     <a href="http://litmus.com" target="_blank">
-                                        <img src="https://www.giypablo.com' +  @fondo + '" width="500" height="400" border="0" 
+                                        <img src="https://www.giypablo.com' +  @fondo + '" width="780" height="auto" border="0" 
 
 alt="Insert alt text here" style="display: block; color: #666666;  font-family: Helvetica, arial, sans-serif; font-size: 
 
@@ -253,7 +243,7 @@ container">
                                                     <tr>
                                                     	<td align="center" style="border-radius: 3px;" bgcolor="#984ecb"><a 
 
-href="https://www.giypablo.com/' + @g.id.to_s + '" target="_blank" style="font-size: 16px; font-family: Helvetica, Arial, sans-serif; color: #ffffff; 
+href="https://www.giypablo.com/' + @g.invitation_id.to_s + '" target="_blank" style="font-size: 16px; font-family: Helvetica, Arial, sans-serif; color: #ffffff; 
 
 text-decoration: none; color: #ffffff; text-decoration: none; border-radius: 3px; padding: 15px 25px; border: 1px solid 
 
