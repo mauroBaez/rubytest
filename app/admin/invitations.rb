@@ -52,7 +52,7 @@ controller do
       #render layout: false
       #UserNotifier.send_signup_email(@guest).deliver
       @logo = ActionController::Base.helpers.asset_path("logo.png")
-      @fondo = ActionController::Base.helpers.asset_path("fondo-sm.jpg")
+      @fondo = ActionController::Base.helpers.asset_path("fondo-mail.jpg")
       @calendar = ActionController::Base.helpers.asset_path("calendar.png")
       @guests = params[:guests]
       @results = {}
