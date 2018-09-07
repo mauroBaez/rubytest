@@ -1,0 +1,6 @@
+<% if @guest.errors.any? %>
+  var html = "<%= escape_javascript(render 'error_messages', object: @guest) %>";
+  $('#quick-add-errors').html(html);
+<% else %>
+  window.location.reload();
+<% end %>

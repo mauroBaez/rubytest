@@ -55,7 +55,7 @@ controller do
       @fondo = ActionController::Base.helpers.asset_path("fondo-sm.jpg")
       @calendar = ActionController::Base.helpers.asset_path("calendar.png")
       @guests = params[:guests]
-      results = {}
+      @results = {}
       @guests.each do |key, value|
         @g = Guest.find(key)
 
@@ -317,7 +317,7 @@ width:100%;">
                                             <tr>
                                                 <td valign="top" style="padding: 40px 0 0 0;" class="mobile-hide"><a 
 
-href="http://litmus.com" target="_blank"><img src="https://www.giypablo.com' + @logo +'" alt="alt text here" width="105" height="105" border="0" 
+href="http://litmus.com" target="_blank"><img src="https://www.giypablo.com' + @calendar +'" alt="alt text here" width="105" height="105" border="0" 
 
 style="display: block; font-family: Arial; color: #666666; font-size: 14px; width: 105px; height: 105px;"></a></td>
                                             </tr>
@@ -403,7 +403,7 @@ width:100%;">
                                             <tr>
                                                 <td valign="top" style="padding: 40px 0 0 0;" class="mobile-hide"><a 
 
-href="http://litmus.com" target="_blank"><img src="https://www.giypablo.com' + @logo +'" alt="alt text here" width="105" height="105" border="0" 
+href="http://litmus.com" target="_blank"><img src="https://www.giypablo.com' + @calendar +'" alt="alt text here" width="105" height="105" border="0" 
 
 style="display: block; font-family: Arial; color: #666666; font-size: 14px; width: 105px; height: 105px;"></a></td>
                                             </tr>
@@ -486,7 +486,7 @@ width:100%;">
                                             <tr>
                                                 <td valign="top" style="padding: 40px 0 0 0;" class="mobile-hide"><a 
 
-href="http://litmus.com" target="_blank"><img src="https://www.giypablo.com' + @logo +'"  alt="alt text here" width="105" height="105" border="0" 
+href="http://litmus.com" target="_blank"><img src="https://www.giypablo.com' + @calendar +'"  alt="alt text here" width="105" height="105" border="0" 
 
 style="display: block; font-family: Arial; color: #666666; font-size: 14px; width: 105px; height: 105px;"></a></td>
                                             </tr>
@@ -569,11 +569,11 @@ PASAJE LAS PROVINCIAS 3052 / 3068</td>
         
         result = mg_client.send_message('mailgun.giypablo.com', message_params).to_h!
         
-        results.store(@g.email,result)
+        @results.store(@g.email,result)
       end
-      #render 'quick_response.js', layout: false
+      render 'quick_send_response.js', layout: false
       #render @html
-      redirect_to admin_invitation_path(params[:id])
+      #redirect_to admin_invitation_path(params[:id])
 
   end
   def quick_sort
