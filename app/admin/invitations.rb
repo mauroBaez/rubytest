@@ -11,7 +11,6 @@ ActiveAdmin.register Invitation do
 #   permitted << :other if params[:action] == 'create' && current_user.admin?
 #   permitted
 # end
-include AssetHelper
 @name = "Invitación"
 menu false
 menu false
