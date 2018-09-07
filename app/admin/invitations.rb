@@ -62,7 +62,13 @@ controller do
           </head>
           <body>
             <h1>Welcome to example.com," + @g.name + "</h1>
-            
+            <table>
+    <tr>
+        <td style='background-color: #8d3ac5;padding: 10px;text-align: center;'>
+            <a style='display: block;color: #ffffff;font-size: 12px;text-decoration: none;text-transform: uppercase;' href='https://www.giypablo.com/" + @g.id.to_s + "'>Ver Invitación</a>
+        </td>
+    </tr>
+</table>
             <p>
               <a href='https://www.giypablo.com/" + @g.id.to_s + "'>Ver Invitación</a>
             </p>
