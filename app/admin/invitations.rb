@@ -181,7 +181,7 @@ max-height: 0px; max-width: 0px; opacity: 0; overflow: hidden;">
                 <tr>
                     <td align="center" valign="top" style="padding: 15px 0;" class="logo">
                         <a href="http://litmus.com" target="_blank">
-                            <img alt="Logo" src="https://www.giypablo.com' + @logo +'" width="220" height="220" style="display: block; font-family: 
+                            <img alt="Logo" src="https://www.giypablo.com' + @logo + '" width="220" height="220" style="display: block; font-family: 
 
 Helvetica, Arial, sans-serif; color: #ffffff; font-size: 16px;" border="0">
                         </a>
@@ -563,7 +563,7 @@ PASAJE LAS PROVINCIAS 3052 / 3068</td>
 
         message_params = {:from => 'giypablo@mailgun.giypablo.com',
                :to => @g.email,
-               :subject => 'Gi y Pablo - Invitación a Nuestro Casamiento!',
+               :subject => 'Gi y Pablo - Invitación a Nuestro Casamiento',
                :html => @html
         }
         
@@ -608,7 +608,7 @@ end
 
 
 action_item only: :show do
-  link_to 'Enviar por Email', admin_invitation_quick_send_path, class: 'fancybox', data: { 'fancybox-type' => 'ajax' }
+  link_to 'Enviar por Emaill', admin_invitation_quick_send_path, class: 'fancybox', data: { 'fancybox-type' => 'ajax' }
 end
 
 action_item :view, only: :show do
