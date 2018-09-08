@@ -179,8 +179,8 @@ body {
 	background-color: #fff;
 	background-image: asset-url("papel");
 	background-repeat: repeat;
-	@media screen and (max-width: $screen-sm) {
-		font-size: 20px;
+	@media screen and (max-width: $screen-md) {
+		font-size: 36px;
 	}
 }
 .gradient{
@@ -211,6 +211,7 @@ body {
 	width: 100%;
 	height: 100%;
 	@include transition(.5s);
+	
 	.offcanvas & {
 		overflow: hidden;	
 		position: absolute;
@@ -1086,7 +1087,9 @@ form {
 span.border {
 	@include separator;
     margin-top: 0;
-    
+    &.tall{
+		margin: 30px;
+	}
 	
 }
 

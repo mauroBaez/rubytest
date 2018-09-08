@@ -644,7 +644,6 @@ show do |invitation|
       row "Título" do
         best_in_place invitation, :title, as: :input, url: [:admin, invitation], :place_holder => "Clic para editar"
       end
-      row "Última modificación", :updated_at
     end
   end
 

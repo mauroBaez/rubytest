@@ -1,9 +1,11 @@
-<div id="modal">    
-  <h2>Agregar Invitado</h2> 
-    <p class="modal-description">Añadir Invitado a la lista.</p>
-    <%= simple_form_for(@guest, url: admin_guest_quick_create_path, remote: true) do |f| %>
+<%= simple_form_for(@guest, url: admin_guest_quick_create_path, remote: true) do |f| %>
+<div class="panel">
+  <h3>Agregar Invitado</h3>
+    <div class="panel_contents">
       <%= f.error_notification %>
       <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+      <p><strong>Añadir Invitado a la lista</strong><br><br></p>
+
       <fieldset>
         <%= f.input :name , label: 'Nombre del Invitado' %>
       </fieldset>
@@ -13,10 +15,15 @@
       <fieldset>
         <%= f.input :phone , label: 'Teléfono móvil del Invitado' %>
       </fieldset>
-      <ul class="form-actions">
-        <li>
-          <%= f.button :submit, "Agregar Invitado"   %>
-        </li>
-      </ul>
-    <% end %>
-</div>
+      
+    </div>
+    
+  </div>
+  <fieldset class="actions">
+            <ol>
+                <li class="action input_action " id="invitation_submit_action">
+                    <%= f.button :submit, "Agregar Invitado"   %>
+                </li>
+            </ol>
+    </fieldset>
+<% end %>

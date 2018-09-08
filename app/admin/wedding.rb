@@ -56,6 +56,7 @@ form do |f|
     tab 'Invitación' do
       f.inputs 'Detalle de la Invitación' do
         
+        f.input :invitation_details_title, label: "Título de la Invitación"
         f.input :invitation_details_content, as: :medium_editor, label: "Contenido de la Invitación"
         
       end

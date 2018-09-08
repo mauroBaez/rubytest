@@ -190,3 +190,13 @@ overflow: hidden;
   padding: 0;
 }
 } 
+.best_in_place{
+      border-bottom: dashed 1px #777;
+      cursor: pointer;
+}
+.fancybox-wrap {
+  form input[type='text'], form input[type='password'], form input[type='email'], form input[type='number'], form input[type='url'], form input[type='tel'], form input[type='date'], form textarea {
+    width: 100%!important;
+  }
+  
+}

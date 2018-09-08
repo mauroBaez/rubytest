@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_08_26_019993) do
+ActiveRecord::Schema.define(version: 2018_08_26_019994) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string "namespace"
@@ -186,6 +186,7 @@ ActiveRecord::Schema.define(version: 2018_08_26_019993) do
     t.text "gifts_details_content"
     t.string "gifts_details_content_btn_text"
     t.text "gifts_info_content"
+    t.string "invitation_details_title"
   end
 
 end
