@@ -564,16 +564,7 @@ PASAJE LAS PROVINCIAS 3052 / 3068</td>
 </body>
 </html>'
         
-        mg_client = Mailgun::Client.new(ENV['MAILGUN_API_KEY'])
-
-        message_params = {:from => 'giypablo@mailgun.giypablo.com',
-               :to => @g.email,
-               :subject => 'Gi y Pablo - Invitación a Nuestro Casamiento',
-               :html => @html
-        }
-        
-        result = mg_client.send_message('mailgun.giypablo.com', message_params).to_h!
-        
+        InvitationMailer.send_invitation_email(@g).deliver
         @results.store(@g.email,result)
       end
       render 'quick_send_response.js', layout: false
