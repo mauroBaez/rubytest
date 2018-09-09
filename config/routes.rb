@@ -35,7 +35,7 @@ Rails.application.routes.draw do
 
   get 'pages/contact'
   get 'pages/about'
-  
+  mount SpecialDelivery::Engine => "/email_events"
   mount Shrine.upload_endpoint(:cache) => "/upload"
   #mount ImageUploader::UploadEndpoint => "/upload"
 

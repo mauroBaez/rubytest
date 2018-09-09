@@ -656,6 +656,7 @@ show do |invitation|
         div class: 'button-row' do
           link_to 'Agregar Invitado', admin_guest_quick_add_path, class: 'fancybox button', data: { 'fancybox-type' => 'ajax' }
         end
+        
         table_for invitation.guests, {:class => 'index_table'} do |guests|
           column "Nombre del Invitado" do |guest|
               best_in_place guest, :name, as: :input, url: [:admin, invitation,guest], :place_holder => "Clic para agregar",:required => true
