@@ -1,5 +1,5 @@
 $(document).ready(function(){
-  $('a.fancybox').fancybox()
+  $("a.fancybox").fancybox({parent: 'body'});
   $(".best_in_place").best_in_place()
   
   $('.lightbox').click(function(event){
@@ -72,7 +72,8 @@ $(document).ready(function(){
 })
 $(document).on('ready page:load', function () {
 /* Activating Best In Place */
-  $('a.fancybox').fancybox()
+  $("a.fancybox").fancybox({parent: 'body'});
+
   $(".best_in_place").best_in_place()
   
 });

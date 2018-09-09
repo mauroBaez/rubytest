@@ -180,7 +180,7 @@ body {
 	background-image: asset-url("papel");
 	background-repeat: repeat;
 	@media screen and (max-width: $screen-md) {
-		font-size: 36px;
+		font-size: 24px;
 	}
 }
 .gradient{
@@ -203,6 +203,13 @@ body {
 }
 .primary-color-bg{
 	background: rgba(103, 32, 150, 1); 
+}
+
+.container {
+	@media screen and (max-width: $screen-md) {
+		max-width: 100%;
+	}
+    
 }
 
 #page {
@@ -487,8 +494,8 @@ h1, h2, h3, h4, h5, h6, figure {
 	width: 100%;
 	img.logo{
 		@media screen and (max-width: $screen-md) {
-			margin-bottom:200px;
-			padding: 30px 10%;
+			margin-bottom: 180px;
+    		padding: 30px 15%;
 		}
 	}
 	.overlay {
@@ -601,8 +608,9 @@ h1, h2, h3, h4, h5, h6, figure {
 	}
 
 	.event-wrap{
-			background: rgba($brand-white, 0.55);
-	    padding: 15px 0;
+		background: rgba($brand-white, 0.55);
+	    padding-top: 15px;
+	    padding-bottom: 15px;
 	    width: 100%;
 	    float: left;
 		box-shadow: 0px 4px 60px -15px rgba(0, 0, 0, 0.95);
@@ -619,7 +627,6 @@ h1, h2, h3, h4, h5, h6, figure {
 		    background: #5A3C6C;
 		    margin: 0;
 		    color: $brand-white;
-    		letter-spacing: 2px;
 		}
 		h3{
 			font-family: $font-primary;
@@ -927,12 +934,18 @@ box-shadow: 0px 4px 60px -15px rgba(0, 0, 0, 0.95);
 		@media screen and (max-width: $screen-xs) {
 			margin-left: 0;
 		}
+		@media screen and (max-width: $screen-sm) {
+			min-height: 280px;
+		}
 		a {
 			min-height: 400px;
 			padding: 2em;
 			position: relative;
 			width: 100%;
 			display: block;
+			@media screen and (max-width: $screen-sm) {
+				min-height: 280px;
+			}
 			&:before {
 				position: absolute;
 				top: 0;
@@ -984,9 +997,7 @@ box-shadow: 0px 4px 60px -15px rgba(0, 0, 0, 0.95);
 			@media screen and (max-width: $screen-sm) {
 				width: 49%;	
 			}
-			@media screen and (max-width: $screen-xs) {
-				width: 100%;	
-			}
+			
 		}
 		
 	}
@@ -1134,17 +1145,17 @@ span.border {
 		h1 {
 			font-family: $font-secondary;
 			margin-bottom: 0px;
-			font-size: 5em;
+			font-size: 4em;
 			line-height: 1.7;
 			@media screen and (max-width: $screen-md) {
-				font-size: 5.25em;
+				font-size: 4.25em;
 				padding-top: 60px;
 			}
 			@media screen and (max-width: $screen-sm) {
-				font-size: 4.5em;
+				font-size: 3.5em;
 			}
 			@media screen and (max-width: $screen-xs) {
-				font-size: 4em;
+				font-size: 3em;
 			}
 		}
 		h2 {
@@ -1220,42 +1231,87 @@ span.border {
 .simply-countdown {
     /* The countdown */
     padding-bottom: 30px;
-	
-}
-.simply-countdown > .simply-section {
+    @media screen and (max-width: $screen-md) {
+	    padding: 0 30px 30px;
+	}
+	.simply-section {
     /* coutndown blocks */
     display: inline-block;
     
     background: rgba($brand-primary,.85);
-    margin: 0 4px;
+    margin: 0 1%;
     @include border-radius(50%);
     position: relative;
-    height: 100px;
-    width: 100px;
-    @media screen and (max-width: $screen-lg) {
+    width: 23%;
+	&:after {
+		  content: "";
+		  display: block;
+		  padding-bottom: 100%;
+		}
+    animation: pulse 1s ease infinite;
+    
+    div {
+	    /* countdown block inner div */
+	    display: table-cell;
+	    vertical-align: middle;
+	    
+	    position: absolute;
+	  width: 80%;
+	    height: 70%;
+	    margin: 15% 10%;
+	  @media screen and (max-width: $screen-md) {
 
-		height: 85px;
-    	width: 85px;
+	    width: 80%;
+	    height: 70%;
+	    margin: 15% 10%;
+
 	}
+	@media screen and (max-width: $screen-sm) {
+		width: 80%;
+	    height: 70%;
+	    margin: 15% 10%;
+
+	}
+	}
+    
+.simply-amount,.simply-word {
+	display: block;
+	color: rgba($brand-white,1);
+    /* amounts and words */
+}
+
+.simply-amount {
+	font-size: 3vw;
+    line-height: 1;
     @media screen and (max-width: $screen-md) {
-    background: rgba($brand-secondary,.5);
+	font-size: 9.2vw;
 
-		height: 100px;
-    	width: 100px;
 	}
-    @media screen and (max-width: $screen-sm) {
-		height: 80px;
-    	width: 80px;
+	@media screen and (max-width: $screen-sm) {
+	font-size: 9vw;
+
 	}
-    
-    
-    
-@media screen and (max-width: $screen-sm) {
-		height: 80px;
-    	width: 80px;
+}
+
+.simply-word {
+	color: rgba($brand-white,.7);
+    text-transform: uppercase;
+	font-size: 0.9vw;
+
+    line-height: 1;
+    @media screen and (max-width: $screen-md) {
+	font-size: 2.5vw;
+    line-height: 1.7;
+
 	}
-    animation: pulse 1s ease infinite, 
-    
+	@media screen and (max-width: $screen-sm) {
+	font-size: 2.2vw;
+    line-height: 1.7;
+
+	}
+    /* words */
+}
+}
 }
 
 @keyframes pulse {
@@ -1264,57 +1320,7 @@ span.border {
   100% { transform: scale(1); }
 }
 
-.simply-countdown > .simply-section > div {
-    /* countdown block inner div */
-    display: table-cell;
-    vertical-align: middle;
-    height: 100px;
-    width: 100px;
-    @media screen and (max-width: $screen-lg) {
 
-		height: 85px;
-    	width: 85px;
-	}
-    @media screen and (max-width: $screen-md) {
-
-		height: 100px;
-    	width: 100px;
-	}
-    @media screen and (max-width: $screen-sm) {
-		height: 80px;
-    	width: 80px;
-	}
-}
-
-.simply-countdown > .simply-section .simply-amount,
-.simply-countdown > .simply-section .simply-word {
-	display: block;
-	color: rgba($brand-white,1);
-    /* amounts and words */
-}
-
-.simply-countdown > .simply-section .simply-amount {
-	font-size: 30px;
-	line-height: 1;
-    /* amounts */
-}
-
-.simply-countdown > .simply-section .simply-word {
-	color: rgba($brand-white,.7);
-	text-transform: uppercase;
-	font-size: 12px;
-	@media screen and (max-width: $screen-md) {
-			font-size: 14px;
-			line-height: 1;
-
-	}
-	@media screen and (max-width: $screen-sm) {
-			font-size: 10px;
-			line-height: 1;
-
-	}
-    /* words */
-}
 
 #fh5co-testimonial,
 #fh5co-services,
@@ -1325,10 +1331,10 @@ span.border {
 #fh5co-couple,
 #fh5co-gallery,
 .fh5co-section {
-	padding: 5em 0;
+	padding: 3.8em 0;
 	clear: both;
 	@media screen and (max-width: $screen-sm) {
-		padding: 3em 0;
+		padding: 2.25em 0;
 	}
 }
 
@@ -1438,7 +1444,7 @@ span.border {
 		margin-bottom: 2em;
 	}
 	h2 {
-		font-size: 60px;
+		font-size: 3.8em;
 		margin-bottom: 10px;
 		line-height: 1.5;
 		color: #5A3C6C;
@@ -1449,7 +1455,7 @@ span.border {
 		    
 		}
 		@media screen and (max-width: $screen-sm){
-			font-size: 3em;
+			font-size: 2.25em;
 		}
 	}
 	p {

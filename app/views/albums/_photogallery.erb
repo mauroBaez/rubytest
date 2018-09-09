@@ -5,7 +5,8 @@
 		</div>
 	</div>
 	<div class="row">
-        <ul id="fh5co-gallery-list">
+		<div class="col-md-12">
+			<ul id="fh5co-gallery-list">
             <% @album.photos.each_with_index do |photo, idx| %>
     			<li class="gallery one-third animate-box fadeIn animated-fast" data-animate-effect="fadeIn" style="background-image: url(<%= photo.image_url(:thumbnail).to_s %>); "> 
                     <a href="<%= photo.image_url(:thumbnail).to_s %>">
@@ -16,4 +17,6 @@
         		</li>
             <% end %>
         </ul>
+		</div>
 	</div>
+        

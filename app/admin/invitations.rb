@@ -625,15 +625,20 @@ sidebar "Estado de Envío", only: :show do
 end
 
 index :title => 'Invitaciones' do
-  column "Invitados" do |invitation|
-    invitation.guests.collect{|t| t.name}.join(', ').html_safe
-  end
-  column "Cantidad de Invitados", :sortable do |invitation|
-    invitation.guests.count
-  end
-  column "" do |invitation|
-    link_to "Editar", admin_invitation_path(invitation), :class => "member_link edit_link"
-  end
+    column "Título" do |invitation|
+        invitation.title
+    end
+    column "Invitados" do |invitation|
+        invitation.guests.collect{|t| t.name}.join(', ').html_safe
+    end
+    
+    column "Cantidad de Invitados", :sortable do |invitation|
+        invitation.guests.count
+    end
+    actions dropdown: true do |invitation|
+        item "Editar", admin_invitation_path(invitation)
+    end
+    
 end
 
 show do |invitation|
