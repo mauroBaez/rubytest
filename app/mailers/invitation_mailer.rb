@@ -18,7 +18,7 @@ class InvitationCallback < SpecialDelivery::Callback
     def opened(guest)
         send_message_to_admin "#{guest.name} just opened their lottery winner email."
     end
-    def delivered()
+    def delivered(guest)
         send_message_to_admin " just opened their lottery winner email."
     end
 end
