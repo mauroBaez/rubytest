@@ -25,7 +25,7 @@ module SpecialDelivery
     end
 
     def ensure_authenticity
-      Authenticator.new(params).authentic? || render_nothing(:unauthorized)
+      SpecialDelivery::Authenticator.new(params).authentic? || render_nothing(:unauthorized)
     end
 
     def event
