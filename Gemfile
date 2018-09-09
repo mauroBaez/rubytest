@@ -99,4 +99,4 @@ gem 'sendgrid-ruby'
 gem 'rest-client'
 gem 'mailgun-ruby'
 gem 'font-awesome-rails'
-gem 'special-delivery'
+gem 'special-delivery', :path => "special-delivery"
