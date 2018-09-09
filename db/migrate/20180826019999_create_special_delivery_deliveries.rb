@@ -1,4 +1,4 @@
-class CreateSpecialDeliveryDeliveries < ActiveRecord::Migration
+class CreateSpecialDeliveryDeliveries < ActiveRecord::Migration[5.2]
   def change
     create_table :special_delivery_deliveries do |t|
       t.string :callback_class_name
