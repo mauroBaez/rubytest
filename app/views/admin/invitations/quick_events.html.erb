@@ -1,1 +1,7 @@
-<pre><%= @results.to_s %></pre>
+<table>
+    <% @results.each do |result| %>
+      <tr>
+        <td><%= result.url %></td>
+      </tr>
+    <% end %>
+</table>

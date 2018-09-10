@@ -49,7 +49,7 @@ controller do
     
     # Issue the get request
     @results = mg_client.get("#{domain}/events")
-    @results = @results.to_h
+    @results = @results.items.to_h
     #render json: result.to_h
     render layout: false 
 
