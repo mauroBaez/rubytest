@@ -4,11 +4,9 @@ class MailgunController < ApplicationController
   before_action :verify_mailgun_signature
 
   def bounced
-    render :json => params[:recipient]
-  end
+    render plain: { hello: 'world' }.to_json, content_type: 'application/json'  end
   def delivered
-    render :json => params[:recipient]
-  end
+    render plain: { hello: 'world' }.to_json, content_type: 'application/json'  end
   private
 
   def verify_mailgun_signature
