@@ -70,7 +70,7 @@ controller do
 
         
         InvitationMailer.send_invitation_email(@g, @invitados).deliver
-        @results.store(@g.email,result)
+        #@results.store(@g.email,result)
       end
       render 'quick_send_response.js', layout: false
       #render @html
