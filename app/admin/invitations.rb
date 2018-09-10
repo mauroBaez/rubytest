@@ -48,8 +48,10 @@ controller do
     domain = ENV['MAILGUN_DOMAIN']
     
     # Issue the get request
-    result = mg_client.get("#{domain}/events")
-    render json: result.to_h
+    @results = mg_client.get("#{domain}/events")
+    #render json: result.to_h
+    render layout: false 
+
   end
   
   def quick_whatsapp
