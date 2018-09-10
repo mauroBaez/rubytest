@@ -6,12 +6,7 @@
               <tr>
                 <td><%= value.to_s %></td>
                 <td>
-                    <% result.each do |value, result| %>
-                      <tr>
-                        <td><%= value.to_s %></td>
-                        <td><%= result.to_s %></td>
-                      </tr>
-                    <% end %>
+                    <%= result.to_s %>
                 </td>
               </tr>
             <% end %>
