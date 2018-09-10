@@ -2,7 +2,9 @@ require_dependency "special_delivery/application_controller"
 
 module SpecialDelivery
   class EventsController < ApplicationController
-    
+    skip_before_action :verify_authenticity_token
+
+    before_action :ensure_authenticity
 
     rescue_from ActiveRecord::RecordNotFound,
                 :with => :issue_accepted_response
@@ -23,7 +25,7 @@ module SpecialDelivery
     end
 
     def ensure_authenticity
-      #SpecialDelivery::Authenticator.new(params).authentic? || render_nothing(:unauthorized)
+      Authenticator.new(params).authentic? || render_nothing(:unauthorized)
     end
 
     def event
