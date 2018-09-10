@@ -1,9 +1,3 @@
-PATH
-  remote: special-delivery
-  specs:
-    special-delivery (0.1.3)
-      rails
-
 GEM
   remote: https://rubygems.org/
   specs:
@@ -431,7 +425,6 @@ DEPENDENCIES
   shrine (~> 2.11)
   shrine-cloudinary
   simple_form
-  special-delivery!
   spring
   spring-watcher-listen (~> 2.0.0)
   sqlite3
