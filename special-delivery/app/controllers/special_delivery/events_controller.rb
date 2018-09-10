@@ -2,6 +2,7 @@ require_dependency "special_delivery/application_controller"
 
 module SpecialDelivery
   class EventsController < ApplicationController
+    include SpecialDelivery::Authenticator
     skip_before_action :verify_authenticity_token
 
     before_action :ensure_authenticity
