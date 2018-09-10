@@ -48,17 +48,8 @@ controller do
     domain = ENV['MAILGUN_DOMAIN']
     
     # Issue the get request
-    result = mg_client.get("#{domain}/events", {:event => 'delivered'})
-    require 'builder'
-
-    data = result
-    xm = Builder::XmlMarkup.new(:indent => 2)
-    xm.table {
-      xm.tr { data[0].keys.each { |key| xm.th(key)}}
-      data.each { |row| xm.tr { row.values.each { |value| xm.td(value)}}}
-    }
-    #puts "#{xm}"
-    render json: xm
+    result = mg_client.get("#{domain}/events")
+    render json: result.to_h
   end
   
   def quick_whatsapp
