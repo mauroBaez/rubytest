@@ -40,6 +40,18 @@ controller do
     end
   end
   
+  def quick_events
+    # First, instantiate the Mailgun Client with your API key
+    mg_client = Mailgun::Client.new ENV['MAILGUN_API_KEY']
+    
+    # Define the domain you wish to query
+    domain = ENV['MAILGUN_DOMAIN']
+    
+    # Issue the get request
+    result = mg_client.get("#{domain}/events", {:event => 'delivered'})
+    render json: result
+  end
+  
   def quick_whatsapp
       @invitation = Invitation.find(params[:id])
       @guests = @invitation.guests
@@ -100,9 +112,6 @@ controller do
       @guest.invitation = @invitation
       @guest.save
       render 'quick_response.js', layout: false
-  end
-  def compute_url_from_resource
-      render 'klklklklklk'
   end
   
 end

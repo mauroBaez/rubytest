@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   #post '/email_event/bounced' => 'mailgun#bounced'
   #post '/email_event/delivered' => 'mailgun#delivered'
   
+  get '/admin/invitations/quick_events' => 'admin/invitations#quick_events', as: :admin_invitation_quick_events
   get '/admin/invitations/:id/quick_send' => 'admin/invitations#quick_send', as: :admin_invitation_quick_send
   get '/admin/invitations/:id/quick_whatsapp' => 'admin/invitations#quick_whatsapp', as: :admin_invitation_quick_whatsapp
   
