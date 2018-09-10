@@ -128,8 +128,8 @@ index :title => 'Invitaciones' do
     column "Cantidad de Invitados", :sortable do |invitation|
         invitation.guests.count
     end
-    actions dropdown: true do |invitation|
-        item "Editar", admin_invitation_path(invitation)
+    column do |invitation|
+        link_to "Editar", admin_invitation_path(invitation)
     end
     
 end
