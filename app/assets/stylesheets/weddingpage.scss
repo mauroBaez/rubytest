@@ -207,10 +207,14 @@ body {
 
 .container {
 	@media screen and (max-width: $screen-md) {
-		max-width: 100%;
+		max-width: 96%;
 	}
     
 }
+
+p {
+		font-size: 1.15em;
+	}
 
 #page {
 	position: relative;
@@ -1469,10 +1473,11 @@ span.border {
 	}
 	span{
 		text-transform: uppercase;
-		font-size: 13px;
-		letter-spacing: 2px;
 		font-weight: 600;
-		color: rgba($brand-black,.4);
+		color: rgba($brand-black,.65);
+		font-size: 0.75em;
+	    letter-spacing: 2px;
+	    margin-bottom: 0.5em;
 	}
 }
 
@@ -1631,11 +1636,14 @@ span.border {
 	box-shadow: 0 0 10px 4px rgba(0,0,0,0.3);
 	h2 {
 		color: $brand-secondary;
-		font-size: 2.25em;
+		font-size: 3em;
 		font-family: "Great Vibes";
 	}
 	h3 {
-		font-size: 1.25em;
+		font-size: 1.35em;
+	}
+	p {
+		font-size: 1.15em;
 	}
 	.overlay {
 		position: absolute;
@@ -1687,11 +1695,11 @@ span.border {
 
 	}
 	.btn {
-		height: 54px;
+		height: auto;
 		border: none!important;
 		background: $brand-primary;
 		color: $brand-white;
-		font-size: 16px;
+		font-size: 1.25em;
 		text-transform: uppercase;
 		font-weight: 400;
 		padding-left: 50px;
