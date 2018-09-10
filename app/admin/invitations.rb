@@ -116,9 +116,6 @@ action_item :view, only: :show do
   link_to 'Enviar por Whatsapp', admin_invitation_quick_whatsapp_path, class: 'fancybox', data: { 'fancybox-type' => 'ajax' }
 end
 
-sidebar "Estado de Envío", only: :show do
-  render 'send', { invitation: invitation }
-end
 
 index :title => 'Invitaciones' do
     column "Título" do |invitation|
