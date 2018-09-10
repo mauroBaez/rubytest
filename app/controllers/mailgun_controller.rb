@@ -7,11 +7,14 @@ class MailgunController < ApplicationController
     logger = Rails.logger
     logger.info params[:recipient]
     logger.error params[:recipient]
+    render_nothing(:ok)
   end
   def delivered
     logger = Rails.logger
     logger.info params[:recipient]
     logger.error params[:recipient]
+    render_nothing(:ok)
+
   end
   private
 
