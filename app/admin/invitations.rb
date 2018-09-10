@@ -49,7 +49,7 @@ controller do
     
     # Issue the get request
     result = mg_client.get("#{domain}/events", {:event => 'delivered'})
-    render html: result
+    render html: result.to_s
   end
   
   def quick_whatsapp
