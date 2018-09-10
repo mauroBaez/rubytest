@@ -582,10 +582,11 @@ h1, h2, h3, h4, h5, h6, figure {
 			color: #5A3C6C;
 		}
 		span{
-			color: rgba(#5A3C6C,.5);
+			color: rgba(#5A3C6C,.85);
 			text-transform: uppercase;
-			font-size: 13px;
+			font-size: 0.75em;
 			letter-spacing: 2px;
+			margin-bottom: 10px;
 		}
 	}
 	.overlay {
@@ -1448,8 +1449,9 @@ span.border {
 	}
 	h2 {
 		font-size: 3.8em;
+		margin-top: 10px;
 		margin-bottom: 10px;
-		line-height: 1.5;
+		line-height: 1;
 		color: #5A3C6C;
 		font-family: $font-secondary;
 		&:after {

@@ -4,6 +4,6 @@ class InvitationMailer < ActionMailer::Base
     def send_invitation_email(guest,invitados)
         @g = guest
         @invitados = invitados
-        mail(:to => guest.email, :subject => 'All the Monies!')
+        mail(:to => guest.email, :subject => 'Gi y Pablo - Invitación a Nuestro Casamiento')
     end
 end
