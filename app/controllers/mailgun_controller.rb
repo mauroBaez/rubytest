@@ -4,17 +4,10 @@ class MailgunController < ApplicationController
   before_action :verify_mailgun_signature
 
   def bounced
-    logger = Rails.logger
-    logger.info params[:recipient]
-    logger.error params[:recipient]
-    render_nothing(:ok)
+    render params[:recipient]
   end
   def delivered
-    logger = Rails.logger
-    logger.info params[:recipient]
-    logger.error params[:recipient]
-    render_nothing(:ok)
-
+    render params[:recipient]
   end
   private
 
