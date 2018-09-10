@@ -207,7 +207,7 @@ body {
 
 .container {
 	@media screen and (max-width: $screen-md) {
-		max-width: 96%;
+		max-width: 100%;
 	}
     
 }
@@ -674,8 +674,7 @@ h1, h2, h3, h4, h5, h6, figure {
 	}
 .feature-center {
 	text-align: center;
-	padding-left: 0;
-	padding-right:  0;
+	
 	float: none;
 	width: 100%;
 	margin-bottom: 0;
@@ -726,7 +725,7 @@ h1, h2, h3, h4, h5, h6, figure {
 	
 	h3 {
 		text-transform: uppercase;
-		font-size: 1em;
+		font-size: 0.9em;
 		//color: #5d5d5d;
 	}
 	
@@ -1636,14 +1635,15 @@ span.border {
 	box-shadow: 0 0 10px 4px rgba(0,0,0,0.3);
 	h2 {
 		color: $brand-secondary;
-		font-size: 3em;
+		font-size: 2.25em;
 		font-family: "Great Vibes";
+		line-height: 1;
 	}
 	h3 {
-		font-size: 1.35em;
+		font-size: 1.15em;
 	}
 	p {
-		font-size: 1.15em;
+		font-size: 1em;
 	}
 	.overlay {
 		position: absolute;
