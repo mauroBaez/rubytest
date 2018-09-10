@@ -2,8 +2,8 @@ Rails.application.routes.draw do
   resources :guests
   
   resources :invitations
-  post '/email_event/bounced' => 'mailgun#bounced'
-  post '/email_event/delivered' => 'mailgun#delivered'
+  get '/email_event/bounced' => 'mailgun#bounced'
+  get '/email_event/delivered' => 'mailgun#delivered'
   
   get '/admin/invitations/:id/quick_send' => 'admin/invitations#quick_send', as: :admin_invitation_quick_send
   get '/admin/invitations/:id/quick_whatsapp' => 'admin/invitations#quick_whatsapp', as: :admin_invitation_quick_whatsapp
