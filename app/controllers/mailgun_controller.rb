@@ -4,17 +4,18 @@ class MailgunController < ApplicationController
   before_action :verify_mailgun_signature
 
   def bounced
-    respond_to do |format|
-      format.html { render :text => 'hjhjhh' }
-      format.json { render :json => { hello: 'world' } }
-    end
+    logger = Rails.logger
+    logger.info params[:recipient]
+    logger.error params[:recipient]
+    render_nothing(:ok)
+  end
   def delivered
-    respond_to do |format|
-          format.html { render :text => 'hjhjhh' }
-          format.json { render :json => { hello: 'world' } }
-    end  
-  end  
-   
+    logger = Rails.logger
+    logger.info params[:recipient]
+    logger.error params[:recipient]
+    render_nothing(:ok)
+
+  end
   private
 
   def verify_mailgun_signature
