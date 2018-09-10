@@ -13,7 +13,8 @@ class MailgunController < ApplicationController
           format.html { render :text => 'hjhjhh' }
           format.json { render :json => { hello: 'world' } }
     end  
-    
+  end  
+   
   private
 
   def verify_mailgun_signature
