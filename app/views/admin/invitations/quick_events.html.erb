@@ -1,7 +1,7 @@
 <table>
     <% @results.first.each do |result| %>
       <tr>
-        <td><%= result.url %></td>
+        <td><%= result.to_s %></td>
       </tr>
     <% end %>
 </table>
