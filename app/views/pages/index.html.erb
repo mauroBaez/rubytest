@@ -20,7 +20,7 @@
 				<div class="offset-md-7 col-md-5 offset-lg-6 col-lg-6 text-center gradient d-none d-lg-block">
 					<div class="display-t gradient">
 						
-						<div class="display-tc animate-box gradient" data-animate-effect="fadeIn">
+						<div class="display-tc gradient" data-animate-effect="fadeIn">
 							
 							<div class="display-tc gradient">
 									<img class="img-fluid logo " alt="Gi y Pablo" src="<%= image_url("logo.png") %>">
@@ -46,8 +46,8 @@
 <% if @wedding %>	
    <div class="fh5co-started">
 		<div class="container">
-			<div class="row animate-box fadeInUp animated-fast">
-				<div class="col-md-12 text-center animate-box">
+			<div class="row fadeInUp">
+				<div class="col-md-12 text-center">
 					<h2><%= @wedding.invitation_details_title.html_safe %></h2>
 					<%= render 'invitations/guestslist' %>
 					<%= @wedding.invitation_details_content.html_safe %>
@@ -60,13 +60,13 @@
     <section>
     	<div id="fh5co-couple">
 		<div class="container">
-			<div class="row animate-box fadeInUp animated-fast">
+			<div class="row">
 					<div class="col-md-12 text-center fh5co-heading">
 						<h2><%= @wedding.wedding_details_title %></h2>
 			          </div>
 					</div>
 			
-			<div class="row align-items-center animate-box">
+			<div class="row align-items-center">
 				<div class="col-md-12 text-center">
 					<%= @wedding.wedding_details_content.html_safe %>
 			    </div>
@@ -96,7 +96,7 @@
 		<div class="overlay"></div>
 		<div class="container">
 			<div class="row">
-				<div class="col-md-12 text-center fh5co-heading animate-box">
+				<div class="col-md-12 text-center fh5co-heading">
 					<span>Horarios y Lugares</span>
 					<h2>Eventos de Nuestro Casamiento</h2>
 				</div>
@@ -118,8 +118,8 @@
 
     <div class="fh5co-started">
 		<div class="container">
-			<div class="row animate-box fadeInUp animated-fast">
-				<div class="col-md-12 text-center animate-box">
+			<div class="row ">
+				<div class="col-md-12 text-center">
 
 						<%= @wedding.gifts_details_content.html_safe %>
 
@@ -158,7 +158,7 @@
     	<div id="fh5co-testimonial" class="gradient-dark">
 			<div class="container">
 				<div class="">
-					<div class="row animate-box">
+					<div class="row">
 						<div class="col-md-12 text-center fh5co-heading">
 							<span>Dejanos tu mensaje</span>
 							<h2>Mensajes de Familia y Amigos</h2>
@@ -166,7 +166,7 @@
 						</div>
 					</div>
 					<div class="row">
-						<div class="col-md-8 offset-md-2  animate-box">
+						<div class="col-md-8 offset-md-2">
 							<div class="wrap-testimony">
 								<%= render 'messages/messageslist' %>
 							</div>
