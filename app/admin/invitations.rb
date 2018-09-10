@@ -49,7 +49,16 @@ controller do
     
     # Issue the get request
     result = mg_client.get("#{domain}/events", {:event => 'delivered'})
-    render json: result.to_h
+    require 'builder'
+
+    data = result
+    xm = Builder::XmlMarkup.new(:indent => 2)
+    xm.table {
+      xm.tr { data[0].keys.each { |key| xm.th(key)}}
+      data.each { |row| xm.tr { row.values.each { |value| xm.td(value)}}}
+    }
+    #puts "#{xm}"
+    render json: xm
   end
   
   def quick_whatsapp
