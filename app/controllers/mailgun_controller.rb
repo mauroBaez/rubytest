@@ -3,10 +3,16 @@ class MailgunController < ApplicationController
 
   before_action :verify_mailgun_signature
 
-  def delivered
-    Email.mark_undeliverable(params[:recipient])
+  def bounced
+    logger = Rails.logger
+    logger.info params[:recipient]
+    logger.error params[:recipient]
   end
-
+  def delivered
+    logger = Rails.logger
+    logger.info params[:recipient]
+    logger.error params[:recipient]
+  end
   private
 
   def verify_mailgun_signature
