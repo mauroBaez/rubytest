@@ -180,7 +180,7 @@ body {
 	background-image: asset-url("papel");
 	background-repeat: repeat;
 	@media screen and (max-width: $screen-md) {
-		font-size: 58px;
+		font-size: 28px;
 	}
 }
 .gradient{
@@ -634,7 +634,7 @@ h1, h2, h3, h4, h5, h6, figure {
 		}
 		h3{
 			font-family: $font-primary;
-		    font-size: 0.8em;
+		    font-size: 1em;
 		    display: block;
 		    padding: 5px 0 0;
 		    //background: #1F4C1D;
@@ -722,7 +722,7 @@ h1, h2, h3, h4, h5, h6, figure {
 	
 	h3 {
 		text-transform: uppercase;
-		font-size: 0.85em;
+		font-size: 1em;
 		//color: #5d5d5d;
 	}
 	
@@ -1632,7 +1632,10 @@ span.border {
 	box-shadow: 0 0 10px 4px rgba(0,0,0,0.3);
 	h2 {
 		color: $brand-secondary;
-
+		font-size: 2.25em;
+	}
+	h3 {
+		font-size: 2em;
 	}
 	.overlay {
 		position: absolute;

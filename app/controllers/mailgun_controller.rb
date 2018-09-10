@@ -4,10 +4,10 @@ class MailgunController < ApplicationController
   before_action :verify_mailgun_signature
 
   def bounced
-    render params[:recipient]
+    render :json => params[:recipient]
   end
   def delivered
-    render params[:recipient]
+    render :json => params[:recipient]
   end
   private
 
