@@ -1,5 +1,5 @@
 class MailgunController < ApplicationController
-  protect_from_forgery with: :exception, unless: -> { request.format.json? }
+  
   before_action :verify_mailgun_signature
 
   def create
