@@ -1,22 +1,25 @@
 class MailgunController < ApplicationController
-  skip_before_action :verify_authenticity_token
-
   before_action :verify_mailgun_signature
 
-  def bounced
-    logger = Rails.logger
-    logger.info params[:recipient]
-    logger.error params[:recipient]
-    render_nothing(:ok)
+  def create
+    process_event!
+    head :ok
   end
-  def delivered
-    logger = Rails.logger
-    logger.info params[:recipient]
-    logger.error params[:recipient]
-    render_nothing(:ok)
 
-  end
   private
+
+  
+  def process_event!
+    sent_email = SentEmail.find_or_initialize_by(
+      message_id: params["Message-Id"]
+    )
+
+    sent_email.guest_id = guest_id
+    sent_email.invitation_id = invitation_id
+    sent_email.status = event_status
+
+    sent_email.save!
+  end
 
   def verify_mailgun_signature
     api_key = ENV["MAILGUN_API_KEY"]
@@ -33,4 +36,7 @@ class MailgunController < ApplicationController
       render nothing: true, status: :unauthorized
     end
   end
+  
+
+  
 end

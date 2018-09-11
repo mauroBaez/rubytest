@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_08_26_019994) do
+ActiveRecord::Schema.define(version: 2018_08_27_024136) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string "namespace"
@@ -144,6 +144,16 @@ ActiveRecord::Schema.define(version: 2018_08_26_019994) do
     t.text "image_data"
     t.integer "album_id"
     t.index ["album_id"], name: "index_photos_on_album_id"
+  end
+
+  create_table "sent_emails", force: :cascade do |t|
+    t.string "message_id"
+    t.string "status"
+    t.integer "invitation_id"
+    t.integer "guest_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["guest_id"], name: "index_sent_emails_on_guest_id"
   end
 
   create_table "users", force: :cascade do |t|
