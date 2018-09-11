@@ -1,4 +1,4 @@
-ActiveAdmin.register SentEmail do
+ActiveAdmin.register Guest do
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
@@ -11,7 +11,8 @@ ActiveAdmin.register SentEmail do
 #   permitted << :other if params[:action] == 'create' && current_user.admin?
 #   permitted
 # end
-  #belongs_to :invitation
+  belongs_to :invitation
+  orderable
 
   menu false
   
