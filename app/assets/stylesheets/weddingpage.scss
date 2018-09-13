@@ -1106,7 +1106,7 @@ span.border {
 	@include separator;
     margin-top: 0;
     &.tall{
-		margin: 30px;
+		margin: 30px auto;
 	}
 	
 }
