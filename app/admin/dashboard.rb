@@ -5,12 +5,12 @@ ActiveAdmin.register_page "Dashboard" do
       column do
         panel "Invitaciones Enviadas" do
           table_for SentEmail.order("id desc").limit(10) do
-            column("Destinatario") { |c| c.recipient }
+            column("Destinatario") { |c| c.guest.name }
+            column("Email") { |c| c.recipient }
             column("Enviado") { |c| c.created_at.to_date }
-            column("Estado") { |c| c.status }
+            column("Estado") { |c| 'Recibida - Sin abrir' }
             
           end
-          text_node %{Aún no se enviaron Invitaciones}.html_safe
         end
       end
       column do
