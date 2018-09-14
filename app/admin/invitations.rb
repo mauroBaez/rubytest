@@ -80,7 +80,8 @@ controller do
       @guests = params[:guests]
       @invitation = Invitation.find(params[:id])
       @invitados = @invitation.guests.collect{|t| t.name}.join('<br>').html_safe
-      @results = {}
+      @sent = {}
+      @enviados = ''
       @guests.each do |key, value|
         @g = Guest.find(key)
 
@@ -93,10 +94,10 @@ controller do
       sent_email.message_id = mailer_response.message_id
       sent_email.status = mailer_response.message_id
       sent_email.save
-
-        #@results.store(@g.email,result)
+      @enviados = @enviados + '\n'  + @g.name
+      #@sent.store(@g.email,result)
       end
-      render 'quick_send_response.js', layout: false, invitation: @invitation, guest: @invitados
+      render 'quick_send_response.js', layout: false, invitation: @invitation, guests: @enviados
       #render @html
       #redirect_to admin_invitation_path(params[:id])
 
