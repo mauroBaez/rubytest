@@ -4,7 +4,7 @@ ActiveAdmin.register_page "Dashboard" do
     columns do
       column do
         panel "Invitaciones Enviadas" do
-          table_for SentEmails.order("id desc").limit(10) do
+          table_for SentEmail.order("id desc").limit(10) do
             column("Destinatario") { |c| c.recipient }
             column("Enviado") { |c| c.created_at.to_date }
             column("Estado") { |c| c.status }
