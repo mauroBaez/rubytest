@@ -85,10 +85,18 @@ controller do
         @g = Guest.find(key)
 
         
-        InvitationMailer.send_invitation_email(@g, @invitados).deliver
+      mailer_response = InvitationMailer.send_invitation_email(@g, @invitados).deliver_now
+      
+      sent_email = SentEmail.new
+      sent_email.guest_id = @g.id
+      sent_email.invitation_id = @g.invitation_id
+      sent_email.message_id = mailer_response.message_id
+      sent_email.status = mailer_response.message_id
+      sent_email.save
+
         #@results.store(@g.email,result)
       end
-      render 'quick_send_response.js', layout: false
+      render 'quick_send_response.js', layout: false, invitation: @invitation, guest: @guest
       #render @html
       #redirect_to admin_invitation_path(params[:id])
 

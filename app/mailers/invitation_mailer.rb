@@ -6,6 +6,11 @@ class InvitationMailer < ActionMailer::Base
         @g = guest
         @invitados = invitados
         mail(:to => guest.email, :subject => 'Gi y Pablo - Invitación a Nuestro Casamiento')
+        
+        sent_email = SentEmail.new
+        sent_email.guest_id = @g.id
+        sent_email.invitation_id = @g.invitation_id
+        sent_email.save
     end
     def add_metadata_headers
         headers['X-Mailgun-Variables'] = {
