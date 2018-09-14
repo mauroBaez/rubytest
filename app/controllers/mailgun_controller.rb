@@ -4,7 +4,7 @@ class MailgunController < ApplicationController
 
   def create
     process_event!
-    head :ok
+    json_response(true)
   end
 
   private
@@ -12,7 +12,7 @@ class MailgunController < ApplicationController
   
   def process_event!
     sent_email = SentEmail.find_or_initialize_by(
-      invitation_id: params["invitation-id"]
+      invitation_id: params["invitation-Id"]
     )
 
     sent_email.guest_id = guest_id

@@ -15,6 +15,7 @@ ActiveAdmin.register Invitation do
 menu false
 menu false
 orderable
+actions :index, :show, :new, :create, :update, :edit
 breadcrumb do
     [
       link_to('Invitaciones', '/admin/invitations')
@@ -127,7 +128,9 @@ end
 action_item :view, only: :show do
   link_to 'Enviar por Whatsapp', admin_invitation_quick_whatsapp_path, class: 'fancybox', data: { 'fancybox-type' => 'ajax' }
 end
-
+action_item :view, only: :show do
+  link_to 'Compartir en Facebook', "https://www.giypablo.com/invitations/" + resource.id.to_s, class: 'facebook-share'
+end
 
 index :title => 'Invitaciones' do
     column "Título" do |invitation|
