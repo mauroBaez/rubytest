@@ -93,6 +93,7 @@ controller do
       sent_email.invitation_id = @g.invitation_id
       sent_email.message_id = mailer_response.message_id
       sent_email.status = mailer_response.message_id
+      sent_email.recipient = @g.email
       sent_email.save
       @sent = @sent + '\n'  + @g.name
       #@sent.store(@g.email,result)

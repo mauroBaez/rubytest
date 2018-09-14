@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_08_27_024136) do
+ActiveRecord::Schema.define(version: 2018_09_14_070645) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string "namespace"
@@ -153,6 +153,7 @@ ActiveRecord::Schema.define(version: 2018_08_27_024136) do
     t.integer "guest_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "recipient"
     t.index ["guest_id"], name: "index_sent_emails_on_guest_id"
   end
 
