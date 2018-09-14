@@ -96,7 +96,7 @@ controller do
 
         #@results.store(@g.email,result)
       end
-      render 'quick_send_response.js', layout: false, invitation: @invitation, guest: @guest
+      render 'quick_send_response.js', layout: false, invitation: @invitation, guest: @invitados
       #render @html
       #redirect_to admin_invitation_path(params[:id])
 
@@ -123,7 +123,7 @@ controller do
       @guest = Guest.new(permitted_params[:guest])
       @guest.invitation = @invitation
       @guest.save
-      render 'quick_response.js', layout: false
+      render 'quick_response.js', layout: false, invitation: @invitation, guest: @guest
   end
   
 end
