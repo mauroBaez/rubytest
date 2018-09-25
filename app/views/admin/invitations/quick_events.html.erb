@@ -2,7 +2,7 @@
     <%= @results.each do |result| %>
       <tr>
         <td>
-          <%= result["timestamp"] %>
+          <%= Time.at(result["timestamp"]) %>
         </td>
         <td>
           <%= result["event"] %>
