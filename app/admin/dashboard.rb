@@ -9,7 +9,6 @@ ActiveAdmin.register_page "Dashboard" do
             column("Email") { |c| c.recipient }
             column("Enviado") { |c| c.created_at.to_date }
             column("Estado") { |c| 'Recibida - Sin abrir' }
-            
           end
         end
       end

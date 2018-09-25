@@ -11,22 +11,25 @@ ActiveAdmin.register Album do
 #   permitted << :other if params[:action] == 'create' && current_user.admin?
 #   permitted
 # end
-menu false
+
 menu false
 breadcrumb do
     [
       
     ]
-  end
+end
+
 controller do
   def permitted_params
     params.permit!
   end
+  
   def update
     update! do |format, album|
       format.html { redirect_to edit_admin_album_path(resource) }
     end
   end
+  
 end
 
 index do

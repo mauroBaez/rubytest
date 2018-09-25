@@ -12,15 +12,18 @@ ActiveAdmin.register Invitation do
 #   permitted
 # end
 @name = "Invitación"
-menu false
+
 menu false
 orderable
+
 actions :index, :show, :new, :create, :update, :edit
+
 breadcrumb do
     [
       link_to('Invitaciones', '/admin/invitations')
     ]
 end
+
 config.action_items.delete_if {|item| item.name == :edit && item.display_on?(:show) }
 
 controller do
@@ -34,25 +37,33 @@ controller do
     end
     
   end
-  def lock
-    lock! do |format, invitation|
-      
-      
-    end
-  end
+  
   
   def quick_events
-    # First, instantiate the Mailgun Client with your API key
-    mg_client = Mailgun::Client.new ENV['MAILGUN_API_KEY']
-    
-    # Define the domain you wish to query
-    domain = ENV['MAILGUN_DOMAIN']
     
     # Issue the get request
     @results = mg_client.get("#{domain}/events")
     @results = @results.to_h
     #render json: result.to_h
     render layout: false 
+    
+    # First, instantiate the SDK with your API credentials, domain, and required parameters for example.
+    mg_client = Mailgun::Client.new(ENV['MAILGUN_API_KEY'])
+    mg_events = Mailgun::Events.new(mg_client, ENV['MAILGUN_DOMAIN'])
+    
+    result = mg_events.get({'limit' => 25,
+                            'recipient' => 'mdbaez@hotmail.com.ar'})
+    
+    result.to_h['items'].each do | item |
+        # outputs "Delivered - 20140509184016.12571.48844@example.com"
+        puts "#{item['event']} - #{item['message']['headers']['message-id']}"
+    end
+    
+    # Want more results?
+    result = mg_events.next
+    
+    # Go backwards?
+    result = mg_events.previous
 
   end
   

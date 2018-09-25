@@ -94,7 +94,4 @@ gem 'activeadmin-async_panel'
 gem 'fancybox2-rails'
 gem 'acts_as_list'
 gem "activeadmin-orderable"
-gem 'sendgrid-ruby'
-gem 'rest-client'
 gem 'mailgun-ruby'
-gem 'font-awesome-rails'
