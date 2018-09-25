@@ -1,1 +1,12 @@
-<%= @results.to_s%>
+<table>
+    <%= @results.each do |result| %>
+      <tr>
+        <td>
+          <%= result.["event"] %>
+        </td>
+        <td>
+          <%= result.["message"]["headers"]["message-id"] %>
+        </td>
+      </tr>
+    <% end %>
+</table>
