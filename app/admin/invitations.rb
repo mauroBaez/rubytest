@@ -41,11 +41,6 @@ controller do
   
   def quick_events
     
-    # Issue the get request
-    @results = mg_client.get("#{domain}/events")
-    @results = @results.to_h
-    #render json: result.to_h
-    render layout: false 
     
     # First, instantiate the SDK with your API credentials, domain, and required parameters for example.
     mg_client = Mailgun::Client.new(ENV['MAILGUN_API_KEY'])
