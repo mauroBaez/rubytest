@@ -41,7 +41,6 @@ controller do
   
   def quick_events
     
-    
     # First, instantiate the SDK with your API credentials, domain, and required parameters for example.
     mg_client = Mailgun::Client.new(ENV['MAILGUN_API_KEY'])
     mg_events = Mailgun::Events.new(mg_client, ENV['MAILGUN_DOMAIN'])
@@ -51,11 +50,10 @@ controller do
     @results = result.to_h['items']
     
     # Want more results?
-    result = mg_events.next
+    #result = mg_events.next
     
     # Go backwards?
-    result = mg_events.previous
-    render layout: false
+    #result = mg_events.previous
   end
   
   def quick_whatsapp
