@@ -2,10 +2,13 @@
     <%= @results.each do |result| %>
       <tr>
         <td>
+          <%= result["timestamp"].to_formatted_s %>
+        </td>
+        <td>
           <%= result["event"] %>
         </td>
         <td>
-          <%= result["message"]["headers"]["message-id"] %>
+          <%= result["message"]["headers"]["recipient"] %>
         </td>
       </tr>
     <% end %>
