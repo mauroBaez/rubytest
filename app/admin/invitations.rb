@@ -59,7 +59,7 @@ controller do
     
     # Go backwards?
     result = mg_events.previous
-
+    render layout: false
   end
   
   def quick_whatsapp
