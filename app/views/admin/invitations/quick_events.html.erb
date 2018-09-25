@@ -1,21 +1,11 @@
 <table>
-    <% @results.each do |value, result| %>
+    <% @results.each do |result| %>
       <tr>
         <td>
-            <% result.each do |value, result| %>
-              <tr>
-                <td><%= value.to_s %></td>
-                <td>
-                    <% result.each do |result| %>
-                      <tr>
-                        <td>
-                            <%= result.to_s %>
-                        </td>
-                      </tr>
-                    <% end %>
-                </td>
-              </tr>
-            <% end %>
+          <%= result.event %>
+        </td>
+        <td>
+          <%= result.message.headers.message-id %>
         </td>
       </tr>
     <% end %>

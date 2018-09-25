@@ -48,6 +48,7 @@ controller do
     
     result = mg_events.get({'limit' => 25,
                             'recipient' => 'mdbaez@hotmail.com.ar'})
+    @results = result.to_h['items']
     
     result.to_h['items'].each do | item |
         # outputs "Delivered - 20140509184016.12571.48844@example.com"
