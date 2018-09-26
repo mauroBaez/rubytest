@@ -12,7 +12,7 @@ class MailgunController < ApplicationController
   
   def process_event!
     sent_email = SentEmail.find_or_initialize_by(
-      invitation_id: params["invitation-d"]
+      invitation_id: params["invitation-id"]
     )
 
     sent_email.guest_id = guest_id
