@@ -3,14 +3,8 @@ ActiveAdmin.register_page "Dashboard" do
   content title: proc { I18n.t("active_admin.dashboard") } do
     columns do
       column do
-        panel "Invitaciones Enviadas" do
-          table_for SentEmail.order("id desc").limit(10) do
-            column("Destinatario") { |c| c.guest.name }
-            column("Email") { |c| c.recipient }
-            column("Enviado") { |c| c.created_at.to_date }
-            column("Estado") { |c| 'Recibida - Sin abrir' }
-          end
-        end
+        panel 'Invitaciones Enviadas', class: 'async-panel', 'data-url' => admin_invitation_quick_events_path, 'data-period' => 1.minute
+        
       end
       column do
         panel "Mensajes Recientes" do

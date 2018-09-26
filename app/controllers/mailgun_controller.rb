@@ -38,6 +38,9 @@ class MailgunController < ApplicationController
     end
   end
   
+  def get_mail_events
+    
+  end
 
   
 end
