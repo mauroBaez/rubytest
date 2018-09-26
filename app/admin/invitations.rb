@@ -47,6 +47,7 @@ controller do
     
     result = mg_events.get({'limit' => 25,
                             'recipient' => 'mdbaez@hotmail.com.ar'})
+                            
     @results = result.to_h['items']
     
     # Want more results?
