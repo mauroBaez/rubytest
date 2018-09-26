@@ -1,1 +1,15 @@
-fgfg
+<table>
+    <%= @results.each do |result| %>
+      <tr>
+        <td>
+          <%= Time.at(result["timestamp"]).strftime("%-H:%M %p") %>
+        </td>
+        <td>
+          <%= result["event"] %>
+        </td>
+        <td>
+          <%= result["recipient"] %>
+        </td>
+      </tr>
+    <% end %>
+</table>
