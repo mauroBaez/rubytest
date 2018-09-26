@@ -1,16 +1,18 @@
 <table>
     <% @results.each do |result| %>
-      <tr>
-        <td>
-          <%= Time.at(result["timestamp"]).strftime("%d/%m/%Y %-H:%M %p") %>
-        </td>
-        <td>
-          <%= result["event"] %>
-        </td>
-        <td>
-          <%= result["recipient"] %>
-        </td>
-      </tr>
+      <% if result["recipient"] != 'http://www.giypablo.com/email_event' %>
+        <tr>
+          <td>
+            <%= Time.at(result["timestamp"]).strftime("%d/%m/%Y %-H:%M %p") %>
+          </td>
+          <td>
+            <%= result["event"] %>
+          </td>
+          <td>
+            <%= result["recipient"] %>
+          </td>
+        </tr>
+      <% end %>
     <% end %>
 </table>
 <pre>
