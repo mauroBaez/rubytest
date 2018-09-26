@@ -2,7 +2,7 @@
     <% @results.each do |result| %>
       <tr>
         <td>
-          <%= Time.at(result["timestamp"]).strftime("%-H:%M %p") %>
+          <%= Time.at(result["timestamp"]).strftime("%d/%m/%Y %-H:%M %p") %>
         </td>
         <td>
           <%= result["event"] %>
