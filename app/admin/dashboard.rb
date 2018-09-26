@@ -3,7 +3,7 @@ ActiveAdmin.register_page "Dashboard" do
   content title: proc { I18n.t("active_admin.dashboard") } do
     columns do
       column do
-        panel 'Invitaciones Enviadas', class: 'async-panel', 'data-url' => admin_invitation_quick_events_path, 'data-period' => 1.minute
+        panel 'Invitaciones - Estado de Envíos', class: 'async-panel', 'data-url' => admin_invitation_quick_events_path, 'data-period' => 1.minute
         
       end
       column do

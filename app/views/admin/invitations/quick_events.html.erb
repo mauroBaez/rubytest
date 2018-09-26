@@ -1,17 +1,35 @@
 <table>
+  <thead>
+    <tr>
+      <th class="col">Fecha</th>
+      <th class="col">Estado</th>
+      <th class="col">Destinatario</th>
+    </tr>
+  </thead>
     <% @results.each do |result| %>
       <% if result["recipient"] != 'http://www.giypablo.com/email_event' %>
-        <tr>
-          <td>
-            <%= Time.at(result["timestamp"]).strftime("%d/%m/%Y %-H:%M %p") %>
-          </td>
-          <td>
-            <%= result["event"] %>
-          </td>
-          <td>
-            <%= result["recipient"] %>
-          </td>
-        </tr>
+        <% if result["event"] != 'accepted' %>
+
+          <tr>
+            <td>
+              <%= Time.at(result["timestamp"]).strftime("%d/%m/%Y %-H:%M %p") %>
+            </td>
+            <td>
+              <% if result["event"] == 'opened' %>
+                Leída
+              <% elsif  result["event"] == 'failed'%>
+                No enviada
+              <% elsif  result["event"] == 'delivered'%>
+                Enviada
+              <% else %>
+                <%= result["event"] %>
+              <% end %>
+            </td>
+            <td>
+              <%= result["recipient"] %>
+            </td>
+          </tr>
+        <% end %>
       <% end %>
     <% end %>
 </table>
