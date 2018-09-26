@@ -1,5 +1,5 @@
 <table>
-    <%= @results.each do |result| %>
+    <% @results.each do |result| %>
       <tr>
         <td>
           <%= Time.at(result["timestamp"]).strftime("%-H:%M %p") %>

@@ -45,8 +45,7 @@ controller do
     mg_client = Mailgun::Client.new(ENV['MAILGUN_API_KEY'])
     mg_events = Mailgun::Events.new(mg_client, ENV['MAILGUN_DOMAIN'])
     
-    result = mg_events.get({'limit' => 25,
-                            'recipient' => 'mdbaez@hotmail.com.ar'})
+    result = mg_events.get({'limit' => 25})
                             
     @results = result.to_h['items']
     
