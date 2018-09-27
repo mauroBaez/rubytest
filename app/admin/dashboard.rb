@@ -3,14 +3,14 @@ ActiveAdmin.register_page "Dashboard" do
   content title: proc { I18n.t("active_admin.dashboard") } do
     columns do
       column do
-        panel 'Invitaciones - Estado de Envíos', class: 'async-panel', 'data-url' => admin_invitation_quick_events_path, 'data-period' => 1.minute
+        panel 'Invitaciones - Estado de Envíos', class: 'async-panel box', 'data-url' => admin_invitation_quick_events_path, 'data-period' => 1.minute
         
       end
       column do
-        panel "Mensajes Recientes" do
-          table_for Message.order("id desc").limit(10) do
+        panel "Mensajes Recientes", class: 'box' do
+          table_for Message.order("id desc").limit(20) do
             column("Remitente") { |c| c.author }
-            column("Fecha") { |c| c.created_at.to_date }
+            column("Fecha") { |c| c.created_at.strftime("%d/%m/%Y %-H:%M %p") }
             column("Aprobado?") { |c| c.show }
             
           end
