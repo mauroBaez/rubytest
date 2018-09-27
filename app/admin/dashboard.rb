@@ -3,10 +3,11 @@ ActiveAdmin.register_page "Dashboard" do
   content title: proc { I18n.t("active_admin.dashboard") } do
     columns do
       column do
-        panel 'Invitaciones - Estado de Envíos', class: 'box async-panel', 'data-url' => admin_invitation_quick_events_path, 'data-period' => 1.minute
+        panel 'Invitaciones - Estado de Envíos', class: 'async-panel', 'data-url' => admin_invitation_quick_events_path, 'data-period' => 1.minute
+        
       end
       column do
-        panel "Mensajes Recientes", class: 'box' do
+        panel "Mensajes Recientes" do
           table_for Message.order("id desc").limit(10) do
             column("Remitente") { |c| c.author }
             column("Fecha") { |c| c.created_at.to_date }
@@ -19,7 +20,7 @@ ActiveAdmin.register_page "Dashboard" do
       
     end # columns
 
-    #columns do
+    columns do
       # column do
       #   panel "ActiveAdmin Demo" do
       #     br
@@ -30,7 +31,7 @@ ActiveAdmin.register_page "Dashboard" do
       # end
 
       
-    #end # columns
+    end # columns
 
     # Define your dashboard sections here. Each block will be
     # rendered on the dashboard in the context of the view. So just

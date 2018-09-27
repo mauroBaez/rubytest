@@ -3,18 +3,7 @@ Rails.application.routes.draw do
   root to: 'pages#index'
   devise_for :users, :controllers => { registrations: 'registrations' }  
   ActiveAdmin.routes(self)
-  resources :guests
-  resources :weddings
-  resources :messageboards
-  resources :invitations
-  resources :messages
-  resources :events
-  resources :contacts
-  resources :categories
-  resources :albums
-  resources :articles do
-      resources :comments
-  end
+  
   
   get '/admin/invitations/quick_events' => 'admin/invitations#quick_events', as: :admin_invitation_quick_events
   
@@ -30,6 +19,19 @@ Rails.application.routes.draw do
   post '/admin/invitations/:id/quick_create' => 'admin/invitations#quick_create', as: :admin_guest_quick_create
   get '/admin/invitations/:id/quick_sort' => 'admin/invitations#quick_sort', as: :admin_invitation_quick_sort
 
+  resources :guests
+  resources :weddings
+  resources :messageboards
+  resources :invitations
+  resources :messages
+  resources :events
+  resources :contacts
+  resources :categories
+  resources :albums
+  resources :articles do
+      resources :comments
+  end
+  
   mount Shrine.upload_endpoint(:cache) => "/upload"
 
 end
