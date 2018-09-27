@@ -201,7 +201,7 @@ overflow: hidden;
   
 }
 
-.panel.box{
+.panel.box .panel_contents{
   max-height: 400px;
   overflow-y: scroll;
 }
