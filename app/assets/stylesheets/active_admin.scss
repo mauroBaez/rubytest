@@ -201,7 +201,24 @@ overflow: hidden;
   
 }
 
-.panel.box .panel_contents{
-  max-height: 400px;
-  overflow-y: scroll;
+.panel.box {
+  
+  .panel_contents{
+    max-height: 300px;
+    min-height: 300px;
+    overflow-y: scroll;
+    padding: 0;
+  }
+  thead {
+    background: white;
+    box-shadow: 0 0 5px rgba(77, 82, 86, 0.25);
+    th{
+    padding: 8px 15px;
+    
+  }
+  }
+  td{
+    padding: 8px 15px;
+    
+  }
 }

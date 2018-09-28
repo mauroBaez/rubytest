@@ -32,6 +32,9 @@
 //= require lightbox
 //= require uppy.min
 //= require uppy_uploads
+//= require best_in_place
+//= require jquery.purr
+//= require best_in_place.purr
 //= require main
 // This code uses:
 //

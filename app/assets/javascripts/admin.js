@@ -97,9 +97,7 @@ $(document).ready(function(){
       
   });
   
-  
-  
-  //displayVals();
+  $('table.sticky-header').stickyTableHeaders({scrollableArea: $('.panel_contents')});  
   
 })
 $(document).on('ready page:load', function () {
@@ -108,5 +106,4 @@ $(document).on('ready page:load', function () {
 
   $(".best_in_place").best_in_place();
   
-  $('.async-panel').worker();
 });

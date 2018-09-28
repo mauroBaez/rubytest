@@ -14,5 +14,6 @@
 #= require best_in_place.purr
 #= require activeadmin-async_panel
 #= require fancybox
+#= require sticky-headers
 #= require activeadmin-orderable
 #= require admin
