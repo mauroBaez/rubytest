@@ -51,9 +51,39 @@ $(document).on('turbolinks:load', function () {
         console.log(el.value);     
       });;
       
-      
-      
   });
   
+  $('.async-panel').each(function(index, item) {
+    item = $(item);
+    
+    var worker = function() {
+      item.addClass('processing');
+      $('h3', item).hide().show(0);
+
+      return $.ajax({
+        url: item.data('url'),
+        success(data) {
+          return $('.panel_contents', item).html(data);
+        },
+        error(data, status, error) {
+          return $('.panel_contents', item).html(error);
+        },
+        complete() {
+          item.removeClass('processing');
+
+          // Schedule the next request when the current one's completed
+          const period = item.data('period');
+          if (period) {
+            return setTimeout(worker, period * 1000);
+          }
+        }
+      });
+    };
+
+    return worker();
+  })
+  
   $('table.sticky-header').stickyTableHeaders({scrollableArea: $('.panel_contents')});  
+  
+  
 });
