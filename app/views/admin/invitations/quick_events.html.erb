@@ -28,7 +28,27 @@
             <td>
               <%= result["recipient"] %>
             </td>
+            <tr>
+            <td>
+              <%= Time.at(result["timestamp"]).strftime("%d/%m/%Y %-H:%M %p") %>
+            </td>
+            <td>
+              <% if result["event"] == 'opened' %>
+                Leída
+              <% elsif  result["event"] == 'failed'%>
+                No enviada
+              <% elsif  result["event"] == 'delivered'%>
+                Enviada
+              <% else %>
+                <%= result["event"] %>
+              <% end %>
+            </td>
+            <td>
+              <%= result["recipient"] %>
+            </td>
           </tr>
+          </tr>
+          
         <% end %>
       <% end %>
     <% end %>
