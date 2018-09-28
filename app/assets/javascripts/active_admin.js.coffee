@@ -16,4 +16,3 @@
 #= require fancybox
 #= require activeadmin-orderable
 #= require admin
-

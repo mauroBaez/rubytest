@@ -106,6 +106,7 @@ $(document).on('ready page:load', function () {
 /* Activating Best In Place */
   $("a.fancybox").fancybox({parent: 'body'});
 
-  $(".best_in_place").best_in_place()
+  $(".best_in_place").best_in_place();
   
+  $('.async-panel').worker();
 });

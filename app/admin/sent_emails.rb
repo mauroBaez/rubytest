@@ -11,7 +11,7 @@ ActiveAdmin.register SentEmail do
 #   permitted << :other if params[:action] == 'create' && current_user.admin?
 #   permitted
 # end
-  #belongs_to :invitation
+  belongs_to :invitation
 
   menu false
   
