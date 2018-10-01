@@ -55,7 +55,6 @@ $(document).on('turbolinks:load', function () {
   
   $('.async-panel').each(function(index, item) {
     item = $(item);
-    
     var worker = function() {
       item.addClass('processing');
       $('h3', item).hide().show(0);
@@ -74,7 +73,7 @@ $(document).on('turbolinks:load', function () {
           // Schedule the next request when the current one's completed
           const period = item.data('period');
           if (period) {
-            return setTimeout(worker, period * 1000);
+            //return setTimeout(worker, period * 1000);
           }
         }
       });
