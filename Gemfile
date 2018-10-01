@@ -94,3 +94,4 @@ gem 'fancybox2-rails'
 gem 'acts_as_list'
 gem "activeadmin-orderable"
 gem 'mailgun-ruby'
+gem 'sidekiq'
