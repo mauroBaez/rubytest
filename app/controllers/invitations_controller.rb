@@ -20,7 +20,13 @@ class InvitationsController < InheritedResources::Base
     @post.save
   end
   private
-
+    def update_events
+      @post = Message.new()
+      @post.author = "kkjkjkj"
+      @post.content = "kkjkjkj"
+      @post.messageboard_id = Messageboard.first.id
+      @post.save
+    end
     def invitation_params
       params.require(:invitation).permit(:title, :sent, :sent_datetime)
     end
