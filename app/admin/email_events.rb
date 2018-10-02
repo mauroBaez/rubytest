@@ -11,10 +11,7 @@ ActiveAdmin.register EmailEvent do
 #   permitted << :other if params[:action] == 'create' && current_user.admin?
 #   permitted
 # end
-  belongs_to :sent_email
 
-  menu false
-  
   controller do
     def permitted_params
       params.permit!
