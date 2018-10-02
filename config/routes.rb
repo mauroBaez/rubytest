@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   
   resources :invitations
   resources :sent_emails
-  post '/email_event' => 'mailgun#create'
+  resources :email_events
 
   get '/admin/invitations/quick_events' => 'admin/invitations#quick_events', as: :admin_invitation_quick_events
   get '/admin/invitations/:id/quick_send' => 'admin/invitations#quick_send', as: :admin_invitation_quick_send
