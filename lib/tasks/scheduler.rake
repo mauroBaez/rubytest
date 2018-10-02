@@ -7,12 +7,25 @@ task :update_events => :environment do
     mg_events = Mailgun::Events.new(mg_client, ENV['MAILGUN_DOMAIN'])
     
     result = mg_events.get({'limit' => 25})
-                            
+                       
     @results = result.to_h['items']
-  @post = Message.new()
-    @post.author = "kkjkjkj"
-    @post.content = @results.to_s
-    @post.messageboard_id = Messageboard.first.id
-    @post.save
+    
+    @results.each do |r|
+      sent_email = SentEmail.find_or_initialize_by(
+        message_id: r["message"]["headers"]["message-id"]
+      )
+      
+      sent_email.status = r["event"]
+      sent_email.save
+      
+      @event = EmailEvent.new()
+      
+      @event.event = r["event"]
+      @event.message_id = r["message"]["headers"]["message-id"]
+      @event.sent_email_id = sent_email.id
+      @event.timestamp = r["timestamp"]
+    
+      @event.save
+    end
   puts "done."
 end
