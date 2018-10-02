@@ -24,7 +24,7 @@ task :update_events => :environment do
       @event.message_id = r["message"]["headers"]["message-id"]
       @event.sent_email_id = sent_email.id
       @event.invitation_id = sent_email.invitation_id
-      @event.timestamp = r["timestamp"]
+      @event.timestamp = Time.at(r["timestamp"])
     
       @event.save
     end
