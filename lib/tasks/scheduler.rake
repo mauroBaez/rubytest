@@ -8,10 +8,10 @@ task :update_events => :environment do
     
     result = mg_events.get({'limit' => 25})
                             
-    @results = result.to_s['items']
+    @results = result.to_h['items']
   @post = Message.new()
     @post.author = "kkjkjkj"
-    @post.content = @results
+    @post.content = @results.to_s
     @post.messageboard_id = Messageboard.first.id
     @post.save
   puts "done."
