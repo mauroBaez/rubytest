@@ -95,3 +95,4 @@ gem 'acts_as_list'
 gem "activeadmin-orderable"
 gem 'mailgun-ruby'
 gem 'sidekiq'
+gem 'whenever', require: false

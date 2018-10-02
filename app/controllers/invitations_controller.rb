@@ -12,6 +12,13 @@ class InvitationsController < InheritedResources::Base
             @invitation = false
         end
   end
+  def update_events
+    @post = Message.new()
+    @post.author = "kkjkjkj"
+    @post.content = "kkjkjkj"
+    @post.messageboard_id = Messageboard.first.id
+    @post.save
+  end
   private
 
     def invitation_params
