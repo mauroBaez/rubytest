@@ -1,4 +1,5 @@
 class MailgunController < ApplicationController
+  
   def quick_events
     
     # First, instantiate the SDK with your API credentials, domain, and required parameters for example.
