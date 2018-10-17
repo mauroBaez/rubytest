@@ -38,21 +38,24 @@ class MailgunController < ApplicationController
       @invitados = @invitation.guests.collect{|t| t.name}.join('<br>').html_safe
       #@sent = {}
       @sent = ''
+      
       @guests.each do |key, value|
         @g = Guest.find(key)
 
         
-      mailer_response = InvitationMailer.send_invitation_email(@g, @invitados).deliver_now
-      
-      sent_email = SentEmail.new
-      sent_email.guest_id = @g.id
-      sent_email.invitation_id = @g.invitation_id
-      sent_email.message_id = mailer_response.message_id
-      sent_email.status = mailer_response.message_id
-      sent_email.recipient = @g.email
-      sent_email.save
-      @sent = @sent + '\n'  + @g.name
-      #@sent.store(@g.email,result)
+        mailer_response = InvitationMailer.send_invitation_email(@g, @invitados).deliver_now
+        
+        sent_email = SentEmail.new
+        sent_email.guest_id = @g.id
+        sent_email.invitation_id = @g.invitation_id
+        sent_email.message_id = mailer_response.message_id
+        sent_email.status = mailer_response.event
+        sent_email.recipient = @g.email
+        sent_email.save
+        
+        @sent = @sent + '\n'  + @g.name
+        #@sent.store(@g.email,result)
+        
       end
       render 'quick_send_response.js', layout: false, invitation: @invitation, sent: @sent
       #render @html
