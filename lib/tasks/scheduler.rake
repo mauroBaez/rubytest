@@ -11,7 +11,7 @@ task :update_events => :environment do
     
     @begin = EmailEvent.last.timestamp
     
-    result = mg_events.get({'limit' => 25, 'begin' => @begin, 'ascending' => 'yes'})
+    result = mg_events.get({'limit' => 25, 'ascending' => 'yes'})
     
     @results = result.to_h['items']
     
