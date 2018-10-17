@@ -9,9 +9,8 @@ task :update_events => :environment do
     mg_client = Mailgun::Client.new(ENV['MAILGUN_API_KEY'])
     mg_events = Mailgun::Events.new(mg_client, ENV['MAILGUN_DOMAIN'])
     
-    @begin = EmailEvent.last.timestamp
-    
-    result = mg_events.get({'limit' => 25, 'ascending' => 'yes'})
+
+    result = mg_events.get({'limit' => 25})
     
     @results = result.to_h['items']
     
@@ -30,7 +29,7 @@ task :update_events => :environment do
       @event.message_id = r["message"]["headers"]["message-id"]
       @event.sent_email_id = sent_email.id
       @event.invitation_id = sent_email.invitation_id
-      @event.timestamp = r["timestamp"]
+      #@event.timestamp = r["timestamp"]
     
       @event.save
     end
