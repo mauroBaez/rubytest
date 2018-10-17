@@ -8,7 +8,7 @@ ActiveAdmin.register_page "Dashboard" do
       end
       column do
         panel "Mensajes Recientes", class: 'box' do
-          table_for Message.order("id desc").limit(20), class: 'sticky-header' do
+          table_for Message.order("id desc").limit(30), class: 'sticky-header' do
             column("Remitente") { |c| c.author }
             column("Fecha") { |c| c.created_at.strftime("%d/%m/%Y %-H:%M %p") }
             column("Aprobado?") { |c| c.show }

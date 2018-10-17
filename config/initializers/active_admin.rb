@@ -291,6 +291,8 @@ ActiveAdmin.setup do |config|
   # You can inherit it with own class and inject it for all resources
   #
   # config.order_clause = MyOrderClause
+  config.display_name_methods = [:active_admin_name, :display_name]
+
   config.footer = "MyApp Revision v1.3"
   config.namespace :admin do |admin|
   admin.build_menu do |menu|

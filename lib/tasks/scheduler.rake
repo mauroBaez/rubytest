@@ -1,16 +1,22 @@
 desc "This task is called by the Heroku scheduler add-on"
 
 task :update_events => :environment do
+  
   puts "Updating feed..."
+  
   # First, instantiate the SDK with your API credentials, domain, and required parameters for example.
+  
     mg_client = Mailgun::Client.new(ENV['MAILGUN_API_KEY'])
     mg_events = Mailgun::Events.new(mg_client, ENV['MAILGUN_DOMAIN'])
     
-    result = mg_events.get({'limit' => 25})
-                       
+    @begin = EmailEvent.last.timestamp.to_s
+    
+    result = mg_events.get({'limit' => 25, 'begin' => @begin, 'ascending' => 'yes'})
+    
     @results = result.to_h['items']
     
     @results.each do |r|
+      
       sent_email = SentEmail.find_or_initialize_by(
         message_id: r["message"]["headers"]["message-id"]
       )
