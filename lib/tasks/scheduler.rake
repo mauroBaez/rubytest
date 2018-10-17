@@ -9,7 +9,7 @@ task :update_events => :environment do
     mg_client = Mailgun::Client.new(ENV['MAILGUN_API_KEY'])
     mg_events = Mailgun::Events.new(mg_client, ENV['MAILGUN_DOMAIN'])
     
-    @begin = EmailEvent.last.timestamp.to_s
+    @begin = EmailEvent.last.timestamp
     
     result = mg_events.get({'limit' => 25, 'begin' => @begin, 'ascending' => 'yes'})
     
