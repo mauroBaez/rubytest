@@ -35,6 +35,7 @@ class MailgunController < ApplicationController
       
       @guests = params[:guests]
       @invitation = Invitation.find(params[:id])
+      
       @invitados = @invitation.guests.collect{|t| t.name}.join('<br>').html_safe
       #@sent = {}
       @sent = ''
@@ -49,7 +50,7 @@ class MailgunController < ApplicationController
         sent_email.guest_id = @g.id
         sent_email.invitation_id = @g.invitation_id
         sent_email.message_id = mailer_response.message_id
-        sent_email.status = mailer_response.event
+        sent_email.status = ''
         sent_email.recipient = @g.email
         sent_email.save
         
