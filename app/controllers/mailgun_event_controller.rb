@@ -1,4 +1,4 @@
-class MailgunEventController < ApplicationController
+class MailgunController < ApplicationController
   
   def quick_events
     
@@ -35,7 +35,6 @@ class MailgunEventController < ApplicationController
       
       @guests = params[:guests]
       @invitation = Invitation.find(params[:id])
-      
       @invitados = @invitation.guests.collect{|t| t.name}.join('<br>').html_safe
       #@sent = {}
       @sent = ''
