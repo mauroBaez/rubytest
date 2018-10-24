@@ -1,4 +1,4 @@
-class MailgunController < ApplicationController
+class MailgunEventController < ApplicationController
   
   def quick_events
     

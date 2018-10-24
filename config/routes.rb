@@ -5,12 +5,12 @@ Rails.application.routes.draw do
   resources :sent_emails
   resources :email_events
 
-  get '/admin/invitations/quick_events' => 'mailgun#quick_events', as: :admin_invitation_quick_events
-  get '/admin/invitations/:id/quick_send' => 'mailgun#quick_send', as: :admin_invitation_quick_send
+  get '/admin/invitations/quick_events' => 'mailgun_event#quick_events', as: :admin_invitation_quick_events
+  get '/admin/invitations/:id/quick_send' => 'mailgun_event#quick_send', as: :admin_invitation_quick_send
   
   get '/admin/invitations/:id/quick_whatsapp' => 'whatsapp#quick_whatsapp', as: :admin_invitation_quick_whatsapp
   
-  post '/admin/invitations/:id/quick_send_mails' => 'mailgun#quick_send_mails', as: :admin_invitation_quick_send_mails
+  post '/admin/invitations/:id/quick_send_mails' => 'mailgun_event#quick_send_mails', as: :admin_invitation_quick_send_mails
   
   post '/admin/invitations/:id/quick_order' => 'admin/invitations#quick_order', as: :admin_invitation_quick_order
 
