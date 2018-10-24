@@ -10,12 +10,14 @@ task :update_events => :environment do
     mg_events = Mailgun::Events.new(mg_client, ENV['MAILGUN_DOMAIN'])
     @begin = EmailEvent.last.timestamp
     
-    result = mg_events.get({'limit' => 25, 'begin' => @begin})
+    result = mg_events.get({'limit' => 25})
 
     @results = result.to_h['items']
     puts "Results"
 
     @results.each do |r|
+      puts "--------"
+
       puts r["message"]["headers"]["message-id"]
       puts r["timestamp"]
 
