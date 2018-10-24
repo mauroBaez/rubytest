@@ -13,9 +13,12 @@ task :update_events => :environment do
     result = mg_events.get({'limit' => 25, 'begin' => @begin})
 
     @results = result.to_h['items']
-    
+    puts "Results"
+
     @results.each do |r|
-      
+      puts r["message"]["headers"]["message-id"]
+      puts r["timestamp"]
+
       sent_email = SentEmail.find_or_initialize_by(
         message_id: r["message"]["headers"]["message-id"]
       )
