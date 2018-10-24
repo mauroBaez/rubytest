@@ -10,7 +10,7 @@ task :update_events => :environment do
     mg_events = Mailgun::Events.new(mg_client, ENV['MAILGUN_DOMAIN'])
     @begin = EmailEvent.last.timestamp
     
-    result = mg_events.get({'limit' => 25})
+    result = mg_events.get({'limit' => 25, 'ascending' => 'yes'})
 
     @results = result.to_h['items']
     puts "Results"
