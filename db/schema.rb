@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_09_14_070646) do
+ActiveRecord::Schema.define(version: 2018_09_14_070647) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string "namespace"
@@ -93,7 +93,7 @@ ActiveRecord::Schema.define(version: 2018_09_14_070646) do
   create_table "email_events", force: :cascade do |t|
     t.string "message_id"
     t.string "event"
-    t.datetime "timestamp"
+    t.string "timestamp"
     t.integer "invitation_id"
     t.integer "sent_email_id"
     t.datetime "created_at", null: false
